@@ -4,3 +4,5 @@ cd lits-diploma
 vagrant up
 ```
 Посмотреть http://localhost:8080
+
+:vagin':
