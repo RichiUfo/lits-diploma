@@ -13,8 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 
 # Some crazy, hot, luxury, vip and swag stuff from Twitter
 gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
-# More style here
-gem 'bootswatch-rails'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
