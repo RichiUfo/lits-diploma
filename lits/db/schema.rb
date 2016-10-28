@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20161027193616) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
+    t.integer  "parent_id"
     t.string   "name"
-    t.integer  "parent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,20 +38,20 @@ ActiveRecord::Schema.define(version: 20161027193616) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.datetime "date"
     t.integer  "city_id"
+    t.integer  "organizer_id"
+    t.integer  "category_id"
+    t.integer  "source_id"
+    t.integer  "format_id"
+    t.datetime "date"
+    t.float    "price"
+    t.string   "coordinates"
+    t.string   "ext_id"
     t.text     "name"
     t.text     "picture"
     t.text     "description"
     t.text     "address"
-    t.string   "coordinates"
-    t.float    "price"
-    t.integer  "organizer_id"
     t.text     "reg_ref"
-    t.integer  "category_id"
-    t.string   "ext_id"
-    t.integer  "source_id"
-    t.integer  "format_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(version: 20161027193616) do
   end
 
   create_table "user_feeds", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "category_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_user_feeds_on_category_id", using: :btree
@@ -120,12 +120,12 @@ ActiveRecord::Schema.define(version: 20161027193616) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "name"
     t.integer  "social_type_id"
+    t.integer  "city_id"
+    t.integer  "age"
+    t.string   "name"
     t.string   "social_id"
     t.string   "sex"
-    t.integer  "age"
-    t.integer  "city_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["city_id"], name: "index_users_on_city_id", using: :btree
