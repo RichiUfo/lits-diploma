@@ -10,9 +10,140 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161027193616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "parent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_tags", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_tags_on_event_id", using: :btree
+    t.index ["tag_id"], name: "index_event_tags_on_tag_id", using: :btree
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "date"
+    t.integer  "city_id"
+    t.text     "name"
+    t.text     "picture"
+    t.text     "description"
+    t.text     "address"
+    t.string   "coordinates"
+    t.float    "price"
+    t.integer  "organizer_id"
+    t.text     "reg_ref"
+    t.integer  "category_id"
+    t.string   "ext_id"
+    t.integer  "source_id"
+    t.integer  "format_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["category_id"], name: "index_events_on_category_id", using: :btree
+    t.index ["city_id"], name: "index_events_on_city_id", using: :btree
+    t.index ["format_id"], name: "index_events_on_format_id", using: :btree
+    t.index ["organizer_id"], name: "index_events_on_organizer_id", using: :btree
+    t.index ["source_id"], name: "index_events_on_source_id", using: :btree
+  end
+
+  create_table "formats", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "organizers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "social_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "source_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.integer  "source_type_id"
+    t.text     "ref"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["source_type_id"], name: "index_sources_on_source_type_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_feeds", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_user_feeds_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_user_feeds_on_user_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "name"
+    t.integer  "social_type_id"
+    t.string   "social_id"
+    t.string   "sex"
+    t.integer  "age"
+    t.integer  "city_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["city_id"], name: "index_users_on_city_id", using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["social_type_id"], name: "index_users_on_social_type_id", using: :btree
+  end
+
+  add_foreign_key "event_tags", "events"
+  add_foreign_key "event_tags", "tags"
+  add_foreign_key "events", "categories"
+  add_foreign_key "events", "cities"
+  add_foreign_key "events", "formats"
+  add_foreign_key "events", "organizers"
+  add_foreign_key "events", "sources"
+  add_foreign_key "sources", "source_types"
+  add_foreign_key "user_feeds", "categories"
+  add_foreign_key "user_feeds", "users"
+  add_foreign_key "users", "cities"
+  add_foreign_key "users", "social_types"
 end
