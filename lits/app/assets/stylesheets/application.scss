@@ -6,6 +6,9 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'variables';
+@import 'utilities';
+
 .navbar {
   .navbar-brand {
     font-size: 24px;

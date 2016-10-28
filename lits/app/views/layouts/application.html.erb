@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Centr</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +13,9 @@
       link_to('Логин', '#', class: 'btn btn-info navbar-btn') 
     end %>
 
-  
-    <%= yield %>
+    <%= container('m-t-70') { 
+      events_timeline +
+      yield 
+    } %>
   </body>
 </html>
