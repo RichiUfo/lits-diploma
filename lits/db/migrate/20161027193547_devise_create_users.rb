@@ -31,12 +31,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # t.datetime :locked_at
 
       #fields for diploma LITS
-      t.string      :name
       t.references  :social_type, foreign_key: true
+      t.references  :city,        foreign_key: true
+      t.integer     :age
+      t.string      :name
       t.string      :social_id
       t.string      :sex
-      t.integer     :age
-      t.references  :city, foreign_key: true
 
       t.timestamps null: false
     end
