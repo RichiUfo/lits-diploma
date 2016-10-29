@@ -13,3 +13,5 @@
 .directory
 .passenger
 .DS_Store
+.viminfo
+.gitconfig
