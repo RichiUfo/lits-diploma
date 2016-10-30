@@ -7,9 +7,9 @@ RSpec.describe Components::EventsReceiver::VkReceiver do
       Components::EventsReceiver::VkReceiver.new
     end
 
-    let(:event_id) do
-      123251774
-    end
+    let(:event_id) { 123251774 }
+
+    let(:source_id) { 74120822 } 
 
     it 'Has to return API result with type "Hashie::Mash"' do
       api_result = receiver.get_raw_event(event_id)
@@ -21,5 +21,14 @@ RSpec.describe Components::EventsReceiver::VkReceiver do
       event = Event.new api_result
       expect(event).to be_valid
     end
+
+    it "Has to replace a pattern with a source vk id" do
+      expect(receiver.source_event_url(11111)).to include('11111')
+    end
+
+    it 'Has to get a list of events for source' do 
+      list = receiver.source_events_ids source_id
+      expect(list.all?{ |id| id.to_i > 0 }).to be_truthy
+    end 
   end
 end
