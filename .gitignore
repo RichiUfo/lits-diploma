@@ -1,0 +1,15 @@
+.bash_history
+.bash_profile
+.bashrc
+.bundle
+.gem
+.gnupg
+.mkshrc
+.profile
+.rvm
+.vagrant
+.zlogin
+.zshrc
+.directory
+.passenger
+.DS_Store

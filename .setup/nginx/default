@@ -1,0 +1,10 @@
+server {
+    listen 80 default_server;
+    server_name localhost;
+    
+    root /var/www/lits/public;
+
+    passenger_enabled on;
+    passenger_friendly_error_pages on;
+    passenger_app_env development;
+}

@@ -1,0 +1,41 @@
+/*
+ *= require_tree .
+ *= require_self
+ *= require flat-ui.min
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'variables';
+@import 'utilities';
+
+.navbar {
+  .navbar-brand {
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  
+  .navbar-collapse{
+
+    .nav.navbar-nav {
+      li {
+        a {
+          &::first-letter {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    .nav.navbar-right {
+      @media only screen and (max-width : 768px) {
+        padding: 0 15px;
+      }
+
+      .navbar-btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
