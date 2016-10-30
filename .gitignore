@@ -15,3 +15,4 @@
 .DS_Store
 .viminfo
 *.gitconfig
+.cloud-locale-test.skip
