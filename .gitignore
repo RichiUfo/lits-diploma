@@ -14,4 +14,4 @@
 .passenger
 .DS_Store
 .viminfo
-.gitconfig
+*.gitconfig
