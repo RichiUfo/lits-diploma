@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027193616) do
+ActiveRecord::Schema.define(version: 20161029130751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20161027193616) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "city_source_types", force: :cascade do |t|
+    t.integer  "city_id"
+    t.integer  "source_type_id"
+    t.integer  "ext_id"
+    t.string   "ext_name"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["city_id"], name: "index_city_source_types_on_city_id", using: :btree
+    t.index ["source_type_id"], name: "index_city_source_types_on_source_type_id", using: :btree
   end
 
   create_table "event_tags", force: :cascade do |t|
@@ -134,6 +145,8 @@ ActiveRecord::Schema.define(version: 20161027193616) do
     t.index ["social_type_id"], name: "index_users_on_social_type_id", using: :btree
   end
 
+  add_foreign_key "city_source_types", "cities"
+  add_foreign_key "city_source_types", "source_types"
   add_foreign_key "event_tags", "events"
   add_foreign_key "event_tags", "tags"
   add_foreign_key "events", "categories"
