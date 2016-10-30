@@ -1,3 +1,9 @@
+[alias]
+        co = checkout
+        ci = commit
+        st = status
+        br = branch
+
 [user]
-	name = SlippyJohny
-	email = shpak.d.o@ukr.net
+	email = slav999@ukr.net
+	name = Sl8v
