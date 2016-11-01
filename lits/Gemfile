@@ -66,3 +66,7 @@ end
 
 # Devise for auth with vk, fb...
 gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
+gem 'omniauth'
+# Devise for auth with vk, fb...
