@@ -1,7 +1,7 @@
 module Components
   module EventsReceiver
     class BaseReceiver
-      def get_source_events_ids sourse_ext_id
+      def source_events_ids sourse_ext_id
         self.class.no_method __method__.to_s
       end
       
@@ -24,7 +24,6 @@ module Components
       end
     end
 
-    class MethodNotImplementedError < NoMethodError
-    end
+    class MethodNotImplementedError < NoMethodError; end
   end
 end

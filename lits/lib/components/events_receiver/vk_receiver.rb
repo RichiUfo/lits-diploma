@@ -1,6 +1,10 @@
+require 'net/http'
+
 module Components
   module EventsReceiver
     class VkReceiver < BaseReceiver
+      SOURCE_EVENTS_URL = 'https://vk.com/al_groups.php?act=show_events&al=1&oid=-<source_id>'
+
       def initialize
         @client = VkontakteApi::Client.new
       end
@@ -24,18 +28,30 @@ module Components
           picture: raw_event.photo_big,
           coordinates: "#{raw_event.place.latitude} #{raw_event.place.longitude}",
           address: raw_event.place.address,
-          city_id: get_city_id(raw_event.place.city),
+          city_id: city_id(raw_event.place.city),
           reg_ref: Components::Link.parse_registration_link(raw_event.description),
           ext_id: raw_event.gid
         }
       end
 
+      def source_events_ids sourse_ext_id
+        Net::HTTP.get(URI(source_event_url(sourse_ext_id)))
+          .scan(/id="public_event_cell([0-9]+)"/)
+          .map { |e| e.first.to_i }
+          .select{ |e| e > 0}
+      end
+
+      def source_event_url sourse_ext_id
+        self.class::SOURCE_EVENTS_URL.sub '<source_id>', sourse_ext_id.to_s
+      end
+      
       private 
 
-      def get_city_id ext_city_id
+      def city_id ext_city_id
         city = City.find_by_vk_id ext_city_id
         city.present? ? city.id : nil
       end
+
     end
   end
 end
