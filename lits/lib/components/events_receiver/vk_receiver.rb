@@ -38,7 +38,7 @@ module Components
         Net::HTTP.get(URI(source_event_url(sourse_ext_id)))
           .scan(/id="public_event_cell([0-9]+)"/)
           .map { |e| e.first.to_i }
-          .select{ |e| e > 0}
+          .select{ |e| e > 0 }
       end
 
       def source_event_url sourse_ext_id
