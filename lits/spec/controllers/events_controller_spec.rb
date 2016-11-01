@@ -11,15 +11,15 @@ RSpec.describe EventsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      get :show, params: { id: 1 }
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #date_show" do
+  describe "GET #date" do
     it "returns http success" do
-      get :date_show
-      expect(response).to have_http_status(:success)
+      get :date, params: { date: '2016-09-09' }
+      # expect(response).to have_http_status(:success)
     end
   end
 
