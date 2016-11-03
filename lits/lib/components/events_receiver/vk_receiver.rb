@@ -1,5 +1,3 @@
-require 'net/http'
-
 module Components
   module EventsReceiver
     class VkReceiver < BaseReceiver

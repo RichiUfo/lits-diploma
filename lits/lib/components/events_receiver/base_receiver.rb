@@ -1,3 +1,5 @@
+require 'net/http'
+
 module Components
   module EventsReceiver
     class BaseReceiver

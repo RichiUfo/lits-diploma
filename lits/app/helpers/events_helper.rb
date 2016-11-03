@@ -42,7 +42,7 @@ module EventsHelper
 
   def event_tpl event
     content_tag :div, class: 'thumbnail event-thumbnail' do
-      link_to(image_tag(event.picture, alt: event.name), events_url(event), class: 'event-thumbnail-link') +
+      link_to(image_tag(event.picture, alt: event.name), event_url(event), class: 'event-thumbnail-link') +
       thumbnail_caption(event)
     end
   end
