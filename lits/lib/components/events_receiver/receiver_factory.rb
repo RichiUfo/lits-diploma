@@ -3,7 +3,7 @@ module Components
     class ReceiverFactory
       def self.source_receiver source_type_name
         if SourceType::KEYS[source_type_name.downcase.to_sym].blank?
-          raise ArgumentError, "Source type with id #{source_id} doesnt exist" 
+          raise ArgumentError, "Source type with id #{source_type_name} doesnt exist" 
         end
 
         receiver_class_name = self.name.sub('ReceiverFactory', source_type_name.capitalize.to_s + 'Receiver')
