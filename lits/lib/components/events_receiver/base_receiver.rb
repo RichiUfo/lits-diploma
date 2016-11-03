@@ -1,9 +1,22 @@
 require 'net/http'
+require 'singleton'
 
 module Components
   module EventsReceiver
     class BaseReceiver
-      def source_events_ids sourse_ext_id
+      include Singleton
+
+      attr_reader :report
+
+      def initialize
+        @report = {
+          created: 0,
+          updated: 0,
+          errors: 0
+        } 
+      end
+
+      def source_events_ids source_ext_id
         self.class.no_method __method__.to_s
       end
       
