@@ -1,9 +1,9 @@
-SourceType.find_or_create_by id: 1, name: 'VK'
-SourceType.find_or_create_by id: 2, name: 'FB'
-SourceType.find_or_create_by id: 3, name: 'DOU'
+SourceType.find_or_create_by id: 1, name: 'vk'
+SourceType.find_or_create_by id: 2, name: 'fb'
+SourceType.find_or_create_by id: 3, name: 'dou'
 
-SocialType.find_or_create_by id: 1, name: 'VK'
-SocialType.find_or_create_by id: 2, name: 'FB'
+SocialType.find_or_create_by id: 1, name: 'vk'
+SocialType.find_or_create_by id: 2, name: 'fb'
 
 City.find_or_create_by id: 1, name: 'Одесса'
 
