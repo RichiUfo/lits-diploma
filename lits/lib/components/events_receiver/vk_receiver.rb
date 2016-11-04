@@ -45,22 +45,17 @@ module Components
       end
 
       def format_event raw_event
-        formatted = {
+        {
           name: raw_event.name,
           description: raw_event.description,
           date: DateTime.strptime(raw_event.start_date,'%s'),
           picture: raw_event.photo_big,
           reg_ref: Components::Link.parse_registration_link(raw_event.description),
-          ext_id: raw_event.gid
+          ext_id: raw_event.gid,
+          coordinates: "#{raw_event.try(:place).try(:latitude)} #{raw_event.try(:place).try(:longitude)}",
+          address: raw_event.try(:place).try(:address),
+          city_id: city_id(raw_event.try(:place).try(:city))
         }
-
-        if raw_event.place.present?
-          formatted[:coordinates] = "#{raw_event.place.latitude} #{raw_event.place.longitude}"
-          formatted[:address] = raw_event.place.address
-          formatted[:city_id] = city_id(raw_event.place.city)
-        end
-
-        formatted
       end
 
       def source_events_ids source_ext_id
