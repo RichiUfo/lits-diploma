@@ -4,7 +4,33 @@ module Components
       SOURCE_EVENTS_URL = 'https://vk.com/al_groups.php?act=show_events&al=1&oid=-<source_id>'
 
       def initialize
+        super
         @client = VkontakteApi::Client.new
+      end
+
+      def save_source_events source
+        source_events_ids(source.ext_id).each do |event_ext_id|
+          event = get_event event_ext_id
+          event[:source_id] = source.id
+          event[:city_id] = source.city_id if event[:city_id].blank?
+
+          event_in_db = Event.vk_source.find_by(ext_id: event[:ext_id].to_i)
+          save_key = :updated
+          
+          if event_in_db.nil?
+            save_key = :created
+            event_in_db = Event.new event
+          end
+
+          if event_in_db.save
+            @report[save_key] += 1
+          else
+            puts event_in_db.errors.full_messages
+            @report[:errors] += 1
+          end
+
+          break if event[:date] < DateTime.now
+        end
       end
 
       def get_event event_ext_id
@@ -22,21 +48,21 @@ module Components
         {
           name: raw_event.name,
           description: raw_event.description,
-          date: raw_event.start_date,
+          date: DateTime.strptime(raw_event.start_date,'%s'),
           picture: raw_event.photo_big,
-          coordinates: "#{raw_event.place.latitude} #{raw_event.place.longitude}",
-          address: raw_event.place.address,
-          city_id: city_id(raw_event.place.city),
           reg_ref: Components::Link.parse_registration_link(raw_event.description),
-          ext_id: raw_event.gid
+          ext_id: raw_event.gid,
+          coordinates: "#{raw_event.try(:place).try(:latitude)} #{raw_event.try(:place).try(:longitude)}",
+          address: raw_event.try(:place).try(:address),
+          city_id: city_id(raw_event.try(:place).try(:city))
         }
       end
 
-      def source_events_ids sourse_ext_id
-        Net::HTTP.get(URI(source_event_url(sourse_ext_id)))
+      def source_events_ids source_ext_id
+        Net::HTTP.get(URI(source_event_url(source_ext_id)))
           .scan(/id="public_event_cell([0-9]+)"/)
           .map { |e| e.first.to_i }
-          .select{ |e| e > 0}
+          .select{ |e| e > 0 }
       end
 
       def source_event_url sourse_ext_id

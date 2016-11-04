@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Components::EventsReceiver::BaseReceiver do
   describe 'Implementation of abstract class' do
     let(:receiver) do
-      Object.const_set(:Receiver, Components::EventsReceiver::BaseReceiver).new
+      Object.const_set(:Receiver, Components::EventsReceiver::BaseReceiver).instance
     end
 
     it 'Has to throw errors on methods needed to be implemented' do

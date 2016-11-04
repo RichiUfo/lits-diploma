@@ -1,5 +1,13 @@
 class SourceType < ApplicationRecord
-  VK  = 1
-  FB  = 2 
-  DOU = 3
+  KEYS = {
+    vk: 1,
+    fb: 2,
+    dou: 3
+  }
+
+  NAMES = {
+    1 => :vk,
+    2 => :fb,
+    3 => :dou,
+  }
 end
