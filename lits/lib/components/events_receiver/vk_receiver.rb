@@ -9,9 +9,10 @@ module Components
       end
 
       def save_source_events source
-        source_events_ids(source.ext_id).each do |event_ext_id, i|
+        source_events_ids(source.ext_id).each do |event_ext_id|
           event = get_event event_ext_id
           event[:source_id] = source.id
+          event[:city_id] = source.city_id if event[:city_id].blank?
 
           event_in_db = Event.vk_source.find_by(ext_id: event[:ext_id].to_i)
           save_key = :updated
@@ -24,6 +25,7 @@ module Components
           if event_in_db.save
             @report[save_key] += 1
           else
+            puts event_in_db.errors.full_messages
             @report[:errors] += 1
           end
 
