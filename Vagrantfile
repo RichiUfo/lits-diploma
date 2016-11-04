@@ -9,6 +9,6 @@ Vagrant.configure(2) do |config|
     config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true # Nginx
     config.vm.network :forwarded_port, guest: 5432, host: 54322, auto_correct: true # PostgreSQL
 
-    vb.customize ['modifyvm', :id, '--memory', '1024']
+    vb.customize ['modifyvm', :id, '--memory', '4096']
   end
 end

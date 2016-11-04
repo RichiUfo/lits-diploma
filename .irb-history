@@ -1,0 +1,39 @@
+q
+p Components::EventsReceiver::DouReceiver.new
+dou Components::EventsReceiver::DouReceiver.new
+p dou.link
+p dou[:link]
+p dou["link"]
+p dou["rss"]["item"]
+p dou["rss"]
+dou["rss"]
+dou.get_data
+p dou.data
+p dou.data[:rss]
+p dou.data["rss"]
+p dou.data["rss"]["channel"]
+p dou.data["rss"]["channel"]["item"]
+dou = Components::EventsReceiver::DouReceiver.new
+dou.fetch_data_from_xml
+clear
+p dou.data["rss"]["channel"]["item"][0].to_json
+p dou.data["rss"]["channel"]["item"][0].to_json.to_s
+p dou.data["rss"]["channel"]["item"][0].to_json.to_s.encode("UTF-8")
+File.open('выходные данные.txt', 'w'){ |file| file.write dou.data["rss"]["channel"]["item"][0].to_json.to_s.encode("UTF-8").html_safe}
+File.open('выходные данные.txt', 'w'){ |file| file.write raw(dou.data["rss"]["channel"]["item"][0].to_json.to_s.encode("UTF-8"))}
+File.open('выходные данные.txt', 'w'){ |file| file.write dou.data["rss"]["channel"]["item"][0].to_json.to_s.encode("UTF-8")}
+File.open('выходные данные.txt', 'w'){ |file| file.write JSON.parse(dou.data["rss"]["channel"]["item"][0].to_json).to_json}
+File.open('выходные данные.txt', 'w'){ |file| file.write JSON.parse(dou.data["rss"]["channel"]["item"][0].to_json)}
+p dou.data["rss"]["channel"]["item"][0]
+p dou.data["rss"]["channel"]["item"][0]["description"]
+p HASH.from_xml dou.data["rss"]["channel"]["item"][0]["description"]
+p Hash.from_xml dou.data["rss"]["channel"]["item"][0]["description"]
+File.open('выходные данные.html', 'w'){ |file| file.write dou.data["rss"]["channel"]["item"][0]["description"])}
+File.open('выходные данные.html', 'w'){ |file| file.write dou.data["rss"]["channel"]["item"][0]["description"]}
+File.open('выходные данные.html', 'w'){ |file| file.write dou.data["rss"]["channel"]["item"][1]["description"]}
+s = "Ods, ffggjj  fdsf fsdf"
+s = "Ods"
+p s.split(',')[0]
+Components::EventsReceiver::DouReceiver.get_and_write_data_from_dou
+Components::EventsReceiver::DouReceiver.run
+exit
