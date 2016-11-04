@@ -16,3 +16,5 @@
 .viminfo
 *.gitconfig
 .cloud-locale-test.skip
+.irb-history
+.viminfo
