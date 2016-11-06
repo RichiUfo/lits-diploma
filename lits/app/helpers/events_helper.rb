@@ -49,9 +49,8 @@ module EventsHelper
 
   def thumbnail_caption event
     content_tag :div, class: 'caption' do
-      content_tag(:h3, event.name) +
-      content_tag(:time, event.date, class: 'event-date', datetime: event.date) +
-      content_tag(:p, event.description, class: 'event-description')
+      content_tag(:h3, link_to(event.name, event_url(event))) +
+      event_time(event)
     end    
   end
 

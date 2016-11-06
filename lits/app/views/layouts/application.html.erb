@@ -15,9 +15,6 @@
       <%= link_to content_tag(:i, '', class: 'fa fa-facebook-square'), user_facebook_omniauth_authorize_path %>
     <%- end %>
 
-    <%= container('m-t-70') {
-      events_timeline +
-      yield
-    } %>
+    <%= container('m-t-70') { yield } %>
   </body>
 </html>
