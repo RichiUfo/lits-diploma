@@ -54,11 +54,7 @@ h.children.children.children.children.children.children.attribute "src", "value"
 h = Nokogiri::HTML(l)
 h.children.children.children.children.children.children.attribute "src"
 (h.children.children.children.children.children.children.attribute "src").value
-dou = Components::EventsReceiver::DouReceiver.new
 dou.data
-e = dou.data['rss']['channel']['item'][0]
-l = e['description'].lines.first
-n = Nokogiri::HTML(l)
 n.atrinute('document')
 n.atribute('document')
 n.attribute('document')
@@ -67,16 +63,29 @@ n.document.html
 h.xpath("//src")
 n.xpath("//src")
 n.xpath("src")
-n
 n.xpath("img")
 n.xpath("document//html")
 n.xpath("document")
 n.xpath("")
-n.search("img").atribute("value")
+n.search("img").
 n.search("img").attribute("value")
 n.search("img").value
 n.search("img")
 n.search("img").attribute("src")
 n.search("img").attribute("src").value
 Components::EventsReceiver::DouReceiver.run
+dou = Components::EventsReceiver::DouReceiver.new
+dou = Components::EventsReceiver::DouReceiver.instanse
+dou = Components::EventsReceiver::DouReceiver.instance
+dou = Components::EventsReceiver::DouReceiver.fetch_data_from_xml("")
+dou.fetch_data_from_xml("")
+e = dou.data['rss']['channel']['item'][0]
+l = e['description'].lines.first
+n = Nokogiri::HTML(l)
+n.search("strong")
+n.search("a")
+n.search("a").remove
+n
+n.html
+n.content
 exit

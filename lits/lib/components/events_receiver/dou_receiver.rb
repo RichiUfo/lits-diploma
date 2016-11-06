@@ -65,12 +65,12 @@ module Components
         end
       end
 
-      protected
-
       def fetch_data_from_xml(url)
         @data = Hash.from_xml(Net::HTTP.get(url.empty? ? SOURCE_EVENTS_URL : URI(URL)))
         # @data = Hash.from_xml(Rails.root.join('lib', 'components', 'events_receiver', 'debug_xml.xml'), &:read)
       end
+
+      protected
 
       def city_id(city_strind)
         city_name = city_strind.split(',')[0]
@@ -80,7 +80,8 @@ module Components
 
       def get_event_date_time_adress(html_string)
         @first_string = Nokogiri::HTML(html_string)
-        @first_string.children.children.children.children.children[8]
+        @first_string.search('a').remove
+        # @first_string.children.children.children.children.children[8]
         @first_string.nil? ? '' : prepare_date_time_adress(@first_string.content)
       end
 
