@@ -4,7 +4,7 @@ RSpec.describe Components::EventsReceiver::VkReceiver do
   describe 'VkReceiver' do
 
     let(:receiver) do
-      Components::EventsReceiver::VkReceiver.new
+      Components::EventsReceiver::VkReceiver.instance
     end
 
     let(:event_id) { 123251774 }

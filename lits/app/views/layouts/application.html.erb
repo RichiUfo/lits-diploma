@@ -5,16 +5,15 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= navbar 'Центр', {события: events_path, категории: '#', организаторы: '#'} do
-      link_to('Логин', '#', class: 'btn btn-info navbar-btn')
-      #link_to image_tag("http://s1.iconbird.com/ico/2013/6/270/w445h4451371236205MezhdunarodnylogotipVK500.png",:size=> "21x21"),user_vkontakte_omniauth_authorize_path
-      # link_to image_tag("https://pbs.twimg.com/media/Bxvs6FjIUAAUFbs.png",:size=> "20x20"),user_facebook_omniauth_authorize_path
-
-    end %>
+    <%= navbar 'Центр', {события: events_path, категории: '#', организаторы: '#'} do %>
+      <%= link_to content_tag(:i, '', class: 'fa fa-vk'), user_vkontakte_omniauth_authorize_path %>
+      <%= link_to content_tag(:i, '', class: 'fa fa-facebook-square'), user_facebook_omniauth_authorize_path %>
+    <%- end %>
 
     <%= container('m-t-70') {
       events_timeline +
