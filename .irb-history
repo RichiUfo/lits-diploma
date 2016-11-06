@@ -13,7 +13,6 @@ p dou.data[:rss]
 p dou.data["rss"]
 p dou.data["rss"]["channel"]
 p dou.data["rss"]["channel"]["item"]
-dou = Components::EventsReceiver::DouReceiver.new
 dou.fetch_data_from_xml
 clear
 p dou.data["rss"]["channel"]["item"][0].to_json
@@ -35,5 +34,49 @@ s = "Ods, ffggjj  fdsf fsdf"
 s = "Ods"
 p s.split(',')[0]
 Components::EventsReceiver::DouReceiver.get_and_write_data_from_dou
+SOURCE_EVENTS_URL = URI('https://dou.ua/calendar/feed/%D0%B2%D1%81%D0%B5%20%D1%82%D0%B5%D0%BC%D1%8B%2F%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0')
+@data = Hash.from_xml(Net::HTTP.get(SOURCE_EVENTS_URL))
+evnts = @data['rss']['channel']['item']
+evnt = evnts[0]
+d= data["rss"]["channel"]["item"][0]["description"]
+d= evnt["description"]
+h =Nokogiri:HTML(d)
+d
+l = d.lines.first
+Nokogiri::HTML(l)
+h.children.children.children.children.children.children
+h.children.children.children.children.children.children.attributes[0].value
+h.children.children.children.children.children.children.attribute[0].value
+h.children.children.children.children.children.children.attributes
+h.children.children.children.children.children.children.attribute
+h.children.children.children.children.children.children.attribute 1
+h.children.children.children.children.children.children.attribute "src", "value"
+h = Nokogiri::HTML(l)
+h.children.children.children.children.children.children.attribute "src"
+(h.children.children.children.children.children.children.attribute "src").value
+dou = Components::EventsReceiver::DouReceiver.new
+dou.data
+e = dou.data['rss']['channel']['item'][0]
+l = e['description'].lines.first
+n = Nokogiri::HTML(l)
+n.atrinute('document')
+n.atribute('document')
+n.attribute('document')
+n.document
+n.document.html
+h.xpath("//src")
+n.xpath("//src")
+n.xpath("src")
+n
+n.xpath("img")
+n.xpath("document//html")
+n.xpath("document")
+n.xpath("")
+n.search("img").atribute("value")
+n.search("img").attribute("value")
+n.search("img").value
+n.search("img")
+n.search("img").attribute("src")
+n.search("img").attribute("src").value
 Components::EventsReceiver::DouReceiver.run
 exit
