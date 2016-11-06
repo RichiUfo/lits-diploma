@@ -15,9 +15,24 @@
     flex-direction: column;
   }
 
-  h1 {
-    font-size: 44px; 
-    margin: 0;
+  .event-info {
+    time, p {
+      opacity: 0.9;
+      font-size: 16px;
+    }
+  }
+
+  .event-title {
+    font-size: 44px;
+    margin: 0 10px 10px 0;
+  }
+
+  .event-address {
+    margin-bottom: 0;
+  }
+
+  .event-original {
+    margin-bottom: 0;
   }
 
   .event-picture-wrapper {
@@ -31,4 +46,9 @@
       max-width: 100%;
     }
   }
+
+}
+
+.event-description {
+  margin-top: 40px;
 }
