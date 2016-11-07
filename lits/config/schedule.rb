@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every :hour do
-  runner "rake receive_events:run"
+  rake "receive_events:run"
 end
