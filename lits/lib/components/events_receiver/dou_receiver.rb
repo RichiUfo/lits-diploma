@@ -7,25 +7,27 @@ module Components
 
       attr_reader :data
       # Components::EventsReceiver::DouReceiver.run
-      def save_source_events(url = '')
-        fetch_data_from_xml(url)
-        process_data
+      def save_source_events(source = nil)
+        fetch_data_from_xml(source)
+        process_data(source)
       end
 
       def initialize
+        super
         @data = {}
       end
 
-      def process_data
+      def process_data(source)
         raw_events = @data['rss']['channel']['item']
         raw_events.each do |e|
           raw_event = {}
           raw_event['title'] = e['title']
           raw_event['date'],
           raw_event['address'] = get_event_date_time_adress(e['description'].lines.first)
-          raw_event['ext_id'] = e['guid']
-          raw_event['description'] = Nokogiri::HTML(e['description']).text
+          raw_event['ext_id'] = e['guid'].split('/').last
+          raw_event['description'] = Nokogiri::HTML(e['description'].gsub("<br>", "\n")).text
           raw_event['image'] = get_image(e['description'].lines.first)
+          raw_event['source'] = source
           save_event(prepare_event(raw_event))
         end
       end
@@ -35,7 +37,7 @@ module Components
           city_id:      city_id(raw_event['address'].split(',')[0]),
           organizer_id: '',
           category_id:  '',
-          source_id:    '',
+          source_id:    raw_event['source'].id,
           format_id:    '',
           date:         prepare_date(raw_event['date']),
           price:        '',
@@ -60,14 +62,14 @@ module Components
         if event_in_db.save
           @report[save_key] += 1
         else
-          puts event_in_db.errors.full_messages
+          p event_in_db.errors.full_messages
           @report[:errors] += 1
         end
       end
 
-      def fetch_data_from_xml(url)
-        @data = Hash.from_xml(Net::HTTP.get(url.empty? ? SOURCE_EVENTS_URL : URI(URL)))
-        # @data = Hash.from_xml(Rails.root.join('lib', 'components', 'events_receiver', 'debug_xml.xml'), &:read)
+      def fetch_data_from_xml(source)
+        # @data = Hash.from_xml(Net::HTTP.get(source.nil? ? SOURCE_EVENTS_URL : URI(source.ref)))
+        @data = Hash.from_xml(File.open(Rails.root.join('public', 'dou.xml').to_s, &:read))
       end
 
       protected
@@ -107,18 +109,26 @@ module Components
           split = k_v.sub(':', "\n").lines
           hash[split[0].strip] = split[1].strip
         end
-        return hash['date'],
+        return {date: hash['date'], start: hash['start'], time: hash['time']},
                hash['place']
       end
 
-      def prepare_date(strind_date)
-        date_parts = strind_date.split(' ')
+      def prepare_date(hash)
+        string_date = hash[:date]
+        string_time = if hash[:start].nil? && hash[:time].nil?
+                        '00:00'
+                      else
+                        hash[:start].nil? ? hash[:time].split('—')[0] : hash[:start]
+                      end
+        date_parts = string_date.split(' ')
         date_parts[1] = date_parts[1].split('(')[0].strip
         current_date = Time.current.to_date
         day = date_parts[0].to_i
         month = convert_month(date_parts[1])
         year = month > current_date.mon ? current_date.year + 1 : current_date.year
-        Date.new(year, month, day)
+        arr_time = string_time.split(':')
+        hh, mm = arr_time[0].to_i, arr_time[1].to_i
+        DateTime.new(year, month, day, hh, mm)
       end
 
       def convert_month(string_month)
