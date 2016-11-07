@@ -67,4 +67,6 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'omniauth'
-# Devise for auth with vk, fb...
+
+#Schedule management
+gem 'whenever', require: false

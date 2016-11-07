@@ -27,4 +27,8 @@ Source.find_or_create_by(id: 8)
       .update_attributes source_type_id: 1, ref: 'https://vk.com/true_man_musicclub', ext_id: 24389413, city_id: 1
 Source.find_or_create_by(id: 9)
       .update_attributes source_type_id: 1, ref: 'https://vk.com/wkaffff', ext_id: 1401801, city_id: 1
-
+Source.find_or_create_by(id: 9)
+      .update_attributes source_type_id: 3, 
+                         ref: 'https://dou.ua/calendar/feed/%D0%B2%D1%81%D0%B5%20%D1%82%D0%B5%D0%BC%D1%8B%2F%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0', 
+                         ext_id: '', 
+                         city_id: 1
