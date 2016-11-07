@@ -25,7 +25,7 @@ module Components
           raw_event['date'],
           raw_event['address'] = get_event_date_time_adress(e['description'].lines.first)
           raw_event['ext_id'] = e['guid'].split('/').last
-          raw_event['description'] = Nokogiri::HTML(e['description'].gsub("<br>", "\n")).text
+          raw_event['description'] = Nokogiri::HTML(e['description']).inner_
           raw_event['image'] = get_image(e['description'].lines.first)
           raw_event['source'] = source
           save_event(prepare_event(raw_event))
@@ -68,8 +68,8 @@ module Components
       end
 
       def fetch_data_from_xml(source)
-        # @data = Hash.from_xml(Net::HTTP.get(source.nil? ? SOURCE_EVENTS_URL : URI(source.ref)))
-        @data = Hash.from_xml(File.open(Rails.root.join('public', 'dou.xml').to_s, &:read))
+        @data = Hash.from_xml(Net::HTTP.get(source.nil? ? SOURCE_EVENTS_URL : URI(source.ref)))
+        # @data = Hash.from_xml(File.open(Rails.root.join('public', 'dou.xml').to_s, &:read))
       end
 
       protected
@@ -141,6 +141,8 @@ module Components
                 end
         index + 1
       end
+
+
     end
   end
 end
