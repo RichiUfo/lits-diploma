@@ -22,5 +22,26 @@ RSpec.describe Components::Link do
       found_link = Components::Link.parse_registration_link(full_link_ipsum) 
       expect(found_link).to eq(full_link)
     end
+
+    it 'Has to generate right vk event link' do
+      vk_source_type = SourceType.find_by(name: :vk)
+
+      original_link = Components::Link.original_event_url vk_source_type, 11111
+      expect(original_link).to eq('https://vk.com/event11111')
+    end
+
+    it 'Has to generate right fb event link' do
+      fb_source_type = SourceType.find_by(name: :fb)
+
+      original_link = Components::Link.original_event_url fb_source_type, 11111
+      expect(original_link).to eq('https://facebook.com/11111')
+    end
+
+    it 'Has to generate right dou event link' do
+      dou_source_type = SourceType.find_by(name: :dou)
+
+      original_link = Components::Link.original_event_url dou_source_type, 11111
+      expect(original_link).to eq('https://dou.ua/calendar/11111')
+    end
   end
 end
