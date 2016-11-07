@@ -25,7 +25,7 @@ module Components
           raw_event['date'],
           raw_event['address'] = get_event_date_time_adress(e['description'].lines.first)
           raw_event['ext_id'] = e['guid'].split('/').last
-          raw_event['description'] = Nokogiri::HTML(e['description']).inner_
+          raw_event['description'] = Nokogiri::HTML(e['description']).text
           raw_event['image'] = get_image(e['description'].lines.first)
           raw_event['source'] = source
           save_event(prepare_event(raw_event))
