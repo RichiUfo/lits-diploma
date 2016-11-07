@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every :hour do
-  runner "Components::EventsReceiver::DouReceiver.get_and_write_data_from_dou"
+  runner "rake receive_events:run"
 end
