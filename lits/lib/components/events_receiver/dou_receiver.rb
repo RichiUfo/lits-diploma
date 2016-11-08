@@ -25,7 +25,7 @@ module Components
           raw_event['date'],
           raw_event['address'] = get_event_date_time_adress(e['description'].lines.first)
           raw_event['ext_id'] = e['guid'].split('/').last
-          raw_event['description'] = Nokogiri::HTML(e['description']).text
+          raw_event['description'] = Sanitize.clean(e['description'])
           raw_event['image'] = get_image(e['description'].lines.first)
           raw_event['source'] = source
           save_event(prepare_event(raw_event))
@@ -52,7 +52,7 @@ module Components
       end
 
       def save_event(prepared_event)
-        event_in_db = Event.dou_source.find_by(ext_id: prepared_event['ext_id'])
+        event_in_db = Event.dou_source.find_by(ext_id: prepared_event[:ext_id])
         save_key = :updated
         if event_in_db.nil?
           save_key = :created
@@ -89,7 +89,7 @@ module Components
 
       def get_image(html_string)
         @first_string = Nokogiri::HTML(html_string)
-        img = @first_string.search("img").attribute("src").value
+        img = @first_string.search('img').attribute('src').value
         img.nil? ? '' : img
       end
 
@@ -109,7 +109,7 @@ module Components
           split = k_v.sub(':', "\n").lines
           hash[split[0].strip] = split[1].strip
         end
-        return {date: hash['date'], start: hash['start'], time: hash['time']},
+        return { date: hash['date'], start: hash['start'], time: hash['time'] },
                hash['place']
       end
 
@@ -141,8 +141,6 @@ module Components
                 end
         index + 1
       end
-
-
     end
   end
 end
