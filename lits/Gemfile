@@ -68,7 +68,5 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'omniauth'
 
-gem 'sanitize'
-
 #Schedule management
 gem 'whenever', require: false

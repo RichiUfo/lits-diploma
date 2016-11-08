@@ -25,7 +25,7 @@ module Components
           raw_event['date'],
           raw_event['address'] = get_event_date_time_adress(e['description'].lines.first)
           raw_event['ext_id'] = e['guid'].split('/').last
-          raw_event['description'] = Sanitize.clean(e['description'])
+          raw_event['description'] = prepare_description(e['description'])
           raw_event['image'] = get_image(e['description'].lines.first)
           raw_event['source'] = source
           save_event(prepare_event(raw_event))
@@ -68,8 +68,8 @@ module Components
       end
 
       def fetch_data_from_xml(source)
-        @data = Hash.from_xml(Net::HTTP.get(source.nil? ? SOURCE_EVENTS_URL : URI(source.ref)))
-        # @data = Hash.from_xml(File.open(Rails.root.join('public', 'dou.xml').to_s, &:read))
+        # @data = Hash.from_xml(Net::HTTP.get(source.nil? ? SOURCE_EVENTS_URL : URI(source.ref)))
+        @data = Hash.from_xml(File.open(Rails.root.join('public', 'dou.xml').to_s, &:read))
       end
 
       protected
@@ -83,7 +83,6 @@ module Components
       def get_event_date_time_adress(html_string)
         @first_string = Nokogiri::HTML(html_string)
         @first_string.search('a').remove
-        # @first_string.children.children.children.children.children[8]
         @first_string.nil? ? '' : prepare_date_time_adress(@first_string.content)
       end
 
@@ -140,6 +139,10 @@ module Components
                   months_r.index(string_month.strip)
                 end
         index + 1
+      end
+
+      def prepare_description(html)
+	"<div>#{html.lines[2..-1].join}"
       end
     end
   end
