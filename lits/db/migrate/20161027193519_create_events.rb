@@ -8,7 +8,8 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.references :format,    foreign_key: true
       t.datetime   :date
       t.float      :price
-      t.string     :coordinates
+      t.float      :lat
+      t.float      :lng
       t.string     :ext_id
       t.text       :name
       t.text       :picture

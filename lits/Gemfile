@@ -68,5 +68,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'omniauth'
 
-#Schedule management
+# Schedule management
 gem 'whenever', require: false
+
+# Google maps
+gem 'gmaps4rails'

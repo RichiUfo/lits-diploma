@@ -21,13 +21,15 @@ module Components
         raw_events = @data['rss']['channel']['item']
         raw_events.each do |e|
           raw_event = {}
-          raw_event['title'] = e['title']
+          raw_event['title']       = e['title']
           raw_event['date'],
-          raw_event['address'] = get_event_date_time_adress(e['description'].lines.first)
-          raw_event['ext_id'] = e['guid'].split('/').last
+          raw_event['address']     = get_event_date_time_adress(e['description'].lines.first)
+          raw_event['ext_id']      = e['guid'].split('/').last
           raw_event['description'] = prepare_description(e['description'])
-          raw_event['image'] = get_image(e['description'].lines.first)
-          raw_event['source'] = source
+          raw_event['image']       = get_image(e['description'].lines.first)
+          raw_event['source']      = source
+          raw_event['lat'],
+          raw_event['lng']         = Components::Geocode.get_coordinates_by_address(raw_event['address'])
           save_event(prepare_event(raw_event))
         end
       end
@@ -41,7 +43,8 @@ module Components
           format_id:    '',
           date:         prepare_date(raw_event['date']),
           price:        '',
-          coordinates:  '',
+          lat:          raw_event['lat'],
+          lng:          raw_event['lng'],
           ext_id:       raw_event['ext_id'],
           name:         raw_event['title'],
           picture:      raw_event['image'],
@@ -61,15 +64,31 @@ module Components
 
         if event_in_db.save
           @report[save_key] += 1
+          save_event_tags(event_in_db)
         else
           p event_in_db.errors.full_messages
           @report[:errors] += 1
         end
       end
 
+      def save_event_tags(event)
+        tags = get_tags(event.source.source_type, event.ext_id)
+        db_tags = []
+        tags.each do |tag_name|
+          tag_in_db = Tag.find_by(name: tag_name)
+          db_tags << if tag_in_db.nil?
+                       { tag: Tag.create(name: tag_name), event: event }
+                     else
+                       { tag: tag_in_db, event: event }
+                     end
+        end
+        EventTag.by_event(event).destroy_all
+        EventTag.create(db_tags)
+      end
+
       def fetch_data_from_xml(source)
-        # @data = Hash.from_xml(Net::HTTP.get(source.nil? ? SOURCE_EVENTS_URL : URI(source.ref)))
-        @data = Hash.from_xml(File.open(Rails.root.join('public', 'dou.xml').to_s, &:read))
+        @data = Hash.from_xml(Net::HTTP.get(source.nil? ? SOURCE_EVENTS_URL : URI(source.ref)))
+        # @data = Hash.from_xml(File.open(Rails.root.join('public', 'dou.xml').to_s, &:read))
       end
 
       protected
@@ -142,7 +161,14 @@ module Components
       end
 
       def prepare_description(html)
-	"<div>#{html.lines[2..-1].join}"
+        "<div>#{html.lines[2..-1].join}"
+      end
+
+      def get_tags(source_type, ext_id)
+        original_link = Components::Link.original_event_url(source_type, ext_id)
+        doc = Nokogiri::HTML(Net::HTTP.get(URI(original_link)))
+        string = doc.search('.b-post-tags').text
+        string.empty? ? ['прочее'] : string.lines[2].strip.split(', ')
       end
     end
   end
