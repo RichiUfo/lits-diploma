@@ -3,7 +3,7 @@ module Components
     @@original_links_creators = {
       vk: -> (url, ext_id) { "#{url}/event#{ext_id}" },
       fb: -> (url, ext_id) { "#{url}/#{ext_id}" },
-      dou: -> (url, ext_id) { "#{url}/calendar/#{ext_id}" }
+      dou: -> (url, ext_id) { "#{url}/calendar/#{ext_id}/" }
     }
 
     def self.parse_registration_link text

@@ -21,13 +21,15 @@ module Components
         raw_events = @data['rss']['channel']['item']
         raw_events.each do |e|
           raw_event = {}
-          raw_event['title'] = e['title']
+          raw_event['title']       = e['title']
           raw_event['date'],
-          raw_event['address'] = get_event_date_time_adress(e['description'].lines.first)
-          raw_event['ext_id'] = e['guid'].split('/').last
-          raw_event['description'] = Nokogiri::HTML(e['description']).text
-          raw_event['image'] = get_image(e['description'].lines.first)
-          raw_event['source'] = source
+          raw_event['address']     = get_event_date_time_adress(e['description'].lines.first)
+          raw_event['ext_id']      = e['guid'].split('/').last
+          raw_event['description'] = prepare_description(e['description'])
+          raw_event['image']       = get_image(e['description'].lines.first)
+          raw_event['source']      = source
+          raw_event['lat'],
+          raw_event['lng']         = Components::Geocode.get_coordinates_by_address(raw_event['address'])
           save_event(prepare_event(raw_event))
         end
       end
@@ -41,7 +43,8 @@ module Components
           format_id:    '',
           date:         prepare_date(raw_event['date']),
           price:        '',
-          coordinates:  '',
+          lat:          raw_event['lat'],
+          lng:          raw_event['lng'],
           ext_id:       raw_event['ext_id'],
           name:         raw_event['title'],
           picture:      raw_event['image'],
@@ -52,7 +55,7 @@ module Components
       end
 
       def save_event(prepared_event)
-        event_in_db = Event.dou_source.find_by(ext_id: prepared_event['ext_id'])
+        event_in_db = Event.dou_source.find_by(ext_id: prepared_event[:ext_id])
         save_key = :updated
         if event_in_db.nil?
           save_key = :created
@@ -61,10 +64,26 @@ module Components
 
         if event_in_db.save
           @report[save_key] += 1
+          save_event_tags(event_in_db)
         else
           p event_in_db.errors.full_messages
           @report[:errors] += 1
         end
+      end
+
+      def save_event_tags(event)
+        tags = get_tags(event.source.source_type, event.ext_id)
+        db_tags = []
+        tags.each do |tag_name|
+          tag_in_db = Tag.find_by(name: tag_name)
+          db_tags << if tag_in_db.nil?
+                       { tag: Tag.create(name: tag_name), event: event }
+                     else
+                       { tag: tag_in_db, event: event }
+                     end
+        end
+        EventTag.by_event(event).destroy_all
+        EventTag.create(db_tags)
       end
 
       def fetch_data_from_xml(source)
@@ -83,13 +102,12 @@ module Components
       def get_event_date_time_adress(html_string)
         @first_string = Nokogiri::HTML(html_string)
         @first_string.search('a').remove
-        # @first_string.children.children.children.children.children[8]
         @first_string.nil? ? '' : prepare_date_time_adress(@first_string.content)
       end
 
       def get_image(html_string)
         @first_string = Nokogiri::HTML(html_string)
-        img = @first_string.search("img").attribute("src").value
+        img = @first_string.search('img').attribute('src').value
         img.nil? ? '' : img
       end
 
@@ -109,7 +127,7 @@ module Components
           split = k_v.sub(':', "\n").lines
           hash[split[0].strip] = split[1].strip
         end
-        return {date: hash['date'], start: hash['start'], time: hash['time']},
+        return { date: hash['date'], start: hash['start'], time: hash['time'] },
                hash['place']
       end
 
@@ -142,7 +160,16 @@ module Components
         index + 1
       end
 
+      def prepare_description(html)
+        "<div>#{html.lines[2..-1].join}"
+      end
 
+      def get_tags(source_type, ext_id)
+        original_link = Components::Link.original_event_url(source_type, ext_id)
+        doc = Nokogiri::HTML(Net::HTTP.get(URI(original_link)))
+        string = doc.search('.b-post-tags').text
+        string.empty? ? ['прочее'] : string.lines[2].strip.split(', ')
+      end
     end
   end
 end
