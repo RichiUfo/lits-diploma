@@ -52,7 +52,8 @@ module Components
           picture: raw_event.photo_big,
           reg_ref: Components::Link.parse_registration_link(raw_event.description),
           ext_id: raw_event.gid,
-          coordinates: "#{raw_event.try(:place).try(:latitude)} #{raw_event.try(:place).try(:longitude)}",
+          lat: raw_event.try(:place).try(:latitude),
+          lng: raw_event.try(:place).try(:longitude),
           address: raw_event.try(:place).try(:address),
           city_id: city_id(raw_event.try(:place).try(:city))
         }
