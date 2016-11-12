@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/thoughtbot/shoulda-matchers.git
+  revision: d1e9a41fca001b6d89455aff49f1f03ac272ee08
+  specs:
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
+
+GIT
   remote: https://github.com/twbs/bootstrap-sass.git
   revision: 5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47
   branch: next
@@ -48,7 +55,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    autoprefixer-rails (6.5.1.1)
+    autoprefixer-rails (6.5.2)
       execjs
     awesome_print (1.7.0)
     bcrypt (3.1.11)
@@ -218,8 +225,6 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     shoulda (2.11.3)
-    shoulda-matchers (3.1.1)
-      activesupport (>= 4.0.0)
     simplecov (0.12.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -296,7 +301,7 @@ DEPENDENCIES
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   shoulda
-  shoulda-matchers
+  shoulda-matchers!
   simplecov
   spring
   spring-commands-rspec

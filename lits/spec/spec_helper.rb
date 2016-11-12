@@ -97,3 +97,4 @@ Shoulda::Matchers.configure do |config|
 end
 
 end
+
