@@ -14,7 +14,7 @@ RSpec.describe Components::Link do
     end
 
     it "Has to find short link" do
-      found_link = Components::Link.parse_registration_link(short_link_ipsum) 
+      found_link = Components::Link.parse_registration_link(short_link_ipsum)
       expect(found_link).to eq(short_link)
     end
 
@@ -41,7 +41,7 @@ RSpec.describe Components::Link do
       dou_source_type = SourceType.find_by(name: :dou)
 
       original_link = Components::Link.original_event_url dou_source_type, 11111
-      expect(original_link).to eq('https://dou.ua/calendar/11111')
+      expect(original_link).to eq('https://dou.ua/calendar/11111/')
     end
   end
 end

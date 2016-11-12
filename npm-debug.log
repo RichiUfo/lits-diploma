@@ -1,0 +1,2563 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'coffeelint' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData coffeelint
+8 silly fetchNamedPackageData coffeelint
+9 silly mapToRegistry name coffeelint
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'coffeelint',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'coffeelint',
+12 silly mapToRegistry   name: 'coffeelint',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/coffeelint
+14 verbose request uri https://registry.npmjs.org/coffeelint
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 23:57:43
+17 verbose request id e038e8e8461c00ed
+18 http request GET https://registry.npmjs.org/coffeelint
+19 http 200 https://registry.npmjs.org/coffeelint
+20 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+20 verbose headers   etag: '"24KS2EDVAOUCAZUEFS1989Q5A"',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'content-encoding': 'gzip',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '12701',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '92',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1478296664.515941,VS0,VE0',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 200,
+21 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+21 silly get     etag: '"24KS2EDVAOUCAZUEFS1989Q5A"',
+21 silly get     'content-type': 'application/json',
+21 silly get     'content-encoding': 'gzip',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '12701',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '92',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-fra1226-FRA',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1478296664.515941,VS0,VE0',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose get saving coffeelint to /home/yuri/.npm/registry.npmjs.org/coffeelint/.cache.json
+23 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+24 verbose makeDirectory /home/yuri/.npm creation not in flight; initializing
+25 silly makeDirectory /home/yuri/.npm uid: 1000 gid: 1000
+26 silly install normalizeTree
+27 silly loadCurrentTree Finishing
+28 silly loadIdealTree Starting
+29 silly install loadIdealTree
+30 silly cloneCurrentTree Starting
+31 silly install cloneCurrentTreeToIdealTree
+32 silly cloneCurrentTree Finishing
+33 silly loadShrinkwrap Starting
+34 silly install loadShrinkwrap
+35 silly loadShrinkwrap Finishing
+36 silly loadAllDepsIntoIdealTree Starting
+37 silly install loadAllDepsIntoIdealTree
+38 silly resolveWithNewModule coffeelint@1.16.0 checking installable status
+39 silly cache add args [ 'coffeelint', null ]
+40 verbose cache add spec coffeelint
+41 silly cache add parsed spec Result {
+41 silly cache add   raw: 'coffeelint',
+41 silly cache add   scope: null,
+41 silly cache add   escapedName: 'coffeelint',
+41 silly cache add   name: 'coffeelint',
+41 silly cache add   rawSpec: '',
+41 silly cache add   spec: 'latest',
+41 silly cache add   type: 'tag' }
+42 silly addNamed coffeelint@latest
+43 verbose addNamed "latest" is being treated as a dist-tag for coffeelint
+44 info addNameTag [ 'coffeelint', 'latest' ]
+45 silly mapToRegistry name coffeelint
+46 silly mapToRegistry using default registry
+47 silly mapToRegistry registry https://registry.npmjs.org/
+48 silly mapToRegistry data Result {
+48 silly mapToRegistry   raw: 'coffeelint',
+48 silly mapToRegistry   scope: null,
+48 silly mapToRegistry   escapedName: 'coffeelint',
+48 silly mapToRegistry   name: 'coffeelint',
+48 silly mapToRegistry   rawSpec: '',
+48 silly mapToRegistry   spec: 'latest',
+48 silly mapToRegistry   type: 'tag' }
+49 silly mapToRegistry uri https://registry.npmjs.org/coffeelint
+50 verbose addNameTag registry:https://registry.npmjs.org/coffeelint not in flight; fetching
+51 verbose get https://registry.npmjs.org/coffeelint not expired, no request
+52 silly addNameTag next cb for coffeelint with tag latest
+53 silly addNamed coffeelint@1.16.0
+54 verbose addNamed "1.16.0" is a plain semver version for coffeelint
+55 silly mapToRegistry name coffeelint
+56 silly mapToRegistry using default registry
+57 silly mapToRegistry registry https://registry.npmjs.org/
+58 silly mapToRegistry data Result {
+58 silly mapToRegistry   raw: 'coffeelint',
+58 silly mapToRegistry   scope: null,
+58 silly mapToRegistry   escapedName: 'coffeelint',
+58 silly mapToRegistry   name: 'coffeelint',
+58 silly mapToRegistry   rawSpec: '',
+58 silly mapToRegistry   spec: 'latest',
+58 silly mapToRegistry   type: 'tag' }
+59 silly mapToRegistry uri https://registry.npmjs.org/coffeelint
+60 verbose addRemoteTarball https://registry.npmjs.org/coffeelint/-/coffeelint-1.16.0.tgz not in flight; adding
+61 verbose addRemoteTarball [ 'https://registry.npmjs.org/coffeelint/-/coffeelint-1.16.0.tgz',
+61 verbose addRemoteTarball   '83d8ed1dafde3a677de44e7b8a18be607761e6d8' ]
+62 info retry fetch attempt 1 at 23:57:44
+63 info attempt registry request try #1 at 23:57:44
+64 http fetch GET https://registry.npmjs.org/coffeelint/-/coffeelint-1.16.0.tgz
+65 http fetch 200 https://registry.npmjs.org/coffeelint/-/coffeelint-1.16.0.tgz
+66 silly fetchAndShaCheck shasum 83d8ed1dafde3a677de44e7b8a18be607761e6d8
+67 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/coffeelint/-/coffeelint-1.16.0.tgz not in flight; adding
+68 verbose addTmpTarball already have metadata; skipping unpack for coffeelint@1.16.0
+69 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+70 silly cache afterAdd coffeelint@1.16.0
+71 verbose afterAdd /home/yuri/.npm/coffeelint/1.16.0/package/package.json not in flight; writing
+72 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+73 verbose afterAdd /home/yuri/.npm/coffeelint/1.16.0/package/package.json written
+74 silly fetchNamedPackageData coffee-script
+75 silly mapToRegistry name coffee-script
+76 silly mapToRegistry using default registry
+77 silly mapToRegistry registry https://registry.npmjs.org/
+78 silly mapToRegistry data Result {
+78 silly mapToRegistry   raw: 'coffee-script',
+78 silly mapToRegistry   scope: null,
+78 silly mapToRegistry   escapedName: 'coffee-script',
+78 silly mapToRegistry   name: 'coffee-script',
+78 silly mapToRegistry   rawSpec: '',
+78 silly mapToRegistry   spec: 'latest',
+78 silly mapToRegistry   type: 'tag' }
+79 silly mapToRegistry uri https://registry.npmjs.org/coffee-script
+80 silly fetchNamedPackageData glob
+81 silly mapToRegistry name glob
+82 silly mapToRegistry using default registry
+83 silly mapToRegistry registry https://registry.npmjs.org/
+84 silly mapToRegistry data Result {
+84 silly mapToRegistry   raw: 'glob',
+84 silly mapToRegistry   scope: null,
+84 silly mapToRegistry   escapedName: 'glob',
+84 silly mapToRegistry   name: 'glob',
+84 silly mapToRegistry   rawSpec: '',
+84 silly mapToRegistry   spec: 'latest',
+84 silly mapToRegistry   type: 'tag' }
+85 silly mapToRegistry uri https://registry.npmjs.org/glob
+86 silly fetchNamedPackageData ignore
+87 silly mapToRegistry name ignore
+88 silly mapToRegistry using default registry
+89 silly mapToRegistry registry https://registry.npmjs.org/
+90 silly mapToRegistry data Result {
+90 silly mapToRegistry   raw: 'ignore',
+90 silly mapToRegistry   scope: null,
+90 silly mapToRegistry   escapedName: 'ignore',
+90 silly mapToRegistry   name: 'ignore',
+90 silly mapToRegistry   rawSpec: '',
+90 silly mapToRegistry   spec: 'latest',
+90 silly mapToRegistry   type: 'tag' }
+91 silly mapToRegistry uri https://registry.npmjs.org/ignore
+92 silly fetchNamedPackageData optimist
+93 silly mapToRegistry name optimist
+94 silly mapToRegistry using default registry
+95 silly mapToRegistry registry https://registry.npmjs.org/
+96 silly mapToRegistry data Result {
+96 silly mapToRegistry   raw: 'optimist',
+96 silly mapToRegistry   scope: null,
+96 silly mapToRegistry   escapedName: 'optimist',
+96 silly mapToRegistry   name: 'optimist',
+96 silly mapToRegistry   rawSpec: '',
+96 silly mapToRegistry   spec: 'latest',
+96 silly mapToRegistry   type: 'tag' }
+97 silly mapToRegistry uri https://registry.npmjs.org/optimist
+98 silly fetchNamedPackageData resolve
+99 silly mapToRegistry name resolve
+100 silly mapToRegistry using default registry
+101 silly mapToRegistry registry https://registry.npmjs.org/
+102 silly mapToRegistry data Result {
+102 silly mapToRegistry   raw: 'resolve',
+102 silly mapToRegistry   scope: null,
+102 silly mapToRegistry   escapedName: 'resolve',
+102 silly mapToRegistry   name: 'resolve',
+102 silly mapToRegistry   rawSpec: '',
+102 silly mapToRegistry   spec: 'latest',
+102 silly mapToRegistry   type: 'tag' }
+103 silly mapToRegistry uri https://registry.npmjs.org/resolve
+104 silly fetchNamedPackageData strip-json-comments
+105 silly mapToRegistry name strip-json-comments
+106 silly mapToRegistry using default registry
+107 silly mapToRegistry registry https://registry.npmjs.org/
+108 silly mapToRegistry data Result {
+108 silly mapToRegistry   raw: 'strip-json-comments',
+108 silly mapToRegistry   scope: null,
+108 silly mapToRegistry   escapedName: 'strip-json-comments',
+108 silly mapToRegistry   name: 'strip-json-comments',
+108 silly mapToRegistry   rawSpec: '',
+108 silly mapToRegistry   spec: 'latest',
+108 silly mapToRegistry   type: 'tag' }
+109 silly mapToRegistry uri https://registry.npmjs.org/strip-json-comments
+110 verbose request uri https://registry.npmjs.org/coffee-script
+111 verbose request no auth needed
+112 info attempt registry request try #1 at 23:57:44
+113 http request GET https://registry.npmjs.org/coffee-script
+114 verbose request uri https://registry.npmjs.org/glob
+115 verbose request no auth needed
+116 info attempt registry request try #1 at 23:57:44
+117 http request GET https://registry.npmjs.org/glob
+118 verbose request uri https://registry.npmjs.org/ignore
+119 verbose request no auth needed
+120 info attempt registry request try #1 at 23:57:44
+121 http request GET https://registry.npmjs.org/ignore
+122 verbose request uri https://registry.npmjs.org/optimist
+123 verbose request no auth needed
+124 info attempt registry request try #1 at 23:57:44
+125 http request GET https://registry.npmjs.org/optimist
+126 verbose request uri https://registry.npmjs.org/resolve
+127 verbose request no auth needed
+128 info attempt registry request try #1 at 23:57:44
+129 http request GET https://registry.npmjs.org/resolve
+130 verbose request uri https://registry.npmjs.org/strip-json-comments
+131 verbose request no auth needed
+132 info attempt registry request try #1 at 23:57:44
+133 http request GET https://registry.npmjs.org/strip-json-comments
+134 http 200 https://registry.npmjs.org/coffee-script
+135 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+135 verbose headers   etag: '"99N11LGHJYQOIFMCYIHSPZLU0"',
+135 verbose headers   'content-type': 'application/json',
+135 verbose headers   'content-encoding': 'gzip',
+135 verbose headers   'cache-control': 'max-age=300',
+135 verbose headers   'content-length': '7934',
+135 verbose headers   'accept-ranges': 'bytes',
+135 verbose headers   date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+135 verbose headers   via: '1.1 varnish',
+135 verbose headers   age: '23',
+135 verbose headers   connection: 'keep-alive',
+135 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+135 verbose headers   'x-cache': 'HIT',
+135 verbose headers   'x-cache-hits': '85',
+135 verbose headers   'x-timer': 'S1478296664.894990,VS0,VE0',
+135 verbose headers   vary: 'Accept-Encoding' }
+136 silly get cb [ 200,
+136 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+136 silly get     etag: '"99N11LGHJYQOIFMCYIHSPZLU0"',
+136 silly get     'content-type': 'application/json',
+136 silly get     'content-encoding': 'gzip',
+136 silly get     'cache-control': 'max-age=300',
+136 silly get     'content-length': '7934',
+136 silly get     'accept-ranges': 'bytes',
+136 silly get     date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+136 silly get     via: '1.1 varnish',
+136 silly get     age: '23',
+136 silly get     connection: 'keep-alive',
+136 silly get     'x-served-by': 'cache-fra1226-FRA',
+136 silly get     'x-cache': 'HIT',
+136 silly get     'x-cache-hits': '85',
+136 silly get     'x-timer': 'S1478296664.894990,VS0,VE0',
+136 silly get     vary: 'Accept-Encoding' } ]
+137 verbose get saving coffee-script to /home/yuri/.npm/registry.npmjs.org/coffee-script/.cache.json
+138 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+139 silly resolveWithNewModule coffee-script@1.11.1 checking installable status
+140 silly cache add args [ 'coffee-script@~1.11.0', null ]
+141 verbose cache add spec coffee-script@~1.11.0
+142 silly cache add parsed spec Result {
+142 silly cache add   raw: 'coffee-script@~1.11.0',
+142 silly cache add   scope: null,
+142 silly cache add   escapedName: 'coffee-script',
+142 silly cache add   name: 'coffee-script',
+142 silly cache add   rawSpec: '~1.11.0',
+142 silly cache add   spec: '>=1.11.0 <1.12.0',
+142 silly cache add   type: 'range' }
+143 silly addNamed coffee-script@>=1.11.0 <1.12.0
+144 verbose addNamed ">=1.11.0 <1.12.0" is a valid semver range for coffee-script
+145 silly addNameRange { name: 'coffee-script',
+145 silly addNameRange   range: '>=1.11.0 <1.12.0',
+145 silly addNameRange   hasData: false }
+146 silly mapToRegistry name coffee-script
+147 silly mapToRegistry using default registry
+148 silly mapToRegistry registry https://registry.npmjs.org/
+149 silly mapToRegistry data Result {
+149 silly mapToRegistry   raw: 'coffee-script',
+149 silly mapToRegistry   scope: null,
+149 silly mapToRegistry   escapedName: 'coffee-script',
+149 silly mapToRegistry   name: 'coffee-script',
+149 silly mapToRegistry   rawSpec: '',
+149 silly mapToRegistry   spec: 'latest',
+149 silly mapToRegistry   type: 'tag' }
+150 silly mapToRegistry uri https://registry.npmjs.org/coffee-script
+151 verbose addNameRange registry:https://registry.npmjs.org/coffee-script not in flight; fetching
+152 verbose get https://registry.npmjs.org/coffee-script not expired, no request
+153 silly addNameRange number 2 { name: 'coffee-script',
+153 silly addNameRange   range: '>=1.11.0 <1.12.0',
+153 silly addNameRange   hasData: true }
+154 silly addNameRange versions [ 'coffee-script',
+154 silly addNameRange   [ '0.7.0',
+154 silly addNameRange     '0.7.1',
+154 silly addNameRange     '0.7.2',
+154 silly addNameRange     '0.9.0',
+154 silly addNameRange     '0.9.1',
+154 silly addNameRange     '0.9.2',
+154 silly addNameRange     '0.9.3',
+154 silly addNameRange     '0.9.4',
+154 silly addNameRange     '0.9.5',
+154 silly addNameRange     '0.9.6',
+154 silly addNameRange     '1.0.0',
+154 silly addNameRange     '1.0.1',
+154 silly addNameRange     '1.1.0',
+154 silly addNameRange     '1.1.1',
+154 silly addNameRange     '1.1.2',
+154 silly addNameRange     '1.1.3',
+154 silly addNameRange     '1.2.0',
+154 silly addNameRange     '1.3.0',
+154 silly addNameRange     '1.3.1',
+154 silly addNameRange     '1.3.2',
+154 silly addNameRange     '1.3.3',
+154 silly addNameRange     '1.4.0',
+154 silly addNameRange     '1.5.0',
+154 silly addNameRange     '1.6.0',
+154 silly addNameRange     '1.6.1',
+154 silly addNameRange     '1.6.2',
+154 silly addNameRange     '1.6.3',
+154 silly addNameRange     '1.7.0',
+154 silly addNameRange     '1.7.1',
+154 silly addNameRange     '1.8.0',
+154 silly addNameRange     '1.9.0',
+154 silly addNameRange     '1.9.1',
+154 silly addNameRange     '1.9.2',
+154 silly addNameRange     '1.9.3',
+154 silly addNameRange     '1.10.0',
+154 silly addNameRange     '1.11.0',
+154 silly addNameRange     '1.11.1' ] ]
+155 silly addNamed coffee-script@1.11.1
+156 verbose addNamed "1.11.1" is a plain semver version for coffee-script
+157 silly mapToRegistry name coffee-script
+158 silly mapToRegistry using default registry
+159 silly mapToRegistry registry https://registry.npmjs.org/
+160 silly mapToRegistry data Result {
+160 silly mapToRegistry   raw: 'coffee-script',
+160 silly mapToRegistry   scope: null,
+160 silly mapToRegistry   escapedName: 'coffee-script',
+160 silly mapToRegistry   name: 'coffee-script',
+160 silly mapToRegistry   rawSpec: '',
+160 silly mapToRegistry   spec: 'latest',
+160 silly mapToRegistry   type: 'tag' }
+161 silly mapToRegistry uri https://registry.npmjs.org/coffee-script
+162 verbose addRemoteTarball https://registry.npmjs.org/coffee-script/-/coffee-script-1.11.1.tgz not in flight; adding
+163 verbose addRemoteTarball [ 'https://registry.npmjs.org/coffee-script/-/coffee-script-1.11.1.tgz',
+163 verbose addRemoteTarball   'bf1c47ad64443a0d95d12df2b147cc0a4daad6e9' ]
+164 info retry fetch attempt 1 at 23:57:44
+165 info attempt registry request try #1 at 23:57:44
+166 http fetch GET https://registry.npmjs.org/coffee-script/-/coffee-script-1.11.1.tgz
+167 http 200 https://registry.npmjs.org/strip-json-comments
+168 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+168 verbose headers   etag: '"B49JV09QWCWE5TVZOB1TS0DEO"',
+168 verbose headers   'content-type': 'application/json',
+168 verbose headers   'content-encoding': 'gzip',
+168 verbose headers   'cache-control': 'max-age=300',
+168 verbose headers   'content-length': '3080',
+168 verbose headers   'accept-ranges': 'bytes',
+168 verbose headers   date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+168 verbose headers   via: '1.1 varnish',
+168 verbose headers   age: '39',
+168 verbose headers   connection: 'keep-alive',
+168 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+168 verbose headers   'x-cache': 'HIT',
+168 verbose headers   'x-cache-hits': '2',
+168 verbose headers   'x-timer': 'S1478296664.960084,VS0,VE0',
+168 verbose headers   vary: 'Accept-Encoding' }
+169 silly get cb [ 200,
+169 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+169 silly get     etag: '"B49JV09QWCWE5TVZOB1TS0DEO"',
+169 silly get     'content-type': 'application/json',
+169 silly get     'content-encoding': 'gzip',
+169 silly get     'cache-control': 'max-age=300',
+169 silly get     'content-length': '3080',
+169 silly get     'accept-ranges': 'bytes',
+169 silly get     date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+169 silly get     via: '1.1 varnish',
+169 silly get     age: '39',
+169 silly get     connection: 'keep-alive',
+169 silly get     'x-served-by': 'cache-fra1221-FRA',
+169 silly get     'x-cache': 'HIT',
+169 silly get     'x-cache-hits': '2',
+169 silly get     'x-timer': 'S1478296664.960084,VS0,VE0',
+169 silly get     vary: 'Accept-Encoding' } ]
+170 verbose get saving strip-json-comments to /home/yuri/.npm/registry.npmjs.org/strip-json-comments/.cache.json
+171 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+172 silly resolveWithNewModule strip-json-comments@1.0.4 checking installable status
+173 silly cache add args [ 'strip-json-comments@^1.0.2', null ]
+174 verbose cache add spec strip-json-comments@^1.0.2
+175 silly cache add parsed spec Result {
+175 silly cache add   raw: 'strip-json-comments@^1.0.2',
+175 silly cache add   scope: null,
+175 silly cache add   escapedName: 'strip-json-comments',
+175 silly cache add   name: 'strip-json-comments',
+175 silly cache add   rawSpec: '^1.0.2',
+175 silly cache add   spec: '>=1.0.2 <2.0.0',
+175 silly cache add   type: 'range' }
+176 silly addNamed strip-json-comments@>=1.0.2 <2.0.0
+177 verbose addNamed ">=1.0.2 <2.0.0" is a valid semver range for strip-json-comments
+178 silly addNameRange { name: 'strip-json-comments',
+178 silly addNameRange   range: '>=1.0.2 <2.0.0',
+178 silly addNameRange   hasData: false }
+179 silly mapToRegistry name strip-json-comments
+180 silly mapToRegistry using default registry
+181 silly mapToRegistry registry https://registry.npmjs.org/
+182 silly mapToRegistry data Result {
+182 silly mapToRegistry   raw: 'strip-json-comments',
+182 silly mapToRegistry   scope: null,
+182 silly mapToRegistry   escapedName: 'strip-json-comments',
+182 silly mapToRegistry   name: 'strip-json-comments',
+182 silly mapToRegistry   rawSpec: '',
+182 silly mapToRegistry   spec: 'latest',
+182 silly mapToRegistry   type: 'tag' }
+183 silly mapToRegistry uri https://registry.npmjs.org/strip-json-comments
+184 verbose addNameRange registry:https://registry.npmjs.org/strip-json-comments not in flight; fetching
+185 verbose get https://registry.npmjs.org/strip-json-comments not expired, no request
+186 silly addNameRange number 2 { name: 'strip-json-comments',
+186 silly addNameRange   range: '>=1.0.2 <2.0.0',
+186 silly addNameRange   hasData: true }
+187 silly addNameRange versions [ 'strip-json-comments',
+187 silly addNameRange   [ '0.1.0',
+187 silly addNameRange     '0.1.1',
+187 silly addNameRange     '0.1.2',
+187 silly addNameRange     '0.1.3',
+187 silly addNameRange     '1.0.0',
+187 silly addNameRange     '1.0.1',
+187 silly addNameRange     '1.0.2',
+187 silly addNameRange     '1.0.3',
+187 silly addNameRange     '1.0.4',
+187 silly addNameRange     '2.0.0',
+187 silly addNameRange     '2.0.1' ] ]
+188 silly addNamed strip-json-comments@1.0.4
+189 verbose addNamed "1.0.4" is a plain semver version for strip-json-comments
+190 http fetch 200 https://registry.npmjs.org/coffee-script/-/coffee-script-1.11.1.tgz
+191 silly mapToRegistry name strip-json-comments
+192 silly mapToRegistry using default registry
+193 silly mapToRegistry registry https://registry.npmjs.org/
+194 silly mapToRegistry data Result {
+194 silly mapToRegistry   raw: 'strip-json-comments',
+194 silly mapToRegistry   scope: null,
+194 silly mapToRegistry   escapedName: 'strip-json-comments',
+194 silly mapToRegistry   name: 'strip-json-comments',
+194 silly mapToRegistry   rawSpec: '',
+194 silly mapToRegistry   spec: 'latest',
+194 silly mapToRegistry   type: 'tag' }
+195 silly mapToRegistry uri https://registry.npmjs.org/strip-json-comments
+196 verbose addRemoteTarball https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.4.tgz not in flight; adding
+197 verbose addRemoteTarball [ 'https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.4.tgz',
+197 verbose addRemoteTarball   '1e15fbcac97d3ee99bf2d73b4c656b082bbafb91' ]
+198 info retry fetch attempt 1 at 23:57:44
+199 info attempt registry request try #1 at 23:57:44
+200 http fetch GET https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.4.tgz
+201 http 200 https://registry.npmjs.org/ignore
+202 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+202 verbose headers   etag: '"5D2M0UUFHB2HUHRCWLHZ8YD1E"',
+202 verbose headers   'content-type': 'application/json',
+202 verbose headers   'content-encoding': 'gzip',
+202 verbose headers   'cache-control': 'max-age=300',
+202 verbose headers   'content-length': '9007',
+202 verbose headers   'accept-ranges': 'bytes',
+202 verbose headers   date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+202 verbose headers   via: '1.1 varnish',
+202 verbose headers   age: '203',
+202 verbose headers   connection: 'keep-alive',
+202 verbose headers   'x-served-by': 'cache-fra1241-FRA',
+202 verbose headers   'x-cache': 'HIT',
+202 verbose headers   'x-cache-hits': '2',
+202 verbose headers   'x-timer': 'S1478296664.974546,VS0,VE0',
+202 verbose headers   vary: 'Accept-Encoding' }
+203 silly get cb [ 200,
+203 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+203 silly get     etag: '"5D2M0UUFHB2HUHRCWLHZ8YD1E"',
+203 silly get     'content-type': 'application/json',
+203 silly get     'content-encoding': 'gzip',
+203 silly get     'cache-control': 'max-age=300',
+203 silly get     'content-length': '9007',
+203 silly get     'accept-ranges': 'bytes',
+203 silly get     date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+203 silly get     via: '1.1 varnish',
+203 silly get     age: '203',
+203 silly get     connection: 'keep-alive',
+203 silly get     'x-served-by': 'cache-fra1241-FRA',
+203 silly get     'x-cache': 'HIT',
+203 silly get     'x-cache-hits': '2',
+203 silly get     'x-timer': 'S1478296664.974546,VS0,VE0',
+203 silly get     vary: 'Accept-Encoding' } ]
+204 verbose get saving ignore to /home/yuri/.npm/registry.npmjs.org/ignore/.cache.json
+205 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+206 http 200 https://registry.npmjs.org/resolve
+207 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+207 verbose headers   etag: '"CMAX2DTTXQQXCO8Z6L8JDNAH5"',
+207 verbose headers   'content-type': 'application/json',
+207 verbose headers   'content-encoding': 'gzip',
+207 verbose headers   'cache-control': 'max-age=300',
+207 verbose headers   'content-length': '6220',
+207 verbose headers   'accept-ranges': 'bytes',
+207 verbose headers   date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+207 verbose headers   via: '1.1 varnish',
+207 verbose headers   age: '181',
+207 verbose headers   connection: 'keep-alive',
+207 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+207 verbose headers   'x-cache': 'HIT',
+207 verbose headers   'x-cache-hits': '2',
+207 verbose headers   'x-timer': 'S1478296664.979414,VS0,VE0',
+207 verbose headers   vary: 'Accept-Encoding' }
+208 silly get cb [ 200,
+208 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+208 silly get     etag: '"CMAX2DTTXQQXCO8Z6L8JDNAH5"',
+208 silly get     'content-type': 'application/json',
+208 silly get     'content-encoding': 'gzip',
+208 silly get     'cache-control': 'max-age=300',
+208 silly get     'content-length': '6220',
+208 silly get     'accept-ranges': 'bytes',
+208 silly get     date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+208 silly get     via: '1.1 varnish',
+208 silly get     age: '181',
+208 silly get     connection: 'keep-alive',
+208 silly get     'x-served-by': 'cache-fra1221-FRA',
+208 silly get     'x-cache': 'HIT',
+208 silly get     'x-cache-hits': '2',
+208 silly get     'x-timer': 'S1478296664.979414,VS0,VE0',
+208 silly get     vary: 'Accept-Encoding' } ]
+209 verbose get saving resolve to /home/yuri/.npm/registry.npmjs.org/resolve/.cache.json
+210 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+211 http 200 https://registry.npmjs.org/optimist
+212 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+212 verbose headers   etag: '"EA71NGTGD6UKPG17U14XBILGE"',
+212 verbose headers   'content-type': 'application/json',
+212 verbose headers   'content-encoding': 'gzip',
+212 verbose headers   'cache-control': 'max-age=300',
+212 verbose headers   'content-length': '9325',
+212 verbose headers   'accept-ranges': 'bytes',
+212 verbose headers   date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+212 verbose headers   via: '1.1 varnish',
+212 verbose headers   age: '218',
+212 verbose headers   connection: 'keep-alive',
+212 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+212 verbose headers   'x-cache': 'HIT',
+212 verbose headers   'x-cache-hits': '5',
+212 verbose headers   'x-timer': 'S1478296664.977385,VS0,VE0',
+212 verbose headers   vary: 'Accept-Encoding' }
+213 silly get cb [ 200,
+213 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+213 silly get     etag: '"EA71NGTGD6UKPG17U14XBILGE"',
+213 silly get     'content-type': 'application/json',
+213 silly get     'content-encoding': 'gzip',
+213 silly get     'cache-control': 'max-age=300',
+213 silly get     'content-length': '9325',
+213 silly get     'accept-ranges': 'bytes',
+213 silly get     date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+213 silly get     via: '1.1 varnish',
+213 silly get     age: '218',
+213 silly get     connection: 'keep-alive',
+213 silly get     'x-served-by': 'cache-fra1226-FRA',
+213 silly get     'x-cache': 'HIT',
+213 silly get     'x-cache-hits': '5',
+213 silly get     'x-timer': 'S1478296664.977385,VS0,VE0',
+213 silly get     vary: 'Accept-Encoding' } ]
+214 verbose get saving optimist to /home/yuri/.npm/registry.npmjs.org/optimist/.cache.json
+215 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+216 silly resolveWithNewModule resolve@0.6.3 checking installable status
+217 silly cache add args [ 'resolve@^0.6.3', null ]
+218 verbose cache add spec resolve@^0.6.3
+219 silly cache add parsed spec Result {
+219 silly cache add   raw: 'resolve@^0.6.3',
+219 silly cache add   scope: null,
+219 silly cache add   escapedName: 'resolve',
+219 silly cache add   name: 'resolve',
+219 silly cache add   rawSpec: '^0.6.3',
+219 silly cache add   spec: '>=0.6.3 <0.7.0',
+219 silly cache add   type: 'range' }
+220 silly addNamed resolve@>=0.6.3 <0.7.0
+221 verbose addNamed ">=0.6.3 <0.7.0" is a valid semver range for resolve
+222 silly addNameRange { name: 'resolve', range: '>=0.6.3 <0.7.0', hasData: false }
+223 silly mapToRegistry name resolve
+224 silly mapToRegistry using default registry
+225 silly mapToRegistry registry https://registry.npmjs.org/
+226 silly mapToRegistry data Result {
+226 silly mapToRegistry   raw: 'resolve',
+226 silly mapToRegistry   scope: null,
+226 silly mapToRegistry   escapedName: 'resolve',
+226 silly mapToRegistry   name: 'resolve',
+226 silly mapToRegistry   rawSpec: '',
+226 silly mapToRegistry   spec: 'latest',
+226 silly mapToRegistry   type: 'tag' }
+227 silly mapToRegistry uri https://registry.npmjs.org/resolve
+228 verbose addNameRange registry:https://registry.npmjs.org/resolve not in flight; fetching
+229 silly resolveWithNewModule ignore@3.2.0 checking installable status
+230 silly cache add args [ 'ignore@^3.0.9', null ]
+231 verbose cache add spec ignore@^3.0.9
+232 silly cache add parsed spec Result {
+232 silly cache add   raw: 'ignore@^3.0.9',
+232 silly cache add   scope: null,
+232 silly cache add   escapedName: 'ignore',
+232 silly cache add   name: 'ignore',
+232 silly cache add   rawSpec: '^3.0.9',
+232 silly cache add   spec: '>=3.0.9 <4.0.0',
+232 silly cache add   type: 'range' }
+233 silly addNamed ignore@>=3.0.9 <4.0.0
+234 verbose addNamed ">=3.0.9 <4.0.0" is a valid semver range for ignore
+235 silly addNameRange { name: 'ignore', range: '>=3.0.9 <4.0.0', hasData: false }
+236 silly mapToRegistry name ignore
+237 silly mapToRegistry using default registry
+238 silly mapToRegistry registry https://registry.npmjs.org/
+239 silly mapToRegistry data Result {
+239 silly mapToRegistry   raw: 'ignore',
+239 silly mapToRegistry   scope: null,
+239 silly mapToRegistry   escapedName: 'ignore',
+239 silly mapToRegistry   name: 'ignore',
+239 silly mapToRegistry   rawSpec: '',
+239 silly mapToRegistry   spec: 'latest',
+239 silly mapToRegistry   type: 'tag' }
+240 silly mapToRegistry uri https://registry.npmjs.org/ignore
+241 verbose addNameRange registry:https://registry.npmjs.org/ignore not in flight; fetching
+242 verbose get https://registry.npmjs.org/ignore not expired, no request
+243 silly addNameRange number 2 { name: 'ignore', range: '>=3.0.9 <4.0.0', hasData: true }
+244 silly addNameRange versions [ 'ignore',
+244 silly addNameRange   [ '0.1.0',
+244 silly addNameRange     '0.1.2',
+244 silly addNameRange     '1.1.3',
+244 silly addNameRange     '2.2.1',
+244 silly addNameRange     '2.2.7',
+244 silly addNameRange     '2.2.8',
+244 silly addNameRange     '2.2.9',
+244 silly addNameRange     '2.2.10',
+244 silly addNameRange     '2.2.11',
+244 silly addNameRange     '2.2.12',
+244 silly addNameRange     '2.2.13',
+244 silly addNameRange     '2.2.14',
+244 silly addNameRange     '2.2.15',
+244 silly addNameRange     '2.2.16',
+244 silly addNameRange     '2.2.17',
+244 silly addNameRange     '2.2.18',
+244 silly addNameRange     '2.2.19',
+244 silly addNameRange     '3.0.0',
+244 silly addNameRange     '3.0.1',
+244 silly addNameRange     '3.0.2',
+244 silly addNameRange     '3.0.3',
+244 silly addNameRange     '3.0.4',
+244 silly addNameRange     '3.0.5',
+244 silly addNameRange     '3.0.6',
+244 silly addNameRange     '3.0.7',
+244 silly addNameRange     '3.0.8',
+244 silly addNameRange     '3.0.9',
+244 silly addNameRange     '3.0.10',
+244 silly addNameRange     '3.0.11',
+244 silly addNameRange     '3.0.12',
+244 silly addNameRange     '3.0.13',
+244 silly addNameRange     '3.0.14',
+244 silly addNameRange     '3.1.0',
+244 silly addNameRange     '3.1.1',
+244 silly addNameRange     '3.1.2',
+244 silly addNameRange     '3.1.3',
+244 silly addNameRange     '3.1.4',
+244 silly addNameRange     '3.1.5',
+244 silly addNameRange     '3.2.0' ] ]
+245 silly addNamed ignore@3.2.0
+246 verbose addNamed "3.2.0" is a plain semver version for ignore
+247 verbose get https://registry.npmjs.org/resolve not expired, no request
+248 silly addNameRange number 2 { name: 'resolve', range: '>=0.6.3 <0.7.0', hasData: true }
+249 silly addNameRange versions [ 'resolve',
+249 silly addNameRange   [ '0.0.0',
+249 silly addNameRange     '0.0.1',
+249 silly addNameRange     '0.0.2',
+249 silly addNameRange     '0.0.3',
+249 silly addNameRange     '0.0.4',
+249 silly addNameRange     '0.1.0',
+249 silly addNameRange     '0.1.2',
+249 silly addNameRange     '0.1.3',
+249 silly addNameRange     '0.2.0',
+249 silly addNameRange     '0.2.1',
+249 silly addNameRange     '0.2.2',
+249 silly addNameRange     '0.2.3',
+249 silly addNameRange     '0.2.4',
+249 silly addNameRange     '0.2.5',
+249 silly addNameRange     '0.2.6',
+249 silly addNameRange     '0.2.7',
+249 silly addNameRange     '0.2.8',
+249 silly addNameRange     '0.3.0',
+249 silly addNameRange     '0.3.1',
+249 silly addNameRange     '0.4.0',
+249 silly addNameRange     '0.4.1',
+249 silly addNameRange     '0.4.2',
+249 silly addNameRange     '0.4.3',
+249 silly addNameRange     '0.5.0',
+249 silly addNameRange     '0.5.1',
+249 silly addNameRange     '0.6.0',
+249 silly addNameRange     '0.6.1',
+249 silly addNameRange     '0.6.2',
+249 silly addNameRange     '0.6.3',
+249 silly addNameRange     '0.7.0',
+249 silly addNameRange     '0.7.1',
+249 silly addNameRange     '0.7.2',
+249 silly addNameRange     '0.7.3',
+249 silly addNameRange     '0.7.4',
+249 silly addNameRange     '1.0.0',
+249 silly addNameRange     '1.1.0',
+249 silly addNameRange     '1.1.2',
+249 silly addNameRange     '1.1.3',
+249 silly addNameRange     '1.1.4',
+249 silly addNameRange     '1.1.5',
+249 silly addNameRange     '1.1.6',
+249 silly addNameRange     '1.1.7' ] ]
+250 silly addNamed resolve@0.6.3
+251 verbose addNamed "0.6.3" is a plain semver version for resolve
+252 silly mapToRegistry name ignore
+253 silly mapToRegistry using default registry
+254 silly mapToRegistry registry https://registry.npmjs.org/
+255 silly mapToRegistry data Result {
+255 silly mapToRegistry   raw: 'ignore',
+255 silly mapToRegistry   scope: null,
+255 silly mapToRegistry   escapedName: 'ignore',
+255 silly mapToRegistry   name: 'ignore',
+255 silly mapToRegistry   rawSpec: '',
+255 silly mapToRegistry   spec: 'latest',
+255 silly mapToRegistry   type: 'tag' }
+256 silly mapToRegistry uri https://registry.npmjs.org/ignore
+257 verbose addRemoteTarball https://registry.npmjs.org/ignore/-/ignore-3.2.0.tgz not in flight; adding
+258 verbose addRemoteTarball [ 'https://registry.npmjs.org/ignore/-/ignore-3.2.0.tgz',
+258 verbose addRemoteTarball   '8d88f03c3002a0ac52114db25d2c673b0bf1e435' ]
+259 silly mapToRegistry name resolve
+260 silly mapToRegistry using default registry
+261 silly mapToRegistry registry https://registry.npmjs.org/
+262 silly mapToRegistry data Result {
+262 silly mapToRegistry   raw: 'resolve',
+262 silly mapToRegistry   scope: null,
+262 silly mapToRegistry   escapedName: 'resolve',
+262 silly mapToRegistry   name: 'resolve',
+262 silly mapToRegistry   rawSpec: '',
+262 silly mapToRegistry   spec: 'latest',
+262 silly mapToRegistry   type: 'tag' }
+263 silly mapToRegistry uri https://registry.npmjs.org/resolve
+264 verbose addRemoteTarball https://registry.npmjs.org/resolve/-/resolve-0.6.3.tgz not in flight; adding
+265 verbose addRemoteTarball [ 'https://registry.npmjs.org/resolve/-/resolve-0.6.3.tgz',
+265 verbose addRemoteTarball   'dd957982e7e736debdf53b58a4dd91754575dd46' ]
+266 silly resolveWithNewModule optimist@0.6.1 checking installable status
+267 silly cache add args [ 'optimist@^0.6.1', null ]
+268 verbose cache add spec optimist@^0.6.1
+269 silly cache add parsed spec Result {
+269 silly cache add   raw: 'optimist@^0.6.1',
+269 silly cache add   scope: null,
+269 silly cache add   escapedName: 'optimist',
+269 silly cache add   name: 'optimist',
+269 silly cache add   rawSpec: '^0.6.1',
+269 silly cache add   spec: '>=0.6.1 <0.7.0',
+269 silly cache add   type: 'range' }
+270 silly addNamed optimist@>=0.6.1 <0.7.0
+271 verbose addNamed ">=0.6.1 <0.7.0" is a valid semver range for optimist
+272 silly addNameRange { name: 'optimist', range: '>=0.6.1 <0.7.0', hasData: false }
+273 silly mapToRegistry name optimist
+274 silly mapToRegistry using default registry
+275 silly mapToRegistry registry https://registry.npmjs.org/
+276 silly mapToRegistry data Result {
+276 silly mapToRegistry   raw: 'optimist',
+276 silly mapToRegistry   scope: null,
+276 silly mapToRegistry   escapedName: 'optimist',
+276 silly mapToRegistry   name: 'optimist',
+276 silly mapToRegistry   rawSpec: '',
+276 silly mapToRegistry   spec: 'latest',
+276 silly mapToRegistry   type: 'tag' }
+277 silly mapToRegistry uri https://registry.npmjs.org/optimist
+278 verbose addNameRange registry:https://registry.npmjs.org/optimist not in flight; fetching
+279 http fetch 200 https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.4.tgz
+280 info retry fetch attempt 1 at 23:57:44
+281 info attempt registry request try #1 at 23:57:44
+282 http fetch GET https://registry.npmjs.org/ignore/-/ignore-3.2.0.tgz
+283 info retry fetch attempt 1 at 23:57:44
+284 info attempt registry request try #1 at 23:57:44
+285 http fetch GET https://registry.npmjs.org/resolve/-/resolve-0.6.3.tgz
+286 silly fetchAndShaCheck shasum bf1c47ad64443a0d95d12df2b147cc0a4daad6e9
+287 verbose get https://registry.npmjs.org/optimist not expired, no request
+288 silly addNameRange number 2 { name: 'optimist', range: '>=0.6.1 <0.7.0', hasData: true }
+289 silly addNameRange versions [ 'optimist',
+289 silly addNameRange   [ '0.0.1',
+289 silly addNameRange     '0.0.2',
+289 silly addNameRange     '0.0.4',
+289 silly addNameRange     '0.0.5',
+289 silly addNameRange     '0.0.6',
+289 silly addNameRange     '0.0.7',
+289 silly addNameRange     '0.1.0',
+289 silly addNameRange     '0.1.1',
+289 silly addNameRange     '0.1.2',
+289 silly addNameRange     '0.1.3',
+289 silly addNameRange     '0.1.4',
+289 silly addNameRange     '0.1.5',
+289 silly addNameRange     '0.1.6',
+289 silly addNameRange     '0.1.7',
+289 silly addNameRange     '0.1.8',
+289 silly addNameRange     '0.1.9',
+289 silly addNameRange     '0.0.3',
+289 silly addNameRange     '0.2.0',
+289 silly addNameRange     '0.2.1',
+289 silly addNameRange     '0.2.2',
+289 silly addNameRange     '0.2.3',
+289 silly addNameRange     '0.2.4',
+289 silly addNameRange     '0.2.5',
+289 silly addNameRange     '0.2.6',
+289 silly addNameRange     '0.2.7',
+289 silly addNameRange     '0.2.8',
+289 silly addNameRange     '0.3.0',
+289 silly addNameRange     '0.3.1',
+289 silly addNameRange     '0.3.3',
+289 silly addNameRange     '0.3.4',
+289 silly addNameRange     '0.3.5',
+289 silly addNameRange     '0.3.6',
+289 silly addNameRange     '0.3.7',
+289 silly addNameRange     '0.4.0',
+289 silly addNameRange     '0.5.0',
+289 silly addNameRange     '0.5.1',
+289 silly addNameRange     '0.5.2',
+289 silly addNameRange     '0.6.0',
+289 silly addNameRange     '0.6.1' ] ]
+290 silly addNamed optimist@0.6.1
+291 verbose addNamed "0.6.1" is a plain semver version for optimist
+292 silly fetchAndShaCheck shasum 1e15fbcac97d3ee99bf2d73b4c656b082bbafb91
+293 silly mapToRegistry name optimist
+294 silly mapToRegistry using default registry
+295 silly mapToRegistry registry https://registry.npmjs.org/
+296 silly mapToRegistry data Result {
+296 silly mapToRegistry   raw: 'optimist',
+296 silly mapToRegistry   scope: null,
+296 silly mapToRegistry   escapedName: 'optimist',
+296 silly mapToRegistry   name: 'optimist',
+296 silly mapToRegistry   rawSpec: '',
+296 silly mapToRegistry   spec: 'latest',
+296 silly mapToRegistry   type: 'tag' }
+297 silly mapToRegistry uri https://registry.npmjs.org/optimist
+298 verbose addRemoteTarball https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz not in flight; adding
+299 verbose addRemoteTarball [ 'https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz',
+299 verbose addRemoteTarball   'da3ea74686fa21a19a111c326e90eb15a0196686' ]
+300 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/coffee-script/-/coffee-script-1.11.1.tgz not in flight; adding
+301 verbose addTmpTarball already have metadata; skipping unpack for coffee-script@1.11.1
+302 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+303 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.4.tgz not in flight; adding
+304 verbose addTmpTarball already have metadata; skipping unpack for strip-json-comments@1.0.4
+305 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+306 info retry fetch attempt 1 at 23:57:44
+307 info attempt registry request try #1 at 23:57:44
+308 http fetch GET https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz
+309 http 200 https://registry.npmjs.org/glob
+310 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+310 verbose headers   etag: '"9S6406YLNVJWSB06R9VKZD9X3"',
+310 verbose headers   'content-type': 'application/json',
+310 verbose headers   'content-encoding': 'gzip',
+310 verbose headers   'cache-control': 'max-age=300',
+310 verbose headers   'content-length': '20521',
+310 verbose headers   'accept-ranges': 'bytes',
+310 verbose headers   date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+310 verbose headers   via: '1.1 varnish',
+310 verbose headers   age: '220',
+310 verbose headers   connection: 'keep-alive',
+310 verbose headers   'x-served-by': 'cache-fra1239-FRA',
+310 verbose headers   'x-cache': 'HIT',
+310 verbose headers   'x-cache-hits': '7',
+310 verbose headers   'x-timer': 'S1478296664.980351,VS0,VE0',
+310 verbose headers   vary: 'Accept-Encoding' }
+311 silly get cb [ 200,
+311 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+311 silly get     etag: '"9S6406YLNVJWSB06R9VKZD9X3"',
+311 silly get     'content-type': 'application/json',
+311 silly get     'content-encoding': 'gzip',
+311 silly get     'cache-control': 'max-age=300',
+311 silly get     'content-length': '20521',
+311 silly get     'accept-ranges': 'bytes',
+311 silly get     date: 'Fri, 04 Nov 2016 21:57:44 GMT',
+311 silly get     via: '1.1 varnish',
+311 silly get     age: '220',
+311 silly get     connection: 'keep-alive',
+311 silly get     'x-served-by': 'cache-fra1239-FRA',
+311 silly get     'x-cache': 'HIT',
+311 silly get     'x-cache-hits': '7',
+311 silly get     'x-timer': 'S1478296664.980351,VS0,VE0',
+311 silly get     vary: 'Accept-Encoding' } ]
+312 verbose get saving glob to /home/yuri/.npm/registry.npmjs.org/glob/.cache.json
+313 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+314 silly resolveWithNewModule glob@7.1.1 checking installable status
+315 silly cache add args [ 'glob@^7.0.6', null ]
+316 verbose cache add spec glob@^7.0.6
+317 silly cache add parsed spec Result {
+317 silly cache add   raw: 'glob@^7.0.6',
+317 silly cache add   scope: null,
+317 silly cache add   escapedName: 'glob',
+317 silly cache add   name: 'glob',
+317 silly cache add   rawSpec: '^7.0.6',
+317 silly cache add   spec: '>=7.0.6 <8.0.0',
+317 silly cache add   type: 'range' }
+318 silly addNamed glob@>=7.0.6 <8.0.0
+319 verbose addNamed ">=7.0.6 <8.0.0" is a valid semver range for glob
+320 silly addNameRange { name: 'glob', range: '>=7.0.6 <8.0.0', hasData: false }
+321 silly mapToRegistry name glob
+322 silly mapToRegistry using default registry
+323 silly mapToRegistry registry https://registry.npmjs.org/
+324 silly mapToRegistry data Result {
+324 silly mapToRegistry   raw: 'glob',
+324 silly mapToRegistry   scope: null,
+324 silly mapToRegistry   escapedName: 'glob',
+324 silly mapToRegistry   name: 'glob',
+324 silly mapToRegistry   rawSpec: '',
+324 silly mapToRegistry   spec: 'latest',
+324 silly mapToRegistry   type: 'tag' }
+325 silly mapToRegistry uri https://registry.npmjs.org/glob
+326 verbose addNameRange registry:https://registry.npmjs.org/glob not in flight; fetching
+327 verbose get https://registry.npmjs.org/glob not expired, no request
+328 silly addNameRange number 2 { name: 'glob', range: '>=7.0.6 <8.0.0', hasData: true }
+329 silly addNameRange versions [ 'glob',
+329 silly addNameRange   [ '1.1.0',
+329 silly addNameRange     '2.0.9',
+329 silly addNameRange     '2.0.8',
+329 silly addNameRange     '2.0.7',
+329 silly addNameRange     '2.1.0',
+329 silly addNameRange     '3.0.0',
+329 silly addNameRange     '3.0.1',
+329 silly addNameRange     '3.1.0',
+329 silly addNameRange     '3.1.1',
+329 silly addNameRange     '3.1.2',
+329 silly addNameRange     '3.1.3',
+329 silly addNameRange     '3.1.4',
+329 silly addNameRange     '3.1.5',
+329 silly addNameRange     '3.1.6',
+329 silly addNameRange     '3.1.7',
+329 silly addNameRange     '3.1.9',
+329 silly addNameRange     '3.1.10',
+329 silly addNameRange     '3.1.11',
+329 silly addNameRange     '3.1.12',
+329 silly addNameRange     '3.1.13',
+329 silly addNameRange     '3.1.14',
+329 silly addNameRange     '3.1.15',
+329 silly addNameRange     '3.1.16',
+329 silly addNameRange     '3.1.17',
+329 silly addNameRange     '3.1.18',
+329 silly addNameRange     '3.1.19',
+329 silly addNameRange     '3.1.20',
+329 silly addNameRange     '3.1.21',
+329 silly addNameRange     '3.2.0',
+329 silly addNameRange     '3.2.1',
+329 silly addNameRange     '3.2.3',
+329 silly addNameRange     '3.2.4',
+329 silly addNameRange     '3.2.5',
+329 silly addNameRange     '3.2.6',
+329 silly addNameRange     '3.2.7',
+329 silly addNameRange     '3.2.8',
+329 silly addNameRange     '3.2.9',
+329 silly addNameRange     '3.2.10',
+329 silly addNameRange     '3.2.11',
+329 silly addNameRange     '4.0.0',
+329 silly addNameRange     '4.0.1',
+329 silly addNameRange     '4.0.2',
+329 silly addNameRange     '4.0.3',
+329 silly addNameRange     '4.0.4',
+329 silly addNameRange     '4.0.5',
+329 silly addNameRange     '4.0.6',
+329 silly addNameRange     '4.1.2-beta',
+329 silly addNameRange     '4.1.2',
+329 silly addNameRange     '4.1.3',
+329 silly addNameRange     '4.1.4',
+329 silly addNameRange     '4.1.5',
+329 silly addNameRange     '4.1.6',
+329 silly addNameRange     '4.2.0',
+329 silly addNameRange     '4.2.1',
+329 silly addNameRange     '4.2.2',
+329 silly addNameRange     '4.3.0',
+329 silly addNameRange     '4.3.1',
+329 silly addNameRange     '4.3.2',
+329 silly addNameRange     '4.3.3',
+329 silly addNameRange     '4.3.4',
+329 silly addNameRange     '4.3.5',
+329 silly addNameRange     '4.4.0',
+329 silly addNameRange     '4.4.2',
+329 silly addNameRange     '4.5.0',
+329 silly addNameRange     '5.0.0',
+329 silly addNameRange     '4.5.1',
+329 silly addNameRange     '5.0.1',
+329 silly addNameRange     '4.5.2',
+329 silly addNameRange     '5.0.2',
+329 silly addNameRange     '4.5.3',
+329 silly addNameRange     '5.0.3',
+329 silly addNameRange     '5.0.4',
+329 silly addNameRange     '5.0.5',
+329 silly addNameRange     '5.0.6',
+329 silly addNameRange     '5.0.7',
+329 silly addNameRange     '5.0.9',
+329 silly addNameRange     '5.0.10',
+329 silly addNameRange     '5.0.11',
+329 silly addNameRange     '5.0.12',
+329 silly addNameRange     '5.0.13',
+329 silly addNameRange     '5.0.14',
+329 silly addNameRange     '5.0.15',
+329 silly addNameRange     '6.0.1',
+329 silly addNameRange     '6.0.2',
+329 silly addNameRange     '6.0.3',
+329 silly addNameRange     '6.0.4',
+329 silly addNameRange     '7.0.0',
+329 silly addNameRange     '7.0.1',
+329 silly addNameRange     '7.0.3',
+329 silly addNameRange     '7.0.4',
+329 silly addNameRange     '7.0.5',
+329 silly addNameRange     '7.0.6',
+329 silly addNameRange     '7.1.0',
+329 silly addNameRange     '7.1.1' ] ]
+330 silly addNamed glob@7.1.1
+331 verbose addNamed "7.1.1" is a plain semver version for glob
+332 silly cache afterAdd strip-json-comments@1.0.4
+333 verbose afterAdd /home/yuri/.npm/strip-json-comments/1.0.4/package/package.json not in flight; writing
+334 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+335 silly mapToRegistry name glob
+336 silly mapToRegistry using default registry
+337 silly mapToRegistry registry https://registry.npmjs.org/
+338 silly mapToRegistry data Result {
+338 silly mapToRegistry   raw: 'glob',
+338 silly mapToRegistry   scope: null,
+338 silly mapToRegistry   escapedName: 'glob',
+338 silly mapToRegistry   name: 'glob',
+338 silly mapToRegistry   rawSpec: '',
+338 silly mapToRegistry   spec: 'latest',
+338 silly mapToRegistry   type: 'tag' }
+339 silly mapToRegistry uri https://registry.npmjs.org/glob
+340 verbose addRemoteTarball https://registry.npmjs.org/glob/-/glob-7.1.1.tgz not in flight; adding
+341 verbose addRemoteTarball [ 'https://registry.npmjs.org/glob/-/glob-7.1.1.tgz',
+341 verbose addRemoteTarball   '805211df04faaf1c63a3600306cdf5ade50b2ec8' ]
+342 silly cache afterAdd coffee-script@1.11.1
+343 verbose afterAdd /home/yuri/.npm/coffee-script/1.11.1/package/package.json not in flight; writing
+344 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+345 info retry fetch attempt 1 at 23:57:44
+346 info attempt registry request try #1 at 23:57:44
+347 http fetch GET https://registry.npmjs.org/glob/-/glob-7.1.1.tgz
+348 verbose afterAdd /home/yuri/.npm/strip-json-comments/1.0.4/package/package.json written
+349 verbose afterAdd /home/yuri/.npm/coffee-script/1.11.1/package/package.json written
+350 http fetch 200 https://registry.npmjs.org/ignore/-/ignore-3.2.0.tgz
+351 http fetch 200 https://registry.npmjs.org/resolve/-/resolve-0.6.3.tgz
+352 http fetch 200 https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz
+353 silly fetchAndShaCheck shasum 8d88f03c3002a0ac52114db25d2c673b0bf1e435
+354 silly fetchAndShaCheck shasum dd957982e7e736debdf53b58a4dd91754575dd46
+355 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/ignore/-/ignore-3.2.0.tgz not in flight; adding
+356 verbose addTmpTarball already have metadata; skipping unpack for ignore@3.2.0
+357 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+358 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/resolve/-/resolve-0.6.3.tgz not in flight; adding
+359 verbose addTmpTarball already have metadata; skipping unpack for resolve@0.6.3
+360 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+361 silly fetchAndShaCheck shasum da3ea74686fa21a19a111c326e90eb15a0196686
+362 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/optimist/-/optimist-0.6.1.tgz not in flight; adding
+363 verbose addTmpTarball already have metadata; skipping unpack for optimist@0.6.1
+364 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+365 silly cache afterAdd ignore@3.2.0
+366 verbose afterAdd /home/yuri/.npm/ignore/3.2.0/package/package.json not in flight; writing
+367 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+368 silly cache afterAdd resolve@0.6.3
+369 verbose afterAdd /home/yuri/.npm/resolve/0.6.3/package/package.json not in flight; writing
+370 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+371 verbose afterAdd /home/yuri/.npm/ignore/3.2.0/package/package.json written
+372 verbose afterAdd /home/yuri/.npm/resolve/0.6.3/package/package.json written
+373 http fetch 200 https://registry.npmjs.org/glob/-/glob-7.1.1.tgz
+374 silly cache afterAdd optimist@0.6.1
+375 verbose afterAdd /home/yuri/.npm/optimist/0.6.1/package/package.json not in flight; writing
+376 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+377 verbose afterAdd /home/yuri/.npm/optimist/0.6.1/package/package.json written
+378 silly fetchAndShaCheck shasum 805211df04faaf1c63a3600306cdf5ade50b2ec8
+379 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/glob/-/glob-7.1.1.tgz not in flight; adding
+380 verbose addTmpTarball already have metadata; skipping unpack for glob@7.1.1
+381 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+382 silly cache afterAdd glob@7.1.1
+383 verbose afterAdd /home/yuri/.npm/glob/7.1.1/package/package.json not in flight; writing
+384 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+385 verbose afterAdd /home/yuri/.npm/glob/7.1.1/package/package.json written
+386 silly fetchNamedPackageData fs.realpath
+387 silly mapToRegistry name fs.realpath
+388 silly mapToRegistry using default registry
+389 silly mapToRegistry registry https://registry.npmjs.org/
+390 silly mapToRegistry data Result {
+390 silly mapToRegistry   raw: 'fs.realpath',
+390 silly mapToRegistry   scope: null,
+390 silly mapToRegistry   escapedName: 'fs.realpath',
+390 silly mapToRegistry   name: 'fs.realpath',
+390 silly mapToRegistry   rawSpec: '',
+390 silly mapToRegistry   spec: 'latest',
+390 silly mapToRegistry   type: 'tag' }
+391 silly mapToRegistry uri https://registry.npmjs.org/fs.realpath
+392 silly fetchNamedPackageData inflight
+393 silly mapToRegistry name inflight
+394 silly mapToRegistry using default registry
+395 silly mapToRegistry registry https://registry.npmjs.org/
+396 silly mapToRegistry data Result {
+396 silly mapToRegistry   raw: 'inflight',
+396 silly mapToRegistry   scope: null,
+396 silly mapToRegistry   escapedName: 'inflight',
+396 silly mapToRegistry   name: 'inflight',
+396 silly mapToRegistry   rawSpec: '',
+396 silly mapToRegistry   spec: 'latest',
+396 silly mapToRegistry   type: 'tag' }
+397 silly mapToRegistry uri https://registry.npmjs.org/inflight
+398 silly fetchNamedPackageData inherits
+399 silly mapToRegistry name inherits
+400 silly mapToRegistry using default registry
+401 silly mapToRegistry registry https://registry.npmjs.org/
+402 silly mapToRegistry data Result {
+402 silly mapToRegistry   raw: 'inherits',
+402 silly mapToRegistry   scope: null,
+402 silly mapToRegistry   escapedName: 'inherits',
+402 silly mapToRegistry   name: 'inherits',
+402 silly mapToRegistry   rawSpec: '',
+402 silly mapToRegistry   spec: 'latest',
+402 silly mapToRegistry   type: 'tag' }
+403 silly mapToRegistry uri https://registry.npmjs.org/inherits
+404 silly fetchNamedPackageData minimatch
+405 silly mapToRegistry name minimatch
+406 silly mapToRegistry using default registry
+407 silly mapToRegistry registry https://registry.npmjs.org/
+408 silly mapToRegistry data Result {
+408 silly mapToRegistry   raw: 'minimatch',
+408 silly mapToRegistry   scope: null,
+408 silly mapToRegistry   escapedName: 'minimatch',
+408 silly mapToRegistry   name: 'minimatch',
+408 silly mapToRegistry   rawSpec: '',
+408 silly mapToRegistry   spec: 'latest',
+408 silly mapToRegistry   type: 'tag' }
+409 silly mapToRegistry uri https://registry.npmjs.org/minimatch
+410 silly fetchNamedPackageData once
+411 silly mapToRegistry name once
+412 silly mapToRegistry using default registry
+413 silly mapToRegistry registry https://registry.npmjs.org/
+414 silly mapToRegistry data Result {
+414 silly mapToRegistry   raw: 'once',
+414 silly mapToRegistry   scope: null,
+414 silly mapToRegistry   escapedName: 'once',
+414 silly mapToRegistry   name: 'once',
+414 silly mapToRegistry   rawSpec: '',
+414 silly mapToRegistry   spec: 'latest',
+414 silly mapToRegistry   type: 'tag' }
+415 silly mapToRegistry uri https://registry.npmjs.org/once
+416 silly fetchNamedPackageData path-is-absolute
+417 silly mapToRegistry name path-is-absolute
+418 silly mapToRegistry using default registry
+419 silly mapToRegistry registry https://registry.npmjs.org/
+420 silly mapToRegistry data Result {
+420 silly mapToRegistry   raw: 'path-is-absolute',
+420 silly mapToRegistry   scope: null,
+420 silly mapToRegistry   escapedName: 'path-is-absolute',
+420 silly mapToRegistry   name: 'path-is-absolute',
+420 silly mapToRegistry   rawSpec: '',
+420 silly mapToRegistry   spec: 'latest',
+420 silly mapToRegistry   type: 'tag' }
+421 silly mapToRegistry uri https://registry.npmjs.org/path-is-absolute
+422 verbose request uri https://registry.npmjs.org/fs.realpath
+423 verbose request no auth needed
+424 info attempt registry request try #1 at 23:57:44
+425 http request GET https://registry.npmjs.org/fs.realpath
+426 verbose request uri https://registry.npmjs.org/inflight
+427 verbose request no auth needed
+428 info attempt registry request try #1 at 23:57:44
+429 http request GET https://registry.npmjs.org/inflight
+430 verbose request uri https://registry.npmjs.org/inherits
+431 verbose request no auth needed
+432 info attempt registry request try #1 at 23:57:45
+433 http request GET https://registry.npmjs.org/inherits
+434 verbose request uri https://registry.npmjs.org/minimatch
+435 verbose request no auth needed
+436 info attempt registry request try #1 at 23:57:45
+437 http request GET https://registry.npmjs.org/minimatch
+438 verbose request uri https://registry.npmjs.org/once
+439 verbose request no auth needed
+440 info attempt registry request try #1 at 23:57:45
+441 http request GET https://registry.npmjs.org/once
+442 verbose request uri https://registry.npmjs.org/path-is-absolute
+443 verbose request no auth needed
+444 info attempt registry request try #1 at 23:57:45
+445 http request GET https://registry.npmjs.org/path-is-absolute
+446 http 200 https://registry.npmjs.org/path-is-absolute
+447 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+447 verbose headers   etag: '"3RYEEENZ41ZISE57ESW4DB8DM"',
+447 verbose headers   'content-type': 'application/json',
+447 verbose headers   'content-encoding': 'gzip',
+447 verbose headers   'cache-control': 'max-age=300',
+447 verbose headers   'content-length': '1485',
+447 verbose headers   'accept-ranges': 'bytes',
+447 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+447 verbose headers   via: '1.1 varnish',
+447 verbose headers   age: '137',
+447 verbose headers   connection: 'keep-alive',
+447 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+447 verbose headers   'x-cache': 'HIT',
+447 verbose headers   'x-cache-hits': '3',
+447 verbose headers   'x-timer': 'S1478296665.246729,VS0,VE0',
+447 verbose headers   vary: 'Accept-Encoding' }
+448 silly get cb [ 200,
+448 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+448 silly get     etag: '"3RYEEENZ41ZISE57ESW4DB8DM"',
+448 silly get     'content-type': 'application/json',
+448 silly get     'content-encoding': 'gzip',
+448 silly get     'cache-control': 'max-age=300',
+448 silly get     'content-length': '1485',
+448 silly get     'accept-ranges': 'bytes',
+448 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+448 silly get     via: '1.1 varnish',
+448 silly get     age: '137',
+448 silly get     connection: 'keep-alive',
+448 silly get     'x-served-by': 'cache-fra1221-FRA',
+448 silly get     'x-cache': 'HIT',
+448 silly get     'x-cache-hits': '3',
+448 silly get     'x-timer': 'S1478296665.246729,VS0,VE0',
+448 silly get     vary: 'Accept-Encoding' } ]
+449 verbose get saving path-is-absolute to /home/yuri/.npm/registry.npmjs.org/path-is-absolute/.cache.json
+450 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+451 silly resolveWithNewModule path-is-absolute@1.0.1 checking installable status
+452 silly cache add args [ 'path-is-absolute@^1.0.0', null ]
+453 verbose cache add spec path-is-absolute@^1.0.0
+454 silly cache add parsed spec Result {
+454 silly cache add   raw: 'path-is-absolute@^1.0.0',
+454 silly cache add   scope: null,
+454 silly cache add   escapedName: 'path-is-absolute',
+454 silly cache add   name: 'path-is-absolute',
+454 silly cache add   rawSpec: '^1.0.0',
+454 silly cache add   spec: '>=1.0.0 <2.0.0',
+454 silly cache add   type: 'range' }
+455 silly addNamed path-is-absolute@>=1.0.0 <2.0.0
+456 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for path-is-absolute
+457 silly addNameRange { name: 'path-is-absolute',
+457 silly addNameRange   range: '>=1.0.0 <2.0.0',
+457 silly addNameRange   hasData: false }
+458 silly mapToRegistry name path-is-absolute
+459 silly mapToRegistry using default registry
+460 silly mapToRegistry registry https://registry.npmjs.org/
+461 silly mapToRegistry data Result {
+461 silly mapToRegistry   raw: 'path-is-absolute',
+461 silly mapToRegistry   scope: null,
+461 silly mapToRegistry   escapedName: 'path-is-absolute',
+461 silly mapToRegistry   name: 'path-is-absolute',
+461 silly mapToRegistry   rawSpec: '',
+461 silly mapToRegistry   spec: 'latest',
+461 silly mapToRegistry   type: 'tag' }
+462 silly mapToRegistry uri https://registry.npmjs.org/path-is-absolute
+463 verbose addNameRange registry:https://registry.npmjs.org/path-is-absolute not in flight; fetching
+464 http 200 https://registry.npmjs.org/inherits
+465 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+465 verbose headers   etag: '"2YNCXX6E4VVMWLPTH6TDM22UQ"',
+465 verbose headers   'content-type': 'application/json',
+465 verbose headers   'content-encoding': 'gzip',
+465 verbose headers   'cache-control': 'max-age=300',
+465 verbose headers   'content-length': '2738',
+465 verbose headers   'accept-ranges': 'bytes',
+465 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+465 verbose headers   via: '1.1 varnish',
+465 verbose headers   age: '101',
+465 verbose headers   connection: 'keep-alive',
+465 verbose headers   'x-served-by': 'cache-fra1241-FRA',
+465 verbose headers   'x-cache': 'HIT',
+465 verbose headers   'x-cache-hits': '2',
+465 verbose headers   'x-timer': 'S1478296665.253581,VS0,VE0',
+465 verbose headers   vary: 'Accept-Encoding' }
+466 silly get cb [ 200,
+466 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+466 silly get     etag: '"2YNCXX6E4VVMWLPTH6TDM22UQ"',
+466 silly get     'content-type': 'application/json',
+466 silly get     'content-encoding': 'gzip',
+466 silly get     'cache-control': 'max-age=300',
+466 silly get     'content-length': '2738',
+466 silly get     'accept-ranges': 'bytes',
+466 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+466 silly get     via: '1.1 varnish',
+466 silly get     age: '101',
+466 silly get     connection: 'keep-alive',
+466 silly get     'x-served-by': 'cache-fra1241-FRA',
+466 silly get     'x-cache': 'HIT',
+466 silly get     'x-cache-hits': '2',
+466 silly get     'x-timer': 'S1478296665.253581,VS0,VE0',
+466 silly get     vary: 'Accept-Encoding' } ]
+467 verbose get saving inherits to /home/yuri/.npm/registry.npmjs.org/inherits/.cache.json
+468 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+469 http 200 https://registry.npmjs.org/fs.realpath
+470 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+470 verbose headers   etag: '"5D89DHCNE96WP19DL41MFASN9"',
+470 verbose headers   'content-type': 'application/json',
+470 verbose headers   'content-encoding': 'gzip',
+470 verbose headers   'cache-control': 'max-age=300',
+470 verbose headers   'content-length': '1461',
+470 verbose headers   'accept-ranges': 'bytes',
+470 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+470 verbose headers   via: '1.1 varnish',
+470 verbose headers   age: '159',
+470 verbose headers   connection: 'keep-alive',
+470 verbose headers   'x-served-by': 'cache-fra1239-FRA',
+470 verbose headers   'x-cache': 'HIT',
+470 verbose headers   'x-cache-hits': '4',
+470 verbose headers   'x-timer': 'S1478296665.253329,VS0,VE0',
+470 verbose headers   vary: 'Accept-Encoding' }
+471 silly get cb [ 200,
+471 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+471 silly get     etag: '"5D89DHCNE96WP19DL41MFASN9"',
+471 silly get     'content-type': 'application/json',
+471 silly get     'content-encoding': 'gzip',
+471 silly get     'cache-control': 'max-age=300',
+471 silly get     'content-length': '1461',
+471 silly get     'accept-ranges': 'bytes',
+471 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+471 silly get     via: '1.1 varnish',
+471 silly get     age: '159',
+471 silly get     connection: 'keep-alive',
+471 silly get     'x-served-by': 'cache-fra1239-FRA',
+471 silly get     'x-cache': 'HIT',
+471 silly get     'x-cache-hits': '4',
+471 silly get     'x-timer': 'S1478296665.253329,VS0,VE0',
+471 silly get     vary: 'Accept-Encoding' } ]
+472 verbose get saving fs.realpath to /home/yuri/.npm/registry.npmjs.org/fs.realpath/.cache.json
+473 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+474 http 200 https://registry.npmjs.org/once
+475 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+475 verbose headers   etag: '"D0PAHUL86GVT9NHP5XQAXTK5V"',
+475 verbose headers   'content-type': 'application/json',
+475 verbose headers   'content-encoding': 'gzip',
+475 verbose headers   'cache-control': 'max-age=300',
+475 verbose headers   'content-length': '2654',
+475 verbose headers   'accept-ranges': 'bytes',
+475 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+475 verbose headers   via: '1.1 varnish',
+475 verbose headers   age: '85',
+475 verbose headers   connection: 'keep-alive',
+475 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+475 verbose headers   'x-cache': 'HIT',
+475 verbose headers   'x-cache-hits': '3',
+475 verbose headers   'x-timer': 'S1478296665.250701,VS0,VE0',
+475 verbose headers   vary: 'Accept-Encoding' }
+476 silly get cb [ 200,
+476 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+476 silly get     etag: '"D0PAHUL86GVT9NHP5XQAXTK5V"',
+476 silly get     'content-type': 'application/json',
+476 silly get     'content-encoding': 'gzip',
+476 silly get     'cache-control': 'max-age=300',
+476 silly get     'content-length': '2654',
+476 silly get     'accept-ranges': 'bytes',
+476 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+476 silly get     via: '1.1 varnish',
+476 silly get     age: '85',
+476 silly get     connection: 'keep-alive',
+476 silly get     'x-served-by': 'cache-fra1226-FRA',
+476 silly get     'x-cache': 'HIT',
+476 silly get     'x-cache-hits': '3',
+476 silly get     'x-timer': 'S1478296665.250701,VS0,VE0',
+476 silly get     vary: 'Accept-Encoding' } ]
+477 verbose get saving once to /home/yuri/.npm/registry.npmjs.org/once/.cache.json
+478 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+479 http 200 https://registry.npmjs.org/inflight
+480 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+480 verbose headers   etag: '"B5UJLJNL9FPOSTAHE5FIXQGLU"',
+480 verbose headers   'content-type': 'application/json',
+480 verbose headers   'content-encoding': 'gzip',
+480 verbose headers   'cache-control': 'max-age=300',
+480 verbose headers   'content-length': '2249',
+480 verbose headers   'accept-ranges': 'bytes',
+480 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+480 verbose headers   via: '1.1 varnish',
+480 verbose headers   age: '97',
+480 verbose headers   connection: 'keep-alive',
+480 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+480 verbose headers   'x-cache': 'HIT',
+480 verbose headers   'x-cache-hits': '3',
+480 verbose headers   'x-timer': 'S1478296665.253819,VS0,VE0',
+480 verbose headers   vary: 'Accept-Encoding' }
+481 silly get cb [ 200,
+481 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+481 silly get     etag: '"B5UJLJNL9FPOSTAHE5FIXQGLU"',
+481 silly get     'content-type': 'application/json',
+481 silly get     'content-encoding': 'gzip',
+481 silly get     'cache-control': 'max-age=300',
+481 silly get     'content-length': '2249',
+481 silly get     'accept-ranges': 'bytes',
+481 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+481 silly get     via: '1.1 varnish',
+481 silly get     age: '97',
+481 silly get     connection: 'keep-alive',
+481 silly get     'x-served-by': 'cache-fra1226-FRA',
+481 silly get     'x-cache': 'HIT',
+481 silly get     'x-cache-hits': '3',
+481 silly get     'x-timer': 'S1478296665.253819,VS0,VE0',
+481 silly get     vary: 'Accept-Encoding' } ]
+482 verbose get saving inflight to /home/yuri/.npm/registry.npmjs.org/inflight/.cache.json
+483 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+484 verbose get https://registry.npmjs.org/path-is-absolute not expired, no request
+485 silly addNameRange number 2 { name: 'path-is-absolute',
+485 silly addNameRange   range: '>=1.0.0 <2.0.0',
+485 silly addNameRange   hasData: true }
+486 silly addNameRange versions [ 'path-is-absolute', [ '1.0.0', '1.0.1' ] ]
+487 silly addNamed path-is-absolute@1.0.1
+488 verbose addNamed "1.0.1" is a plain semver version for path-is-absolute
+489 silly mapToRegistry name path-is-absolute
+490 silly mapToRegistry using default registry
+491 silly mapToRegistry registry https://registry.npmjs.org/
+492 silly mapToRegistry data Result {
+492 silly mapToRegistry   raw: 'path-is-absolute',
+492 silly mapToRegistry   scope: null,
+492 silly mapToRegistry   escapedName: 'path-is-absolute',
+492 silly mapToRegistry   name: 'path-is-absolute',
+492 silly mapToRegistry   rawSpec: '',
+492 silly mapToRegistry   spec: 'latest',
+492 silly mapToRegistry   type: 'tag' }
+493 silly mapToRegistry uri https://registry.npmjs.org/path-is-absolute
+494 verbose addRemoteTarball https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz not in flight; adding
+495 verbose addRemoteTarball [ 'https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz',
+495 verbose addRemoteTarball   '174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f' ]
+496 http 200 https://registry.npmjs.org/minimatch
+497 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+497 verbose headers   etag: '"8VUUHOJJAI6MPAUAJJZR5FC1M"',
+497 verbose headers   'content-type': 'application/json',
+497 verbose headers   'content-encoding': 'gzip',
+497 verbose headers   'cache-control': 'max-age=300',
+497 verbose headers   'content-length': '8822',
+497 verbose headers   'accept-ranges': 'bytes',
+497 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+497 verbose headers   via: '1.1 varnish',
+497 verbose headers   age: '190',
+497 verbose headers   connection: 'keep-alive',
+497 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+497 verbose headers   'x-cache': 'HIT',
+497 verbose headers   'x-cache-hits': '7',
+497 verbose headers   'x-timer': 'S1478296665.252790,VS0,VE0',
+497 verbose headers   vary: 'Accept-Encoding' }
+498 silly get cb [ 200,
+498 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+498 silly get     etag: '"8VUUHOJJAI6MPAUAJJZR5FC1M"',
+498 silly get     'content-type': 'application/json',
+498 silly get     'content-encoding': 'gzip',
+498 silly get     'cache-control': 'max-age=300',
+498 silly get     'content-length': '8822',
+498 silly get     'accept-ranges': 'bytes',
+498 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+498 silly get     via: '1.1 varnish',
+498 silly get     age: '190',
+498 silly get     connection: 'keep-alive',
+498 silly get     'x-served-by': 'cache-fra1221-FRA',
+498 silly get     'x-cache': 'HIT',
+498 silly get     'x-cache-hits': '7',
+498 silly get     'x-timer': 'S1478296665.252790,VS0,VE0',
+498 silly get     vary: 'Accept-Encoding' } ]
+499 verbose get saving minimatch to /home/yuri/.npm/registry.npmjs.org/minimatch/.cache.json
+500 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+501 info retry fetch attempt 1 at 23:57:45
+502 info attempt registry request try #1 at 23:57:45
+503 http fetch GET https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz
+504 silly resolveWithNewModule inherits@2.0.3 checking installable status
+505 silly cache add args [ 'inherits@2', null ]
+506 verbose cache add spec inherits@2
+507 silly cache add parsed spec Result {
+507 silly cache add   raw: 'inherits@2',
+507 silly cache add   scope: null,
+507 silly cache add   escapedName: 'inherits',
+507 silly cache add   name: 'inherits',
+507 silly cache add   rawSpec: '2',
+507 silly cache add   spec: '>=2.0.0 <3.0.0',
+507 silly cache add   type: 'range' }
+508 silly addNamed inherits@>=2.0.0 <3.0.0
+509 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for inherits
+510 silly addNameRange { name: 'inherits', range: '>=2.0.0 <3.0.0', hasData: false }
+511 silly mapToRegistry name inherits
+512 silly mapToRegistry using default registry
+513 silly mapToRegistry registry https://registry.npmjs.org/
+514 silly mapToRegistry data Result {
+514 silly mapToRegistry   raw: 'inherits',
+514 silly mapToRegistry   scope: null,
+514 silly mapToRegistry   escapedName: 'inherits',
+514 silly mapToRegistry   name: 'inherits',
+514 silly mapToRegistry   rawSpec: '',
+514 silly mapToRegistry   spec: 'latest',
+514 silly mapToRegistry   type: 'tag' }
+515 silly mapToRegistry uri https://registry.npmjs.org/inherits
+516 verbose addNameRange registry:https://registry.npmjs.org/inherits not in flight; fetching
+517 silly resolveWithNewModule once@1.4.0 checking installable status
+518 silly cache add args [ 'once@^1.3.0', null ]
+519 verbose cache add spec once@^1.3.0
+520 silly cache add parsed spec Result {
+520 silly cache add   raw: 'once@^1.3.0',
+520 silly cache add   scope: null,
+520 silly cache add   escapedName: 'once',
+520 silly cache add   name: 'once',
+520 silly cache add   rawSpec: '^1.3.0',
+520 silly cache add   spec: '>=1.3.0 <2.0.0',
+520 silly cache add   type: 'range' }
+521 silly addNamed once@>=1.3.0 <2.0.0
+522 verbose addNamed ">=1.3.0 <2.0.0" is a valid semver range for once
+523 silly addNameRange { name: 'once', range: '>=1.3.0 <2.0.0', hasData: false }
+524 silly mapToRegistry name once
+525 silly mapToRegistry using default registry
+526 silly mapToRegistry registry https://registry.npmjs.org/
+527 silly mapToRegistry data Result {
+527 silly mapToRegistry   raw: 'once',
+527 silly mapToRegistry   scope: null,
+527 silly mapToRegistry   escapedName: 'once',
+527 silly mapToRegistry   name: 'once',
+527 silly mapToRegistry   rawSpec: '',
+527 silly mapToRegistry   spec: 'latest',
+527 silly mapToRegistry   type: 'tag' }
+528 silly mapToRegistry uri https://registry.npmjs.org/once
+529 verbose addNameRange registry:https://registry.npmjs.org/once not in flight; fetching
+530 silly resolveWithNewModule fs.realpath@1.0.0 checking installable status
+531 silly cache add args [ 'fs.realpath@^1.0.0', null ]
+532 verbose cache add spec fs.realpath@^1.0.0
+533 silly cache add parsed spec Result {
+533 silly cache add   raw: 'fs.realpath@^1.0.0',
+533 silly cache add   scope: null,
+533 silly cache add   escapedName: 'fs.realpath',
+533 silly cache add   name: 'fs.realpath',
+533 silly cache add   rawSpec: '^1.0.0',
+533 silly cache add   spec: '>=1.0.0 <2.0.0',
+533 silly cache add   type: 'range' }
+534 silly addNamed fs.realpath@>=1.0.0 <2.0.0
+535 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for fs.realpath
+536 silly addNameRange { name: 'fs.realpath', range: '>=1.0.0 <2.0.0', hasData: false }
+537 silly mapToRegistry name fs.realpath
+538 silly mapToRegistry using default registry
+539 silly mapToRegistry registry https://registry.npmjs.org/
+540 silly mapToRegistry data Result {
+540 silly mapToRegistry   raw: 'fs.realpath',
+540 silly mapToRegistry   scope: null,
+540 silly mapToRegistry   escapedName: 'fs.realpath',
+540 silly mapToRegistry   name: 'fs.realpath',
+540 silly mapToRegistry   rawSpec: '',
+540 silly mapToRegistry   spec: 'latest',
+540 silly mapToRegistry   type: 'tag' }
+541 silly mapToRegistry uri https://registry.npmjs.org/fs.realpath
+542 verbose addNameRange registry:https://registry.npmjs.org/fs.realpath not in flight; fetching
+543 silly resolveWithNewModule inflight@1.0.6 checking installable status
+544 silly cache add args [ 'inflight@^1.0.4', null ]
+545 verbose cache add spec inflight@^1.0.4
+546 silly cache add parsed spec Result {
+546 silly cache add   raw: 'inflight@^1.0.4',
+546 silly cache add   scope: null,
+546 silly cache add   escapedName: 'inflight',
+546 silly cache add   name: 'inflight',
+546 silly cache add   rawSpec: '^1.0.4',
+546 silly cache add   spec: '>=1.0.4 <2.0.0',
+546 silly cache add   type: 'range' }
+547 silly addNamed inflight@>=1.0.4 <2.0.0
+548 verbose addNamed ">=1.0.4 <2.0.0" is a valid semver range for inflight
+549 silly addNameRange { name: 'inflight', range: '>=1.0.4 <2.0.0', hasData: false }
+550 silly mapToRegistry name inflight
+551 silly mapToRegistry using default registry
+552 silly mapToRegistry registry https://registry.npmjs.org/
+553 silly mapToRegistry data Result {
+553 silly mapToRegistry   raw: 'inflight',
+553 silly mapToRegistry   scope: null,
+553 silly mapToRegistry   escapedName: 'inflight',
+553 silly mapToRegistry   name: 'inflight',
+553 silly mapToRegistry   rawSpec: '',
+553 silly mapToRegistry   spec: 'latest',
+553 silly mapToRegistry   type: 'tag' }
+554 silly mapToRegistry uri https://registry.npmjs.org/inflight
+555 verbose addNameRange registry:https://registry.npmjs.org/inflight not in flight; fetching
+556 silly resolveWithNewModule minimatch@3.0.3 checking installable status
+557 silly cache add args [ 'minimatch@^3.0.2', null ]
+558 verbose cache add spec minimatch@^3.0.2
+559 silly cache add parsed spec Result {
+559 silly cache add   raw: 'minimatch@^3.0.2',
+559 silly cache add   scope: null,
+559 silly cache add   escapedName: 'minimatch',
+559 silly cache add   name: 'minimatch',
+559 silly cache add   rawSpec: '^3.0.2',
+559 silly cache add   spec: '>=3.0.2 <4.0.0',
+559 silly cache add   type: 'range' }
+560 silly addNamed minimatch@>=3.0.2 <4.0.0
+561 verbose addNamed ">=3.0.2 <4.0.0" is a valid semver range for minimatch
+562 silly addNameRange { name: 'minimatch', range: '>=3.0.2 <4.0.0', hasData: false }
+563 silly mapToRegistry name minimatch
+564 silly mapToRegistry using default registry
+565 silly mapToRegistry registry https://registry.npmjs.org/
+566 silly mapToRegistry data Result {
+566 silly mapToRegistry   raw: 'minimatch',
+566 silly mapToRegistry   scope: null,
+566 silly mapToRegistry   escapedName: 'minimatch',
+566 silly mapToRegistry   name: 'minimatch',
+566 silly mapToRegistry   rawSpec: '',
+566 silly mapToRegistry   spec: 'latest',
+566 silly mapToRegistry   type: 'tag' }
+567 silly mapToRegistry uri https://registry.npmjs.org/minimatch
+568 verbose addNameRange registry:https://registry.npmjs.org/minimatch not in flight; fetching
+569 verbose get https://registry.npmjs.org/inherits not expired, no request
+570 silly addNameRange number 2 { name: 'inherits', range: '>=2.0.0 <3.0.0', hasData: true }
+571 silly addNameRange versions [ 'inherits',
+571 silly addNameRange   [ '1.0.0', '2.0.0', '2.0.1', '1.0.1', '1.0.2', '2.0.3' ] ]
+572 silly addNamed inherits@2.0.3
+573 verbose addNamed "2.0.3" is a plain semver version for inherits
+574 verbose get https://registry.npmjs.org/once not expired, no request
+575 silly addNameRange number 2 { name: 'once', range: '>=1.3.0 <2.0.0', hasData: true }
+576 silly addNameRange versions [ 'once',
+576 silly addNameRange   [ '1.1.1', '1.2.0', '1.3.0', '1.3.1', '1.3.2', '1.3.3', '1.4.0' ] ]
+577 silly addNamed once@1.4.0
+578 verbose addNamed "1.4.0" is a plain semver version for once
+579 verbose get https://registry.npmjs.org/fs.realpath not expired, no request
+580 silly addNameRange number 2 { name: 'fs.realpath', range: '>=1.0.0 <2.0.0', hasData: true }
+581 silly addNameRange versions [ 'fs.realpath', [ '0.0.0', '1.0.0' ] ]
+582 silly addNamed fs.realpath@1.0.0
+583 verbose addNamed "1.0.0" is a plain semver version for fs.realpath
+584 verbose get https://registry.npmjs.org/inflight not expired, no request
+585 silly addNameRange number 2 { name: 'inflight', range: '>=1.0.4 <2.0.0', hasData: true }
+586 silly addNameRange versions [ 'inflight',
+586 silly addNameRange   [ '1.0.0', '1.0.1', '1.0.2', '1.0.3', '1.0.4', '1.0.5', '1.0.6' ] ]
+587 silly addNamed inflight@1.0.6
+588 verbose addNamed "1.0.6" is a plain semver version for inflight
+589 silly mapToRegistry name inherits
+590 silly mapToRegistry using default registry
+591 silly mapToRegistry registry https://registry.npmjs.org/
+592 silly mapToRegistry data Result {
+592 silly mapToRegistry   raw: 'inherits',
+592 silly mapToRegistry   scope: null,
+592 silly mapToRegistry   escapedName: 'inherits',
+592 silly mapToRegistry   name: 'inherits',
+592 silly mapToRegistry   rawSpec: '',
+592 silly mapToRegistry   spec: 'latest',
+592 silly mapToRegistry   type: 'tag' }
+593 silly mapToRegistry uri https://registry.npmjs.org/inherits
+594 verbose addRemoteTarball https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz not in flight; adding
+595 verbose addRemoteTarball [ 'https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz',
+595 verbose addRemoteTarball   '633c2c83e3da42a502f52466022480f4208261de' ]
+596 silly mapToRegistry name once
+597 silly mapToRegistry using default registry
+598 silly mapToRegistry registry https://registry.npmjs.org/
+599 silly mapToRegistry data Result {
+599 silly mapToRegistry   raw: 'once',
+599 silly mapToRegistry   scope: null,
+599 silly mapToRegistry   escapedName: 'once',
+599 silly mapToRegistry   name: 'once',
+599 silly mapToRegistry   rawSpec: '',
+599 silly mapToRegistry   spec: 'latest',
+599 silly mapToRegistry   type: 'tag' }
+600 silly mapToRegistry uri https://registry.npmjs.org/once
+601 verbose addRemoteTarball https://registry.npmjs.org/once/-/once-1.4.0.tgz not in flight; adding
+602 verbose addRemoteTarball [ 'https://registry.npmjs.org/once/-/once-1.4.0.tgz',
+602 verbose addRemoteTarball   '583b1aa775961d4b113ac17d9c50baef9dd76bd1' ]
+603 silly mapToRegistry name fs.realpath
+604 silly mapToRegistry using default registry
+605 silly mapToRegistry registry https://registry.npmjs.org/
+606 silly mapToRegistry data Result {
+606 silly mapToRegistry   raw: 'fs.realpath',
+606 silly mapToRegistry   scope: null,
+606 silly mapToRegistry   escapedName: 'fs.realpath',
+606 silly mapToRegistry   name: 'fs.realpath',
+606 silly mapToRegistry   rawSpec: '',
+606 silly mapToRegistry   spec: 'latest',
+606 silly mapToRegistry   type: 'tag' }
+607 silly mapToRegistry uri https://registry.npmjs.org/fs.realpath
+608 verbose addRemoteTarball https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz not in flight; adding
+609 verbose addRemoteTarball [ 'https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz',
+609 verbose addRemoteTarball   '1504ad2523158caa40db4a2787cb01411994ea4f' ]
+610 silly mapToRegistry name inflight
+611 silly mapToRegistry using default registry
+612 silly mapToRegistry registry https://registry.npmjs.org/
+613 silly mapToRegistry data Result {
+613 silly mapToRegistry   raw: 'inflight',
+613 silly mapToRegistry   scope: null,
+613 silly mapToRegistry   escapedName: 'inflight',
+613 silly mapToRegistry   name: 'inflight',
+613 silly mapToRegistry   rawSpec: '',
+613 silly mapToRegistry   spec: 'latest',
+613 silly mapToRegistry   type: 'tag' }
+614 silly mapToRegistry uri https://registry.npmjs.org/inflight
+615 verbose addRemoteTarball https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz not in flight; adding
+616 verbose addRemoteTarball [ 'https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz',
+616 verbose addRemoteTarball   '49bd6331d7d02d0c09bc910a1075ba8165b56df9' ]
+617 info retry fetch attempt 1 at 23:57:45
+618 info attempt registry request try #1 at 23:57:45
+619 http fetch GET https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+620 verbose get https://registry.npmjs.org/minimatch not expired, no request
+621 silly addNameRange number 2 { name: 'minimatch', range: '>=3.0.2 <4.0.0', hasData: true }
+622 silly addNameRange versions [ 'minimatch',
+622 silly addNameRange   [ '0.0.1',
+622 silly addNameRange     '0.0.2',
+622 silly addNameRange     '0.0.4',
+622 silly addNameRange     '0.0.5',
+622 silly addNameRange     '0.1.1',
+622 silly addNameRange     '0.1.2',
+622 silly addNameRange     '0.1.3',
+622 silly addNameRange     '0.1.4',
+622 silly addNameRange     '0.1.5',
+622 silly addNameRange     '0.2.0',
+622 silly addNameRange     '0.2.2',
+622 silly addNameRange     '0.2.3',
+622 silly addNameRange     '0.2.4',
+622 silly addNameRange     '0.2.5',
+622 silly addNameRange     '0.2.6',
+622 silly addNameRange     '0.2.7',
+622 silly addNameRange     '0.2.8',
+622 silly addNameRange     '0.2.9',
+622 silly addNameRange     '0.2.10',
+622 silly addNameRange     '0.2.11',
+622 silly addNameRange     '0.2.12',
+622 silly addNameRange     '0.2.13',
+622 silly addNameRange     '0.2.14',
+622 silly addNameRange     '0.3.0',
+622 silly addNameRange     '0.4.0',
+622 silly addNameRange     '1.0.0',
+622 silly addNameRange     '2.0.0',
+622 silly addNameRange     '2.0.1',
+622 silly addNameRange     '2.0.2',
+622 silly addNameRange     '2.0.3',
+622 silly addNameRange     '2.0.4',
+622 silly addNameRange     '2.0.5',
+622 silly addNameRange     '2.0.6',
+622 silly addNameRange     '2.0.7',
+622 silly addNameRange     '2.0.8',
+622 silly addNameRange     '2.0.9',
+622 silly addNameRange     '2.0.10',
+622 silly addNameRange     '3.0.0',
+622 silly addNameRange     '3.0.2',
+622 silly addNameRange     '3.0.3' ] ]
+623 silly addNamed minimatch@3.0.3
+624 verbose addNamed "3.0.3" is a plain semver version for minimatch
+625 silly mapToRegistry name minimatch
+626 silly mapToRegistry using default registry
+627 silly mapToRegistry registry https://registry.npmjs.org/
+628 silly mapToRegistry data Result {
+628 silly mapToRegistry   raw: 'minimatch',
+628 silly mapToRegistry   scope: null,
+628 silly mapToRegistry   escapedName: 'minimatch',
+628 silly mapToRegistry   name: 'minimatch',
+628 silly mapToRegistry   rawSpec: '',
+628 silly mapToRegistry   spec: 'latest',
+628 silly mapToRegistry   type: 'tag' }
+629 silly mapToRegistry uri https://registry.npmjs.org/minimatch
+630 verbose addRemoteTarball https://registry.npmjs.org/minimatch/-/minimatch-3.0.3.tgz not in flight; adding
+631 verbose addRemoteTarball [ 'https://registry.npmjs.org/minimatch/-/minimatch-3.0.3.tgz',
+631 verbose addRemoteTarball   '2a4e4090b96b2db06a9d7df01055a62a77c9b774' ]
+632 info retry fetch attempt 1 at 23:57:45
+633 info attempt registry request try #1 at 23:57:45
+634 http fetch GET https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz
+635 info retry fetch attempt 1 at 23:57:45
+636 info attempt registry request try #1 at 23:57:45
+637 http fetch GET https://registry.npmjs.org/once/-/once-1.4.0.tgz
+638 info retry fetch attempt 1 at 23:57:45
+639 info attempt registry request try #1 at 23:57:45
+640 http fetch GET https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz
+641 http fetch 200 https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz
+642 info retry fetch attempt 1 at 23:57:45
+643 info attempt registry request try #1 at 23:57:45
+644 http fetch GET https://registry.npmjs.org/minimatch/-/minimatch-3.0.3.tgz
+645 silly fetchAndShaCheck shasum 174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f
+646 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz not in flight; adding
+647 verbose addTmpTarball already have metadata; skipping unpack for path-is-absolute@1.0.1
+648 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+649 silly cache afterAdd path-is-absolute@1.0.1
+650 verbose afterAdd /home/yuri/.npm/path-is-absolute/1.0.1/package/package.json not in flight; writing
+651 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+652 verbose afterAdd /home/yuri/.npm/path-is-absolute/1.0.1/package/package.json written
+653 http fetch 200 https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+654 silly fetchAndShaCheck shasum 633c2c83e3da42a502f52466022480f4208261de
+655 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/inherits/-/inherits-2.0.3.tgz not in flight; adding
+656 verbose addTmpTarball already have metadata; skipping unpack for inherits@2.0.3
+657 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+658 silly cache afterAdd inherits@2.0.3
+659 verbose afterAdd /home/yuri/.npm/inherits/2.0.3/package/package.json not in flight; writing
+660 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+661 verbose afterAdd /home/yuri/.npm/inherits/2.0.3/package/package.json written
+662 http fetch 200 https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz
+663 silly fetchAndShaCheck shasum 1504ad2523158caa40db4a2787cb01411994ea4f
+664 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz not in flight; adding
+665 verbose addTmpTarball already have metadata; skipping unpack for fs.realpath@1.0.0
+666 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+667 http fetch 200 https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz
+668 http fetch 200 https://registry.npmjs.org/minimatch/-/minimatch-3.0.3.tgz
+669 http fetch 200 https://registry.npmjs.org/once/-/once-1.4.0.tgz
+670 silly fetchAndShaCheck shasum 49bd6331d7d02d0c09bc910a1075ba8165b56df9
+671 silly fetchAndShaCheck shasum 583b1aa775961d4b113ac17d9c50baef9dd76bd1
+672 silly fetchAndShaCheck shasum 2a4e4090b96b2db06a9d7df01055a62a77c9b774
+673 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/inflight/-/inflight-1.0.6.tgz not in flight; adding
+674 verbose addTmpTarball already have metadata; skipping unpack for inflight@1.0.6
+675 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+676 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/once/-/once-1.4.0.tgz not in flight; adding
+677 verbose addTmpTarball already have metadata; skipping unpack for once@1.4.0
+678 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+679 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/minimatch/-/minimatch-3.0.3.tgz not in flight; adding
+680 verbose addTmpTarball already have metadata; skipping unpack for minimatch@3.0.3
+681 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+682 silly cache afterAdd fs.realpath@1.0.0
+683 verbose afterAdd /home/yuri/.npm/fs.realpath/1.0.0/package/package.json not in flight; writing
+684 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+685 verbose afterAdd /home/yuri/.npm/fs.realpath/1.0.0/package/package.json written
+686 silly cache afterAdd once@1.4.0
+687 verbose afterAdd /home/yuri/.npm/once/1.4.0/package/package.json not in flight; writing
+688 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+689 silly cache afterAdd inflight@1.0.6
+690 verbose afterAdd /home/yuri/.npm/inflight/1.0.6/package/package.json not in flight; writing
+691 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+692 silly cache afterAdd minimatch@3.0.3
+693 verbose afterAdd /home/yuri/.npm/minimatch/3.0.3/package/package.json not in flight; writing
+694 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+695 verbose afterAdd /home/yuri/.npm/once/1.4.0/package/package.json written
+696 verbose afterAdd /home/yuri/.npm/inflight/1.0.6/package/package.json written
+697 verbose afterAdd /home/yuri/.npm/minimatch/3.0.3/package/package.json written
+698 silly fetchNamedPackageData wrappy
+699 silly mapToRegistry name wrappy
+700 silly mapToRegistry using default registry
+701 silly mapToRegistry registry https://registry.npmjs.org/
+702 silly mapToRegistry data Result {
+702 silly mapToRegistry   raw: 'wrappy',
+702 silly mapToRegistry   scope: null,
+702 silly mapToRegistry   escapedName: 'wrappy',
+702 silly mapToRegistry   name: 'wrappy',
+702 silly mapToRegistry   rawSpec: '',
+702 silly mapToRegistry   spec: 'latest',
+702 silly mapToRegistry   type: 'tag' }
+703 silly mapToRegistry uri https://registry.npmjs.org/wrappy
+704 verbose request uri https://registry.npmjs.org/wrappy
+705 verbose request no auth needed
+706 info attempt registry request try #1 at 23:57:45
+707 http request GET https://registry.npmjs.org/wrappy
+708 http 200 https://registry.npmjs.org/wrappy
+709 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+709 verbose headers   etag: '"A08L1FNYCL23JVZPABKJJPW2O"',
+709 verbose headers   'content-type': 'application/json',
+709 verbose headers   'content-encoding': 'gzip',
+709 verbose headers   'cache-control': 'max-age=300',
+709 verbose headers   'content-length': '1484',
+709 verbose headers   'accept-ranges': 'bytes',
+709 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+709 verbose headers   via: '1.1 varnish',
+709 verbose headers   age: '27',
+709 verbose headers   connection: 'keep-alive',
+709 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+709 verbose headers   'x-cache': 'HIT',
+709 verbose headers   'x-cache-hits': '1',
+709 verbose headers   'x-timer': 'S1478296665.433289,VS0,VE0',
+709 verbose headers   vary: 'Accept-Encoding' }
+710 silly get cb [ 200,
+710 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+710 silly get     etag: '"A08L1FNYCL23JVZPABKJJPW2O"',
+710 silly get     'content-type': 'application/json',
+710 silly get     'content-encoding': 'gzip',
+710 silly get     'cache-control': 'max-age=300',
+710 silly get     'content-length': '1484',
+710 silly get     'accept-ranges': 'bytes',
+710 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+710 silly get     via: '1.1 varnish',
+710 silly get     age: '27',
+710 silly get     connection: 'keep-alive',
+710 silly get     'x-served-by': 'cache-fra1221-FRA',
+710 silly get     'x-cache': 'HIT',
+710 silly get     'x-cache-hits': '1',
+710 silly get     'x-timer': 'S1478296665.433289,VS0,VE0',
+710 silly get     vary: 'Accept-Encoding' } ]
+711 verbose get saving wrappy to /home/yuri/.npm/registry.npmjs.org/wrappy/.cache.json
+712 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+713 silly resolveWithNewModule wrappy@1.0.2 checking installable status
+714 silly cache add args [ 'wrappy@1', null ]
+715 verbose cache add spec wrappy@1
+716 silly cache add parsed spec Result {
+716 silly cache add   raw: 'wrappy@1',
+716 silly cache add   scope: null,
+716 silly cache add   escapedName: 'wrappy',
+716 silly cache add   name: 'wrappy',
+716 silly cache add   rawSpec: '1',
+716 silly cache add   spec: '>=1.0.0 <2.0.0',
+716 silly cache add   type: 'range' }
+717 silly addNamed wrappy@>=1.0.0 <2.0.0
+718 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for wrappy
+719 silly addNameRange { name: 'wrappy', range: '>=1.0.0 <2.0.0', hasData: false }
+720 silly mapToRegistry name wrappy
+721 silly mapToRegistry using default registry
+722 silly mapToRegistry registry https://registry.npmjs.org/
+723 silly mapToRegistry data Result {
+723 silly mapToRegistry   raw: 'wrappy',
+723 silly mapToRegistry   scope: null,
+723 silly mapToRegistry   escapedName: 'wrappy',
+723 silly mapToRegistry   name: 'wrappy',
+723 silly mapToRegistry   rawSpec: '',
+723 silly mapToRegistry   spec: 'latest',
+723 silly mapToRegistry   type: 'tag' }
+724 silly mapToRegistry uri https://registry.npmjs.org/wrappy
+725 verbose addNameRange registry:https://registry.npmjs.org/wrappy not in flight; fetching
+726 verbose get https://registry.npmjs.org/wrappy not expired, no request
+727 silly addNameRange number 2 { name: 'wrappy', range: '>=1.0.0 <2.0.0', hasData: true }
+728 silly addNameRange versions [ 'wrappy', [ '1.0.0', '1.0.1', '1.0.2' ] ]
+729 silly addNamed wrappy@1.0.2
+730 verbose addNamed "1.0.2" is a plain semver version for wrappy
+731 silly mapToRegistry name wrappy
+732 silly mapToRegistry using default registry
+733 silly mapToRegistry registry https://registry.npmjs.org/
+734 silly mapToRegistry data Result {
+734 silly mapToRegistry   raw: 'wrappy',
+734 silly mapToRegistry   scope: null,
+734 silly mapToRegistry   escapedName: 'wrappy',
+734 silly mapToRegistry   name: 'wrappy',
+734 silly mapToRegistry   rawSpec: '',
+734 silly mapToRegistry   spec: 'latest',
+734 silly mapToRegistry   type: 'tag' }
+735 silly mapToRegistry uri https://registry.npmjs.org/wrappy
+736 verbose addRemoteTarball https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz not in flight; adding
+737 verbose addRemoteTarball [ 'https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz',
+737 verbose addRemoteTarball   'b5243d8f3ec1aa35f1364605bc0d1036e30ab69f' ]
+738 info retry fetch attempt 1 at 23:57:45
+739 info attempt registry request try #1 at 23:57:45
+740 http fetch GET https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz
+741 http fetch 200 https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz
+742 silly fetchAndShaCheck shasum b5243d8f3ec1aa35f1364605bc0d1036e30ab69f
+743 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz not in flight; adding
+744 verbose addTmpTarball already have metadata; skipping unpack for wrappy@1.0.2
+745 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+746 silly cache afterAdd wrappy@1.0.2
+747 verbose afterAdd /home/yuri/.npm/wrappy/1.0.2/package/package.json not in flight; writing
+748 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+749 verbose afterAdd /home/yuri/.npm/wrappy/1.0.2/package/package.json written
+750 silly fetchNamedPackageData brace-expansion
+751 silly mapToRegistry name brace-expansion
+752 silly mapToRegistry using default registry
+753 silly mapToRegistry registry https://registry.npmjs.org/
+754 silly mapToRegistry data Result {
+754 silly mapToRegistry   raw: 'brace-expansion',
+754 silly mapToRegistry   scope: null,
+754 silly mapToRegistry   escapedName: 'brace-expansion',
+754 silly mapToRegistry   name: 'brace-expansion',
+754 silly mapToRegistry   rawSpec: '',
+754 silly mapToRegistry   spec: 'latest',
+754 silly mapToRegistry   type: 'tag' }
+755 silly mapToRegistry uri https://registry.npmjs.org/brace-expansion
+756 verbose request uri https://registry.npmjs.org/brace-expansion
+757 verbose request no auth needed
+758 info attempt registry request try #1 at 23:57:45
+759 http request GET https://registry.npmjs.org/brace-expansion
+760 http 200 https://registry.npmjs.org/brace-expansion
+761 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+761 verbose headers   etag: '"3699T8MMHGC0BN3ABJRKLHJ4W"',
+761 verbose headers   'content-type': 'application/json',
+761 verbose headers   'content-encoding': 'gzip',
+761 verbose headers   'cache-control': 'max-age=300',
+761 verbose headers   'content-length': '4096',
+761 verbose headers   'accept-ranges': 'bytes',
+761 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+761 verbose headers   via: '1.1 varnish',
+761 verbose headers   age: '254',
+761 verbose headers   connection: 'keep-alive',
+761 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+761 verbose headers   'x-cache': 'HIT',
+761 verbose headers   'x-cache-hits': '11',
+761 verbose headers   'x-timer': 'S1478296665.539446,VS0,VE0',
+761 verbose headers   vary: 'Accept-Encoding' }
+762 silly get cb [ 200,
+762 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+762 silly get     etag: '"3699T8MMHGC0BN3ABJRKLHJ4W"',
+762 silly get     'content-type': 'application/json',
+762 silly get     'content-encoding': 'gzip',
+762 silly get     'cache-control': 'max-age=300',
+762 silly get     'content-length': '4096',
+762 silly get     'accept-ranges': 'bytes',
+762 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+762 silly get     via: '1.1 varnish',
+762 silly get     age: '254',
+762 silly get     connection: 'keep-alive',
+762 silly get     'x-served-by': 'cache-fra1221-FRA',
+762 silly get     'x-cache': 'HIT',
+762 silly get     'x-cache-hits': '11',
+762 silly get     'x-timer': 'S1478296665.539446,VS0,VE0',
+762 silly get     vary: 'Accept-Encoding' } ]
+763 verbose get saving brace-expansion to /home/yuri/.npm/registry.npmjs.org/brace-expansion/.cache.json
+764 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+765 silly resolveWithNewModule brace-expansion@1.1.6 checking installable status
+766 silly cache add args [ 'brace-expansion@^1.0.0', null ]
+767 verbose cache add spec brace-expansion@^1.0.0
+768 silly cache add parsed spec Result {
+768 silly cache add   raw: 'brace-expansion@^1.0.0',
+768 silly cache add   scope: null,
+768 silly cache add   escapedName: 'brace-expansion',
+768 silly cache add   name: 'brace-expansion',
+768 silly cache add   rawSpec: '^1.0.0',
+768 silly cache add   spec: '>=1.0.0 <2.0.0',
+768 silly cache add   type: 'range' }
+769 silly addNamed brace-expansion@>=1.0.0 <2.0.0
+770 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for brace-expansion
+771 silly addNameRange { name: 'brace-expansion',
+771 silly addNameRange   range: '>=1.0.0 <2.0.0',
+771 silly addNameRange   hasData: false }
+772 silly mapToRegistry name brace-expansion
+773 silly mapToRegistry using default registry
+774 silly mapToRegistry registry https://registry.npmjs.org/
+775 silly mapToRegistry data Result {
+775 silly mapToRegistry   raw: 'brace-expansion',
+775 silly mapToRegistry   scope: null,
+775 silly mapToRegistry   escapedName: 'brace-expansion',
+775 silly mapToRegistry   name: 'brace-expansion',
+775 silly mapToRegistry   rawSpec: '',
+775 silly mapToRegistry   spec: 'latest',
+775 silly mapToRegistry   type: 'tag' }
+776 silly mapToRegistry uri https://registry.npmjs.org/brace-expansion
+777 verbose addNameRange registry:https://registry.npmjs.org/brace-expansion not in flight; fetching
+778 verbose get https://registry.npmjs.org/brace-expansion not expired, no request
+779 silly addNameRange number 2 { name: 'brace-expansion',
+779 silly addNameRange   range: '>=1.0.0 <2.0.0',
+779 silly addNameRange   hasData: true }
+780 silly addNameRange versions [ 'brace-expansion',
+780 silly addNameRange   [ '0.0.0',
+780 silly addNameRange     '1.0.0',
+780 silly addNameRange     '1.0.1',
+780 silly addNameRange     '1.1.0',
+780 silly addNameRange     '1.1.1',
+780 silly addNameRange     '1.1.2',
+780 silly addNameRange     '1.1.3',
+780 silly addNameRange     '1.1.4',
+780 silly addNameRange     '1.1.5',
+780 silly addNameRange     '1.1.6' ] ]
+781 silly addNamed brace-expansion@1.1.6
+782 verbose addNamed "1.1.6" is a plain semver version for brace-expansion
+783 silly mapToRegistry name brace-expansion
+784 silly mapToRegistry using default registry
+785 silly mapToRegistry registry https://registry.npmjs.org/
+786 silly mapToRegistry data Result {
+786 silly mapToRegistry   raw: 'brace-expansion',
+786 silly mapToRegistry   scope: null,
+786 silly mapToRegistry   escapedName: 'brace-expansion',
+786 silly mapToRegistry   name: 'brace-expansion',
+786 silly mapToRegistry   rawSpec: '',
+786 silly mapToRegistry   spec: 'latest',
+786 silly mapToRegistry   type: 'tag' }
+787 silly mapToRegistry uri https://registry.npmjs.org/brace-expansion
+788 verbose addRemoteTarball https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.6.tgz not in flight; adding
+789 verbose addRemoteTarball [ 'https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.6.tgz',
+789 verbose addRemoteTarball   '7197d7eaa9b87e648390ea61fc66c84427420df9' ]
+790 info retry fetch attempt 1 at 23:57:45
+791 info attempt registry request try #1 at 23:57:45
+792 http fetch GET https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.6.tgz
+793 http fetch 200 https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.6.tgz
+794 silly fetchAndShaCheck shasum 7197d7eaa9b87e648390ea61fc66c84427420df9
+795 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.6.tgz not in flight; adding
+796 verbose addTmpTarball already have metadata; skipping unpack for brace-expansion@1.1.6
+797 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+798 silly cache afterAdd brace-expansion@1.1.6
+799 verbose afterAdd /home/yuri/.npm/brace-expansion/1.1.6/package/package.json not in flight; writing
+800 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+801 verbose afterAdd /home/yuri/.npm/brace-expansion/1.1.6/package/package.json written
+802 silly fetchNamedPackageData balanced-match
+803 silly mapToRegistry name balanced-match
+804 silly mapToRegistry using default registry
+805 silly mapToRegistry registry https://registry.npmjs.org/
+806 silly mapToRegistry data Result {
+806 silly mapToRegistry   raw: 'balanced-match',
+806 silly mapToRegistry   scope: null,
+806 silly mapToRegistry   escapedName: 'balanced-match',
+806 silly mapToRegistry   name: 'balanced-match',
+806 silly mapToRegistry   rawSpec: '',
+806 silly mapToRegistry   spec: 'latest',
+806 silly mapToRegistry   type: 'tag' }
+807 silly mapToRegistry uri https://registry.npmjs.org/balanced-match
+808 silly fetchNamedPackageData concat-map
+809 silly mapToRegistry name concat-map
+810 silly mapToRegistry using default registry
+811 silly mapToRegistry registry https://registry.npmjs.org/
+812 silly mapToRegistry data Result {
+812 silly mapToRegistry   raw: 'concat-map',
+812 silly mapToRegistry   scope: null,
+812 silly mapToRegistry   escapedName: 'concat-map',
+812 silly mapToRegistry   name: 'concat-map',
+812 silly mapToRegistry   rawSpec: '',
+812 silly mapToRegistry   spec: 'latest',
+812 silly mapToRegistry   type: 'tag' }
+813 silly mapToRegistry uri https://registry.npmjs.org/concat-map
+814 verbose request uri https://registry.npmjs.org/balanced-match
+815 verbose request no auth needed
+816 info attempt registry request try #1 at 23:57:45
+817 http request GET https://registry.npmjs.org/balanced-match
+818 verbose request uri https://registry.npmjs.org/concat-map
+819 verbose request no auth needed
+820 info attempt registry request try #1 at 23:57:45
+821 http request GET https://registry.npmjs.org/concat-map
+822 http 200 https://registry.npmjs.org/concat-map
+823 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+823 verbose headers   etag: '"66LI2B4AH1989LYDFSL4P944A"',
+823 verbose headers   'content-type': 'application/json',
+823 verbose headers   'content-encoding': 'gzip',
+823 verbose headers   'cache-control': 'max-age=300',
+823 verbose headers   'content-length': '1479',
+823 verbose headers   'accept-ranges': 'bytes',
+823 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+823 verbose headers   via: '1.1 varnish',
+823 verbose headers   age: '143',
+823 verbose headers   connection: 'keep-alive',
+823 verbose headers   'x-served-by': 'cache-fra1239-FRA',
+823 verbose headers   'x-cache': 'HIT',
+823 verbose headers   'x-cache-hits': '2',
+823 verbose headers   'x-timer': 'S1478296665.664499,VS0,VE0',
+823 verbose headers   vary: 'Accept-Encoding' }
+824 silly get cb [ 200,
+824 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+824 silly get     etag: '"66LI2B4AH1989LYDFSL4P944A"',
+824 silly get     'content-type': 'application/json',
+824 silly get     'content-encoding': 'gzip',
+824 silly get     'cache-control': 'max-age=300',
+824 silly get     'content-length': '1479',
+824 silly get     'accept-ranges': 'bytes',
+824 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+824 silly get     via: '1.1 varnish',
+824 silly get     age: '143',
+824 silly get     connection: 'keep-alive',
+824 silly get     'x-served-by': 'cache-fra1239-FRA',
+824 silly get     'x-cache': 'HIT',
+824 silly get     'x-cache-hits': '2',
+824 silly get     'x-timer': 'S1478296665.664499,VS0,VE0',
+824 silly get     vary: 'Accept-Encoding' } ]
+825 verbose get saving concat-map to /home/yuri/.npm/registry.npmjs.org/concat-map/.cache.json
+826 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+827 http 200 https://registry.npmjs.org/balanced-match
+828 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+828 verbose headers   etag: '"F15USL4EKTBR2S3SNHJ3NM0EX"',
+828 verbose headers   'content-type': 'application/json',
+828 verbose headers   'content-encoding': 'gzip',
+828 verbose headers   'cache-control': 'max-age=300',
+828 verbose headers   'content-length': '3623',
+828 verbose headers   'accept-ranges': 'bytes',
+828 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+828 verbose headers   via: '1.1 varnish',
+828 verbose headers   age: '52',
+828 verbose headers   connection: 'keep-alive',
+828 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+828 verbose headers   'x-cache': 'HIT',
+828 verbose headers   'x-cache-hits': '2',
+828 verbose headers   'x-timer': 'S1478296665.663189,VS0,VE0',
+828 verbose headers   vary: 'Accept-Encoding' }
+829 silly get cb [ 200,
+829 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+829 silly get     etag: '"F15USL4EKTBR2S3SNHJ3NM0EX"',
+829 silly get     'content-type': 'application/json',
+829 silly get     'content-encoding': 'gzip',
+829 silly get     'cache-control': 'max-age=300',
+829 silly get     'content-length': '3623',
+829 silly get     'accept-ranges': 'bytes',
+829 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+829 silly get     via: '1.1 varnish',
+829 silly get     age: '52',
+829 silly get     connection: 'keep-alive',
+829 silly get     'x-served-by': 'cache-fra1226-FRA',
+829 silly get     'x-cache': 'HIT',
+829 silly get     'x-cache-hits': '2',
+829 silly get     'x-timer': 'S1478296665.663189,VS0,VE0',
+829 silly get     vary: 'Accept-Encoding' } ]
+830 verbose get saving balanced-match to /home/yuri/.npm/registry.npmjs.org/balanced-match/.cache.json
+831 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+832 silly resolveWithNewModule concat-map@0.0.1 checking installable status
+833 silly cache add args [ 'concat-map@0.0.1', null ]
+834 verbose cache add spec concat-map@0.0.1
+835 silly cache add parsed spec Result {
+835 silly cache add   raw: 'concat-map@0.0.1',
+835 silly cache add   scope: null,
+835 silly cache add   escapedName: 'concat-map',
+835 silly cache add   name: 'concat-map',
+835 silly cache add   rawSpec: '0.0.1',
+835 silly cache add   spec: '0.0.1',
+835 silly cache add   type: 'version' }
+836 silly addNamed concat-map@0.0.1
+837 verbose addNamed "0.0.1" is a plain semver version for concat-map
+838 silly mapToRegistry name concat-map
+839 silly mapToRegistry using default registry
+840 silly mapToRegistry registry https://registry.npmjs.org/
+841 silly mapToRegistry data Result {
+841 silly mapToRegistry   raw: 'concat-map',
+841 silly mapToRegistry   scope: null,
+841 silly mapToRegistry   escapedName: 'concat-map',
+841 silly mapToRegistry   name: 'concat-map',
+841 silly mapToRegistry   rawSpec: '',
+841 silly mapToRegistry   spec: 'latest',
+841 silly mapToRegistry   type: 'tag' }
+842 silly mapToRegistry uri https://registry.npmjs.org/concat-map
+843 verbose addNameVersion registry:https://registry.npmjs.org/concat-map not in flight; fetching
+844 silly resolveWithNewModule balanced-match@0.4.2 checking installable status
+845 silly cache add args [ 'balanced-match@^0.4.1', null ]
+846 verbose cache add spec balanced-match@^0.4.1
+847 silly cache add parsed spec Result {
+847 silly cache add   raw: 'balanced-match@^0.4.1',
+847 silly cache add   scope: null,
+847 silly cache add   escapedName: 'balanced-match',
+847 silly cache add   name: 'balanced-match',
+847 silly cache add   rawSpec: '^0.4.1',
+847 silly cache add   spec: '>=0.4.1 <0.5.0',
+847 silly cache add   type: 'range' }
+848 silly addNamed balanced-match@>=0.4.1 <0.5.0
+849 verbose addNamed ">=0.4.1 <0.5.0" is a valid semver range for balanced-match
+850 silly addNameRange { name: 'balanced-match',
+850 silly addNameRange   range: '>=0.4.1 <0.5.0',
+850 silly addNameRange   hasData: false }
+851 silly mapToRegistry name balanced-match
+852 silly mapToRegistry using default registry
+853 silly mapToRegistry registry https://registry.npmjs.org/
+854 silly mapToRegistry data Result {
+854 silly mapToRegistry   raw: 'balanced-match',
+854 silly mapToRegistry   scope: null,
+854 silly mapToRegistry   escapedName: 'balanced-match',
+854 silly mapToRegistry   name: 'balanced-match',
+854 silly mapToRegistry   rawSpec: '',
+854 silly mapToRegistry   spec: 'latest',
+854 silly mapToRegistry   type: 'tag' }
+855 silly mapToRegistry uri https://registry.npmjs.org/balanced-match
+856 verbose addNameRange registry:https://registry.npmjs.org/balanced-match not in flight; fetching
+857 verbose get https://registry.npmjs.org/concat-map not expired, no request
+858 verbose get https://registry.npmjs.org/balanced-match not expired, no request
+859 silly addNameRange number 2 { name: 'balanced-match',
+859 silly addNameRange   range: '>=0.4.1 <0.5.0',
+859 silly addNameRange   hasData: true }
+860 silly addNameRange versions [ 'balanced-match',
+860 silly addNameRange   [ '0.0.0',
+860 silly addNameRange     '0.0.1',
+860 silly addNameRange     '0.1.0',
+860 silly addNameRange     '0.2.0',
+860 silly addNameRange     '0.2.1',
+860 silly addNameRange     '0.3.0',
+860 silly addNameRange     '0.4.0',
+860 silly addNameRange     '0.4.1',
+860 silly addNameRange     '0.4.2' ] ]
+861 silly addNamed balanced-match@0.4.2
+862 verbose addNamed "0.4.2" is a plain semver version for balanced-match
+863 silly mapToRegistry name concat-map
+864 silly mapToRegistry using default registry
+865 silly mapToRegistry registry https://registry.npmjs.org/
+866 silly mapToRegistry data Result {
+866 silly mapToRegistry   raw: 'concat-map',
+866 silly mapToRegistry   scope: null,
+866 silly mapToRegistry   escapedName: 'concat-map',
+866 silly mapToRegistry   name: 'concat-map',
+866 silly mapToRegistry   rawSpec: '',
+866 silly mapToRegistry   spec: 'latest',
+866 silly mapToRegistry   type: 'tag' }
+867 silly mapToRegistry uri https://registry.npmjs.org/concat-map
+868 verbose addRemoteTarball https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz not in flight; adding
+869 verbose addRemoteTarball [ 'https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz',
+869 verbose addRemoteTarball   'd8a96bd77fd68df7793a73036a3ba0d5405d477b' ]
+870 silly mapToRegistry name balanced-match
+871 silly mapToRegistry using default registry
+872 silly mapToRegistry registry https://registry.npmjs.org/
+873 silly mapToRegistry data Result {
+873 silly mapToRegistry   raw: 'balanced-match',
+873 silly mapToRegistry   scope: null,
+873 silly mapToRegistry   escapedName: 'balanced-match',
+873 silly mapToRegistry   name: 'balanced-match',
+873 silly mapToRegistry   rawSpec: '',
+873 silly mapToRegistry   spec: 'latest',
+873 silly mapToRegistry   type: 'tag' }
+874 silly mapToRegistry uri https://registry.npmjs.org/balanced-match
+875 verbose addRemoteTarball https://registry.npmjs.org/balanced-match/-/balanced-match-0.4.2.tgz not in flight; adding
+876 verbose addRemoteTarball [ 'https://registry.npmjs.org/balanced-match/-/balanced-match-0.4.2.tgz',
+876 verbose addRemoteTarball   'cb3f3e3c732dc0f01ee70b403f302e61d7709838' ]
+877 info retry fetch attempt 1 at 23:57:45
+878 info attempt registry request try #1 at 23:57:45
+879 http fetch GET https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz
+880 info retry fetch attempt 1 at 23:57:45
+881 info attempt registry request try #1 at 23:57:45
+882 http fetch GET https://registry.npmjs.org/balanced-match/-/balanced-match-0.4.2.tgz
+883 http fetch 200 https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz
+884 silly fetchAndShaCheck shasum d8a96bd77fd68df7793a73036a3ba0d5405d477b
+885 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz not in flight; adding
+886 verbose addTmpTarball already have metadata; skipping unpack for concat-map@0.0.1
+887 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+888 silly cache afterAdd concat-map@0.0.1
+889 verbose afterAdd /home/yuri/.npm/concat-map/0.0.1/package/package.json not in flight; writing
+890 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+891 verbose afterAdd /home/yuri/.npm/concat-map/0.0.1/package/package.json written
+892 http fetch 200 https://registry.npmjs.org/balanced-match/-/balanced-match-0.4.2.tgz
+893 silly fetchAndShaCheck shasum cb3f3e3c732dc0f01ee70b403f302e61d7709838
+894 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/balanced-match/-/balanced-match-0.4.2.tgz not in flight; adding
+895 verbose addTmpTarball already have metadata; skipping unpack for balanced-match@0.4.2
+896 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+897 silly cache afterAdd balanced-match@0.4.2
+898 verbose afterAdd /home/yuri/.npm/balanced-match/0.4.2/package/package.json not in flight; writing
+899 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+900 verbose afterAdd /home/yuri/.npm/balanced-match/0.4.2/package/package.json written
+901 silly fetchNamedPackageData wordwrap
+902 silly mapToRegistry name wordwrap
+903 silly mapToRegistry using default registry
+904 silly mapToRegistry registry https://registry.npmjs.org/
+905 silly mapToRegistry data Result {
+905 silly mapToRegistry   raw: 'wordwrap',
+905 silly mapToRegistry   scope: null,
+905 silly mapToRegistry   escapedName: 'wordwrap',
+905 silly mapToRegistry   name: 'wordwrap',
+905 silly mapToRegistry   rawSpec: '',
+905 silly mapToRegistry   spec: 'latest',
+905 silly mapToRegistry   type: 'tag' }
+906 silly mapToRegistry uri https://registry.npmjs.org/wordwrap
+907 silly fetchNamedPackageData minimist
+908 silly mapToRegistry name minimist
+909 silly mapToRegistry using default registry
+910 silly mapToRegistry registry https://registry.npmjs.org/
+911 silly mapToRegistry data Result {
+911 silly mapToRegistry   raw: 'minimist',
+911 silly mapToRegistry   scope: null,
+911 silly mapToRegistry   escapedName: 'minimist',
+911 silly mapToRegistry   name: 'minimist',
+911 silly mapToRegistry   rawSpec: '',
+911 silly mapToRegistry   spec: 'latest',
+911 silly mapToRegistry   type: 'tag' }
+912 silly mapToRegistry uri https://registry.npmjs.org/minimist
+913 verbose request uri https://registry.npmjs.org/wordwrap
+914 verbose request no auth needed
+915 info attempt registry request try #1 at 23:57:45
+916 http request GET https://registry.npmjs.org/wordwrap
+917 verbose request uri https://registry.npmjs.org/minimist
+918 verbose request no auth needed
+919 info attempt registry request try #1 at 23:57:45
+920 http request GET https://registry.npmjs.org/minimist
+921 http 200 https://registry.npmjs.org/wordwrap
+922 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+922 verbose headers   etag: '"6Y7XZHAQEALAMS9JQ5TYUE3OK"',
+922 verbose headers   'content-type': 'application/json',
+922 verbose headers   'content-encoding': 'gzip',
+922 verbose headers   'cache-control': 'max-age=300',
+922 verbose headers   'content-length': '1949',
+922 verbose headers   'accept-ranges': 'bytes',
+922 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+922 verbose headers   via: '1.1 varnish',
+922 verbose headers   age: '102',
+922 verbose headers   connection: 'keep-alive',
+922 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+922 verbose headers   'x-cache': 'HIT',
+922 verbose headers   'x-cache-hits': '3',
+922 verbose headers   'x-timer': 'S1478296665.776892,VS0,VE0',
+922 verbose headers   vary: 'Accept-Encoding' }
+923 silly get cb [ 200,
+923 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+923 silly get     etag: '"6Y7XZHAQEALAMS9JQ5TYUE3OK"',
+923 silly get     'content-type': 'application/json',
+923 silly get     'content-encoding': 'gzip',
+923 silly get     'cache-control': 'max-age=300',
+923 silly get     'content-length': '1949',
+923 silly get     'accept-ranges': 'bytes',
+923 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+923 silly get     via: '1.1 varnish',
+923 silly get     age: '102',
+923 silly get     connection: 'keep-alive',
+923 silly get     'x-served-by': 'cache-fra1221-FRA',
+923 silly get     'x-cache': 'HIT',
+923 silly get     'x-cache-hits': '3',
+923 silly get     'x-timer': 'S1478296665.776892,VS0,VE0',
+923 silly get     vary: 'Accept-Encoding' } ]
+924 verbose get saving wordwrap to /home/yuri/.npm/registry.npmjs.org/wordwrap/.cache.json
+925 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+926 silly resolveWithNewModule wordwrap@0.0.3 checking installable status
+927 silly cache add args [ 'wordwrap@~0.0.2', null ]
+928 verbose cache add spec wordwrap@~0.0.2
+929 silly cache add parsed spec Result {
+929 silly cache add   raw: 'wordwrap@~0.0.2',
+929 silly cache add   scope: null,
+929 silly cache add   escapedName: 'wordwrap',
+929 silly cache add   name: 'wordwrap',
+929 silly cache add   rawSpec: '~0.0.2',
+929 silly cache add   spec: '>=0.0.2 <0.1.0',
+929 silly cache add   type: 'range' }
+930 silly addNamed wordwrap@>=0.0.2 <0.1.0
+931 verbose addNamed ">=0.0.2 <0.1.0" is a valid semver range for wordwrap
+932 silly addNameRange { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: false }
+933 silly mapToRegistry name wordwrap
+934 silly mapToRegistry using default registry
+935 silly mapToRegistry registry https://registry.npmjs.org/
+936 silly mapToRegistry data Result {
+936 silly mapToRegistry   raw: 'wordwrap',
+936 silly mapToRegistry   scope: null,
+936 silly mapToRegistry   escapedName: 'wordwrap',
+936 silly mapToRegistry   name: 'wordwrap',
+936 silly mapToRegistry   rawSpec: '',
+936 silly mapToRegistry   spec: 'latest',
+936 silly mapToRegistry   type: 'tag' }
+937 silly mapToRegistry uri https://registry.npmjs.org/wordwrap
+938 verbose addNameRange registry:https://registry.npmjs.org/wordwrap not in flight; fetching
+939 http 200 https://registry.npmjs.org/minimist
+940 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+940 verbose headers   etag: '"C8DPR6G8JDQ90VQK24DOOLT0U"',
+940 verbose headers   'content-type': 'application/json',
+940 verbose headers   'content-encoding': 'gzip',
+940 verbose headers   'cache-control': 'max-age=300',
+940 verbose headers   'content-length': '5845',
+940 verbose headers   'accept-ranges': 'bytes',
+940 verbose headers   date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+940 verbose headers   via: '1.1 varnish',
+940 verbose headers   age: '147',
+940 verbose headers   connection: 'keep-alive',
+940 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+940 verbose headers   'x-cache': 'HIT',
+940 verbose headers   'x-cache-hits': '7',
+940 verbose headers   'x-timer': 'S1478296665.776769,VS0,VE0',
+940 verbose headers   vary: 'Accept-Encoding' }
+941 silly get cb [ 200,
+941 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+941 silly get     etag: '"C8DPR6G8JDQ90VQK24DOOLT0U"',
+941 silly get     'content-type': 'application/json',
+941 silly get     'content-encoding': 'gzip',
+941 silly get     'cache-control': 'max-age=300',
+941 silly get     'content-length': '5845',
+941 silly get     'accept-ranges': 'bytes',
+941 silly get     date: 'Fri, 04 Nov 2016 21:57:45 GMT',
+941 silly get     via: '1.1 varnish',
+941 silly get     age: '147',
+941 silly get     connection: 'keep-alive',
+941 silly get     'x-served-by': 'cache-fra1226-FRA',
+941 silly get     'x-cache': 'HIT',
+941 silly get     'x-cache-hits': '7',
+941 silly get     'x-timer': 'S1478296665.776769,VS0,VE0',
+941 silly get     vary: 'Accept-Encoding' } ]
+942 verbose get saving minimist to /home/yuri/.npm/registry.npmjs.org/minimist/.cache.json
+943 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+944 verbose get https://registry.npmjs.org/wordwrap not expired, no request
+945 silly addNameRange number 2 { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: true }
+946 silly addNameRange versions [ 'wordwrap', [ '0.0.1', '0.0.2', '0.0.3', '1.0.0' ] ]
+947 silly addNamed wordwrap@0.0.3
+948 verbose addNamed "0.0.3" is a plain semver version for wordwrap
+949 silly mapToRegistry name wordwrap
+950 silly mapToRegistry using default registry
+951 silly mapToRegistry registry https://registry.npmjs.org/
+952 silly mapToRegistry data Result {
+952 silly mapToRegistry   raw: 'wordwrap',
+952 silly mapToRegistry   scope: null,
+952 silly mapToRegistry   escapedName: 'wordwrap',
+952 silly mapToRegistry   name: 'wordwrap',
+952 silly mapToRegistry   rawSpec: '',
+952 silly mapToRegistry   spec: 'latest',
+952 silly mapToRegistry   type: 'tag' }
+953 silly mapToRegistry uri https://registry.npmjs.org/wordwrap
+954 verbose addRemoteTarball https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz not in flight; adding
+955 verbose addRemoteTarball [ 'https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz',
+955 verbose addRemoteTarball   'a3d5da6cd5c0bc0008d37234bbaf1bed63059107' ]
+956 info retry fetch attempt 1 at 23:57:45
+957 info attempt registry request try #1 at 23:57:45
+958 http fetch GET https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz
+959 silly resolveWithNewModule minimist@0.0.10 checking installable status
+960 silly cache add args [ 'minimist@~0.0.1', null ]
+961 verbose cache add spec minimist@~0.0.1
+962 silly cache add parsed spec Result {
+962 silly cache add   raw: 'minimist@~0.0.1',
+962 silly cache add   scope: null,
+962 silly cache add   escapedName: 'minimist',
+962 silly cache add   name: 'minimist',
+962 silly cache add   rawSpec: '~0.0.1',
+962 silly cache add   spec: '>=0.0.1 <0.1.0',
+962 silly cache add   type: 'range' }
+963 silly addNamed minimist@>=0.0.1 <0.1.0
+964 verbose addNamed ">=0.0.1 <0.1.0" is a valid semver range for minimist
+965 silly addNameRange { name: 'minimist', range: '>=0.0.1 <0.1.0', hasData: false }
+966 silly mapToRegistry name minimist
+967 silly mapToRegistry using default registry
+968 silly mapToRegistry registry https://registry.npmjs.org/
+969 silly mapToRegistry data Result {
+969 silly mapToRegistry   raw: 'minimist',
+969 silly mapToRegistry   scope: null,
+969 silly mapToRegistry   escapedName: 'minimist',
+969 silly mapToRegistry   name: 'minimist',
+969 silly mapToRegistry   rawSpec: '',
+969 silly mapToRegistry   spec: 'latest',
+969 silly mapToRegistry   type: 'tag' }
+970 silly mapToRegistry uri https://registry.npmjs.org/minimist
+971 verbose addNameRange registry:https://registry.npmjs.org/minimist not in flight; fetching
+972 verbose get https://registry.npmjs.org/minimist not expired, no request
+973 silly addNameRange number 2 { name: 'minimist', range: '>=0.0.1 <0.1.0', hasData: true }
+974 silly addNameRange versions [ 'minimist',
+974 silly addNameRange   [ '0.0.0',
+974 silly addNameRange     '0.0.1',
+974 silly addNameRange     '0.0.2',
+974 silly addNameRange     '0.0.3',
+974 silly addNameRange     '0.0.4',
+974 silly addNameRange     '0.0.5',
+974 silly addNameRange     '0.0.6',
+974 silly addNameRange     '0.0.7',
+974 silly addNameRange     '0.0.8',
+974 silly addNameRange     '0.0.9',
+974 silly addNameRange     '0.0.10',
+974 silly addNameRange     '0.1.0',
+974 silly addNameRange     '0.2.0',
+974 silly addNameRange     '1.0.0',
+974 silly addNameRange     '1.1.0',
+974 silly addNameRange     '1.1.1',
+974 silly addNameRange     '1.1.2',
+974 silly addNameRange     '1.1.3',
+974 silly addNameRange     '1.2.0' ] ]
+975 silly addNamed minimist@0.0.10
+976 verbose addNamed "0.0.10" is a plain semver version for minimist
+977 silly mapToRegistry name minimist
+978 silly mapToRegistry using default registry
+979 silly mapToRegistry registry https://registry.npmjs.org/
+980 silly mapToRegistry data Result {
+980 silly mapToRegistry   raw: 'minimist',
+980 silly mapToRegistry   scope: null,
+980 silly mapToRegistry   escapedName: 'minimist',
+980 silly mapToRegistry   name: 'minimist',
+980 silly mapToRegistry   rawSpec: '',
+980 silly mapToRegistry   spec: 'latest',
+980 silly mapToRegistry   type: 'tag' }
+981 silly mapToRegistry uri https://registry.npmjs.org/minimist
+982 verbose addRemoteTarball https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz not in flight; adding
+983 verbose addRemoteTarball [ 'https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz',
+983 verbose addRemoteTarball   'de3f98543dbf96082be48ad1a0c7cda836301dcf' ]
+984 info retry fetch attempt 1 at 23:57:45
+985 info attempt registry request try #1 at 23:57:45
+986 http fetch GET https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz
+987 http fetch 200 https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz
+988 silly fetchAndShaCheck shasum a3d5da6cd5c0bc0008d37234bbaf1bed63059107
+989 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz not in flight; adding
+990 verbose addTmpTarball already have metadata; skipping unpack for wordwrap@0.0.3
+991 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+992 silly cache afterAdd wordwrap@0.0.3
+993 verbose afterAdd /home/yuri/.npm/wordwrap/0.0.3/package/package.json not in flight; writing
+994 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+995 verbose afterAdd /home/yuri/.npm/wordwrap/0.0.3/package/package.json written
+996 http fetch 200 https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz
+997 silly fetchAndShaCheck shasum de3f98543dbf96082be48ad1a0c7cda836301dcf
+998 verbose addTmpTarball /tmp/npm-12521-900d70cd/registry.npmjs.org/minimist/-/minimist-0.0.10.tgz not in flight; adding
+999 verbose addTmpTarball already have metadata; skipping unpack for minimist@0.0.10
+1000 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+1001 silly cache afterAdd minimist@0.0.10
+1002 verbose afterAdd /home/yuri/.npm/minimist/0.0.10/package/package.json not in flight; writing
+1003 verbose correctMkdir /home/yuri/.npm correctMkdir not in flight; initializing
+1004 verbose afterAdd /home/yuri/.npm/minimist/0.0.10/package/package.json written
+1005 silly loadAllDepsIntoIdealTree Finishing
+1006 silly loadIdealTree Finishing
+1007 silly currentTree lib
+1008 silly idealTree lib
+1008 silly idealTree └─┬ coffeelint@1.16.0
+1008 silly idealTree   ├── balanced-match@0.4.2
+1008 silly idealTree   ├── brace-expansion@1.1.6
+1008 silly idealTree   ├── coffee-script@1.11.1
+1008 silly idealTree   ├── concat-map@0.0.1
+1008 silly idealTree   ├── fs.realpath@1.0.0
+1008 silly idealTree   ├── glob@7.1.1
+1008 silly idealTree   ├── ignore@3.2.0
+1008 silly idealTree   ├── inflight@1.0.6
+1008 silly idealTree   ├── inherits@2.0.3
+1008 silly idealTree   ├── minimatch@3.0.3
+1008 silly idealTree   ├── minimist@0.0.10
+1008 silly idealTree   ├── once@1.4.0
+1008 silly idealTree   ├── optimist@0.6.1
+1008 silly idealTree   ├── path-is-absolute@1.0.1
+1008 silly idealTree   ├── resolve@0.6.3
+1008 silly idealTree   ├── strip-json-comments@1.0.4
+1008 silly idealTree   ├── wordwrap@0.0.3
+1008 silly idealTree   └── wrappy@1.0.2
+1009 silly generateActionsToTake Starting
+1010 silly install generateActionsToTake
+1011 warn checkPermissions Missing write access to /usr/lib/node_modules
+1012 silly rollbackFailedOptional Starting
+1013 silly rollbackFailedOptional Finishing
+1014 silly runTopLevelLifecycles Finishing
+1015 silly install printInstalled
+1016 verbose stack Error: EACCES: permission denied, access '/usr/lib/node_modules'
+1016 verbose stack     at Error (native)
+1017 verbose cwd /home/yuri/Documents/Ruby/lits-diploma
+1018 error Linux 4.4.0-45-generic
+1019 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "coffeelint"
+1020 error node v6.9.1
+1021 error npm  v3.10.8
+1022 error path /usr/lib/node_modules
+1023 error code EACCES
+1024 error errno -13
+1025 error syscall access
+1026 error Error: EACCES: permission denied, access '/usr/lib/node_modules'
+1026 error     at Error (native)
+1026 error  { Error: EACCES: permission denied, access '/usr/lib/node_modules'
+1026 error     at Error (native)
+1026 error   errno: -13,
+1026 error   code: 'EACCES',
+1026 error   syscall: 'access',
+1026 error   path: '/usr/lib/node_modules' }
+1027 error Please try running this command again as root/Administrator.
+1028 verbose exit [ -13, true ]

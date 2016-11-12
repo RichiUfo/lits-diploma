@@ -3,7 +3,3 @@
         ci = commit
         st = status
         br = branch
-
-[user]
-	email = slav999@ukr.net
-	name = Sl8v

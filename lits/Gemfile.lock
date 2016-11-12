@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/thoughtbot/shoulda-matchers.git
+  revision: d1e9a41fca001b6d89455aff49f1f03ac272ee08
+  specs:
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
+
+GIT
   remote: https://github.com/twbs/bootstrap-sass.git
   revision: 5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47
   branch: next
@@ -48,13 +55,14 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    autoprefixer-rails (6.5.1.1)
+    autoprefixer-rails (6.5.2)
       execjs
     awesome_print (1.7.0)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
     builder (3.2.2)
     byebug (9.0.6)
+    chronic (0.10.2)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
@@ -90,6 +98,7 @@ GEM
       ruby-progressbar (~> 1.4)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     hashie (3.4.6)
     i18n (0.7.0)
     jbuilder (2.6.0)
@@ -216,8 +225,6 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     shoulda (2.11.3)
-    shoulda-matchers (3.1.1)
-      activesupport (>= 4.0.0)
     simplecov (0.12.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -264,6 +271,8 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    whenever (0.9.7)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -277,6 +286,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fuubar
+  gmaps4rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -291,7 +301,7 @@ DEPENDENCIES
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   shoulda
-  shoulda-matchers
+  shoulda-matchers!
   simplecov
   spring
   spring-commands-rspec
@@ -300,6 +310,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   vkontakte_api (~> 1.4)
   web-console
+  whenever
 
 BUNDLED WITH
    1.13.6
