@@ -49,6 +49,23 @@
 
 }
 
-.event-description {
-  margin-top: 40px;
+.event-body {
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width : 768px) {
+    flex-direction: column;
+  }
+
+  .event-description {
+    margin: 0 10px 10px 0;
+    text-align: justify;
+  }
+
+  .event-map {
+    max-width: 300px;
+
+
+  }
+
 }

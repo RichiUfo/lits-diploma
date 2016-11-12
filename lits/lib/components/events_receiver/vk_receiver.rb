@@ -16,7 +16,7 @@ module Components
 
           event_in_db = Event.vk_source.find_by(ext_id: event[:ext_id].to_i)
           save_key = :updated
-          
+
           if event_in_db.nil?
             save_key = :created
             event_in_db = Event.new event
@@ -39,8 +39,8 @@ module Components
 
       def get_raw_event event_ext_id
         @client.groups.getById(
-          gid: event_ext_id, 
-          fields: ['city', 'country', 'place', 'description', 'wiki_page', 'start_date', 'finish_date', 
+          gid: event_ext_id,
+          fields: ['city', 'country', 'place', 'description', 'wiki_page', 'start_date', 'finish_date',
                   'activity', 'status', 'contacts', 'links', 'fixed_post', 'verified', 'site']).last
       end
 
@@ -52,7 +52,8 @@ module Components
           picture: raw_event.photo_big,
           reg_ref: Components::Link.parse_registration_link(raw_event.description),
           ext_id: raw_event.gid,
-          coordinates: "#{raw_event.try(:place).try(:latitude)} #{raw_event.try(:place).try(:longitude)}",
+          lat: raw_event.try(:place).try(:latitude),
+          lng: raw_event.try(:place).try(:longitude),
           address: raw_event.try(:place).try(:address),
           city_id: city_id(raw_event.try(:place).try(:city))
         }
@@ -68,8 +69,8 @@ module Components
       def source_event_url sourse_ext_id
         self.class::SOURCE_EVENTS_URL.sub '<source_id>', sourse_ext_id.to_s
       end
-      
-      private 
+
+      private
 
       def city_id ext_city_id
         city = City.find_by_vk_id ext_city_id

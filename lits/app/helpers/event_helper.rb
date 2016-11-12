@@ -1,10 +1,26 @@
 module EventHelper
-  
+
   UNDER_HEADER_RATIO = 1.5
+
+  def event_image_map event
+   if !event.lat.nil? && !event.lng.nil?
+     content_tag(:div,
+            image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{event.lat},#{event.lng}&size=300x300&zoom=17&markers=color:red|#{event.lat},#{event.lng}&key=AIzaSyDwbSLp-THz0tcCIPo8UiF6LXyAwZrrEak"),
+            class: 'event-map')
+   else
+     ''
+   end
+  end
 
   def event_header event
     content_tag :hgroup, class: 'event-header' do
        event_info(event) + event_picture(event)
+    end
+  end
+
+  def event_body event
+    content_tag :bgroup, class: 'event-body' do
+      event_despripton(event) + event_image_map(event)
     end
   end
 
@@ -13,13 +29,13 @@ module EventHelper
       content_tag(:article, event.description.html_safe, class: 'event-description')
     else
       ''
-    end 
+    end
   end
 
-  def event_picture event 
-    if event.picture.present? 
-      content_tag(:div, image_tag(event.picture), class: 'event-picture-wrapper') 
-    else 
+  def event_picture event
+    if event.picture.present?
+      content_tag(:div, image_tag(event.picture), class: 'event-picture-wrapper')
+    else
       ''
     end
   end
@@ -44,8 +60,8 @@ module EventHelper
 
   def event_original event
     original_link = Components::Link.original_event_url(event.source.source_type, event.ext_id)
-    content_tag :p, 
-                "Оригинал: #{link_to(original_link, original_link, target: :_blank)}".html_safe, 
+    content_tag :p,
+                "Оригинал: #{link_to(original_link, original_link, target: :_blank)}".html_safe,
                 class: 'event-original'
   end
 end
