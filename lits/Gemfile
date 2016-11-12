@@ -17,7 +17,6 @@ gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :bra
 # Let us use VK, bitcheeeez!
 gem 'vkontakte_api', '~> 1.4'
 
-
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -30,6 +29,18 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Devise for auth with vk, fb...
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
+gem 'omniauth'
+
+# Schedule management
+gem 'whenever', require: false
+
+# Google maps
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
@@ -59,15 +70,3 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
 end
-
-# Devise for auth with vk, fb...
-gem 'devise'
-gem 'omniauth-facebook'
-gem 'omniauth-vkontakte'
-gem 'omniauth'
-
-# Schedule management
-gem 'whenever', require: false
-
-# Google maps
-gem 'gmaps4rails'
