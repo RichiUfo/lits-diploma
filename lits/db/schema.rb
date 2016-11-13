@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106081744) do
+ActiveRecord::Schema.define(version: 20161112150259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,8 +56,7 @@ ActiveRecord::Schema.define(version: 20161106081744) do
     t.integer  "format_id"
     t.datetime "date"
     t.float    "price"
-    t.float    "lat"
-    t.float    "lng"
+    t.string   "coordinates"
     t.string   "ext_id"
     t.text     "name"
     t.text     "picture"
@@ -113,7 +112,7 @@ ActiveRecord::Schema.define(version: 20161106081744) do
     t.text     "ref"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "ext_id"
+    t.bigint   "ext_id"
     t.integer  "city_id"
     t.index ["source_type_id"], name: "index_sources_on_source_type_id", using: :btree
   end
@@ -134,7 +133,6 @@ ActiveRecord::Schema.define(version: 20161106081744) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "image"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -145,10 +143,6 @@ ActiveRecord::Schema.define(version: 20161106081744) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.integer  "social_type_id"
     t.integer  "city_id"
     t.integer  "age"
@@ -158,7 +152,6 @@ ActiveRecord::Schema.define(version: 20161106081744) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["city_id"], name: "index_users_on_city_id", using: :btree
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["social_type_id"], name: "index_users_on_social_type_id", using: :btree
