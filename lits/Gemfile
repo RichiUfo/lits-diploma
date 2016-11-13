@@ -12,7 +12,7 @@ gem 'fbgraph'
 gem 'hashie'
 
 gem 'puma'
->>>>>>> e39441e80823608042ccd198a3bd12c91d6c4974
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
