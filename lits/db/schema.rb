@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20161106081744) do
     t.text     "ref"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "ext_id"
+    t.bigint   "ext_id"
     t.integer  "city_id"
     t.index ["source_type_id"], name: "index_sources_on_source_type_id", using: :btree
   end

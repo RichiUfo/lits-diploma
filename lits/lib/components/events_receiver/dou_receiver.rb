@@ -17,7 +17,11 @@ module Components
         @data = {}
       end
 
+
+
+
       def process_data(source)
+
         raw_events = @data['rss']['channel']['item']
         raw_events.each do |e|
           raw_event = {}

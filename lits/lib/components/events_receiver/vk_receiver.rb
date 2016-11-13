@@ -9,6 +9,7 @@ module Components
       end
 
       def save_source_events source
+
         source_events_ids(source.ext_id).each do |event_ext_id|
           event = get_event event_ext_id
           event[:source_id] = source.id
@@ -34,6 +35,7 @@ module Components
       end
 
       def get_event event_ext_id
+
         format_event get_raw_event(event_ext_id)
       end
 
@@ -52,7 +54,8 @@ module Components
           picture: raw_event.photo_big,
           reg_ref: Components::Link.parse_registration_link(raw_event.description),
           ext_id: raw_event.gid,
-          coordinates: "#{raw_event.try(:place).try(:latitude)} #{raw_event.try(:place).try(:longitude)}",
+          lat: raw_event.try(:place).try(:latitude),
+          lng: raw_event.try(:place).try(:longitude),
           address: raw_event.try(:place).try(:address),
           city_id: city_id(raw_event.try(:place).try(:city))
         }

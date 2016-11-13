@@ -6,6 +6,9 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'passenger', '>= 5.0.30', require: 'phusion_passenger/rack_handler'
+gem 'koala'
+gem 'fbgraph'
+gem 'hashie'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,7 +39,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
-  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
+  gem 'shoulda-matchers'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'nyan-cat-formatter'
