@@ -45,8 +45,6 @@ module Components
       end
 
       def process_data(event)
-
-
         puts raw_event = {}
         puts raw_event['name'] = event['name']
         puts raw_event['date'] = DateTime.parse(event['start_time']).strftime(" %e %b %Y %H:%M ")
@@ -57,8 +55,7 @@ module Components
         puts raw_event['lat'] = event.try(:[], 'place').try(:[], 'location').try(:[], 'latitude')
         puts raw_event['lng'] = event.try(:[], 'place').try(:[], 'location').try(:[], 'longitude')
 
-
-        {organizer_id: '',
+         {organizer_id: '',
          category_id: '',
          format_id: '',
          price: '',

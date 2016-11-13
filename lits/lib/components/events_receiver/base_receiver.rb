@@ -42,7 +42,3 @@ module Components
     class MethodNotImplementedError < NoMethodError; end
   end
 end
-
-
-
-
