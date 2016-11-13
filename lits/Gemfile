@@ -12,18 +12,17 @@ gem 'fbgraph'
 gem 'hashie'
 
 gem 'puma'
->>>>>>> e39441e80823608042ccd198a3bd12c91d6c4974
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Some crazy, hot, luxury, vip and swag stuff from Twitter
-gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
+gem 'bootstrap-sass', git: 'https://github.com/twbs/bootstrap-sass.git', branch: 'next'
 
 # Let us use VK, bitcheeeez!
 gem 'vkontakte_api', '~> 1.4'
-
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
