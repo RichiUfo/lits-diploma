@@ -1,0 +1,30 @@
+.navbar {
+  .user-panel {
+    .user-avatar-button {
+      border: none;
+      border-radius: 40px;
+      height: 40px;
+      margin-top: 5px;
+      outline: none;
+      overflow: hidden;
+      padding: 0;
+      width: 40px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &.open {
+      .dropdown-menu {
+        li {
+          a {
+            font-size: 18px;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
