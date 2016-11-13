@@ -172,7 +172,10 @@ GEM
     pry-byebug (3.4.0)
       byebug (~> 9.0)
       pry (~> 0.10)
+<<<<<<< HEAD
     public_suffix (2.0.4)
+=======
+>>>>>>> e39441e80823608042ccd198a3bd12c91d6c4974
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
