@@ -29,9 +29,7 @@ module NavbarHelper
                'aria-expanded' => false,
                'aria-controls' => 'navbar',
                data: { toggle: 'collapse', target: '#navbar-main' }) do
-      concat content_tag(:span, '', class: 'icon-bar')
-      concat content_tag(:span, '', class: 'icon-bar')
-      concat content_tag(:span, '', class: 'icon-bar')
+      safe_join([0..2].fill(content_tag(:span, '', class: 'icon-bar')))
     end
   end
 
@@ -48,8 +46,8 @@ module NavbarHelper
   end
 
   def navbar_links(links)
-    links.keys.map do |key|
+    safe_join(links.keys.map do |key|
       content_tag :li, link_to(key, links[key]), class: current_page?(links[key]) ? 'active' : ''
-    end
+    end)
   end
 end
