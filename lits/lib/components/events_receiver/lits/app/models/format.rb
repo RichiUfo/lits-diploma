@@ -1,2 +1,0 @@
-class Format < ApplicationRecord
-end
