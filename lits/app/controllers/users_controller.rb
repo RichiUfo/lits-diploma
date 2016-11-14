@@ -48,8 +48,8 @@ class UsersController < ApplicationController
       end
     end
   end
-  def finish_signup
 
+  def finish_signup
     if request.patch? && params[:user]
       if @user.update(user_params)
         @user.skip_reconfirmation!
@@ -83,6 +83,6 @@ class UsersController < ApplicationController
     def user_params
       accessible = [ :name, :email,:avatar, :image ]
       accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
-      params.require(:user).permit(accessible )
+      params.require(:user).permit(accessible)
     end
 end
