@@ -77,7 +77,7 @@ module Components
       private
 
       def city_id(ext_city_id)
-        city = City.find_by(vk_id: ext_city_id)
+        city = City.find_by(id: ext_city_id)
         city.present? ? city.id : nil
       end
     end

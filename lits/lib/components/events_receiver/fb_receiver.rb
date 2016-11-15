@@ -47,9 +47,9 @@ module Components
           date:        raw_event['start_time'].to_time.strftime('%a, %d %b %Y %H:%M:%S UTC %:z'),
           picture:     big_picture(raw_event['id']),
           ext_id:      raw_event['id'],
-          coordinates: '', # {}"#{raw_event.try(:place).try(:latitude)} #{raw_event.try(:place).try(:longitude)}",
-          # lat: raw_event.try(:place).try(:latitude),
-          # lng: raw_event.try(:place).try(:longitude),
+          # coordinates: '', # {}"#{raw_event.try(:place).try(:latitude)} #{raw_event.try(:place).try(:longitude)}",
+          lat: raw_event.dig('place', 'location', 'latitude'),
+          lng: raw_event.dig('place', 'location', 'longitude'),
           address:     raw_event.dig('place', 'location', 'street'),
           ### stubs below
           city_id:      '1', # city_id(raw_event.try(:place).try(:city))
