@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks'}
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  resources :events, only: [:index, :show]
-  
-  get 'events/date/:date', to: 'events#date', as: 'date'
+  devise_scope :user do
+    delete 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
+
+  resources :events, only: [:index, :show] do
+    get 'date/:date', to: 'events#date', on: :collection
+  end
+
+  get 'feed', to: 'feed#index', as: :feed
+  get 'feed/edit', to: 'feed#edit', as: :feed_edit
 
   root 'events#index'
 end

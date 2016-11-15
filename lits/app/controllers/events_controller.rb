@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.where('date > ?', DateTime.now).order('date').all 
+    @events = Event.where('date > ?', DateTime.now).order('date').all
   end
 
   def show
@@ -8,5 +8,6 @@ class EventsController < ApplicationController
   end
 
   def date
+    logger.debug(OmniAuth::Strategies.constants)
   end
 end

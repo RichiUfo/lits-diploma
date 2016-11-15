@@ -19,3 +19,4 @@
 .irb-history
 .viminfo
 npm-debug.log
+.log

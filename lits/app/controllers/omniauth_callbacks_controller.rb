@@ -1,24 +1,32 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def self.provides_callback_for(provider)
-    class_eval %Q{
-      def #{provider}
-        @user = User.find_for_oauth(env["omniauth.auth"], current_user)
+  
+  def self.available_providers
+    # reject providers that were avaliable by default
+    OmniAuth::Strategies.constants
+      .reject{|item| item =~ /Developer|OAuth2|Oauth/i }
+      .map{ |item| item.downcase }
+  end
 
-        if @user.persisted?
-          sign_in_and_redirect @user, event: :authentication
-          set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
-        else
-          session["devise.#{provider}_data"] = env["omniauth.auth"]
-          redirect_to new_user_registration_url
-        end
+  self.available_providers.each do |provider|
+    define_method(provider) do
+      @user = User.from_omniauth(request.env["omniauth.auth"])
+
+      if @user.persisted?
+        sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+        set_flash_message(:notice, :success, :kind => provider) if is_navigational_format?
+      else
+        session["devise.#{provider}_data"] = request.env["omniauth.auth"]
+        redirect_to new_user_registration_url
       end
-    }
+    end
   end
 
-  [:facebook, :vkontakte].each do |provider|
-    provides_callback_for provider
+  def failure
+    redirect_to root_path
   end
+
   protected
+
   def after_sign_in_path_for(resource)
     return request.env['omniauth.origin'] || session[:return_to]
   end
