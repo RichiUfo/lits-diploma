@@ -2,9 +2,6 @@ SourceType.find_or_create_by(id: 1).update_attributes name: 'vk', url: 'https://
 SourceType.find_or_create_by(id: 2).update_attributes name: 'fb', url: 'https://facebook.com'
 SourceType.find_or_create_by(id: 3).update_attributes name: 'dou', url: 'https://dou.ua'
 
-SocialType.find_or_create_by(id: 1).update_attributes name: 'vk'
-SocialType.find_or_create_by(id: 2).update_attributes name: 'fb'
-
 City.find_or_create_by(id: 1).update_attributes name: 'Одесса'
 
 CitySourceType.find_or_create_by(id: 1).update_attributes city_id: 1, source_type_id: 1, ext_id: 292, ext_name: nil
@@ -32,3 +29,10 @@ Source.find_or_create_by(id: 10)
                          ref: 'https://dou.ua/calendar/feed/%D0%B2%D1%81%D0%B5%20%D1%82%D0%B5%D0%BC%D1%8B%2F%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0',
                          ext_id: '',
                          city_id: 1
+Source.find_or_create_by(id: 11)
+      .update_attributes source_type_id: 2, ref: 'https://facebook.com/MuseumForChange', ext_id: 981332051921505, city_id: 1
+Source.find_or_create_by(id: 12)
+      .update_attributes source_type_id: 2, ref: 'https://facebook.com/lavkaspeciy', ext_id: 922406907773990, city_id: 1
+Source.find_or_create_by(id: 13).update_attributes source_type_id: 2, ref: 'https://facebook.com/ImpactHubOdessa', ext_id: 420258711362597, city_id: 1
+Source.find_or_create_by(id: 14).update_attributes source_type_id: 2, ref: 'https://facebook.com/prosto.fm', ext_id: 168373746580055, city_id: 1
+Source.find_or_create_by(id: 15).update_attributes source_type_id: 2, ref: 'https://facebook.com/arthouse.club', ext_id: 1661847287429096, city_id: 1

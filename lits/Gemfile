@@ -16,6 +16,7 @@ gem 'bootstrap-sass', git: 'https://github.com/twbs/bootstrap-sass.git', branch:
 
 # Let us use VK, bitcheeeez!
 gem 'vkontakte_api', '~> 1.4'
+gem 'koala', '~> 2.2' # Facebook API
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
