@@ -76,9 +76,9 @@ module Components
 
       private
 
-      def city_id(ext_city_id)
-        city = City.find_by(id: ext_city_id)
-        city.present? ? city.id : nil
+       def city_id(ext_city_id)
+        city_source_type = CitySourceType.find_by(ext_id: ext_city_id)
+        city_source_type.present? ? city_source_type.city_id : nil
       end
     end
   end
