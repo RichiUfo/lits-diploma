@@ -157,7 +157,7 @@ module Components
                 else
                   months_r.index(string_month.strip)
                 end
-        index + 1
+        index.nil? ? 1 : index + 1 
       end
 
       def prepare_description(html)
