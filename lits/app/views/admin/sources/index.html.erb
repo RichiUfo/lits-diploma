@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sources</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td>source_type_id</td>
+      <td style="max-width: 300px; width: 300px; word-wrap: break-word;">ref</td>
+      <td>ext_id</td>
+      <td>city_id</td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sources.each do |source| %>
+      <tr>
+        <td><%= source.source_type_id %></td>
+        <td style="max-width: 300px; width: 300px; word-wrap: break-word;"><%= source.ref %></td>
+        <td><%= source.ext_id %></td>
+        <td><%= source.city_id %></td>
+        <td><%= link_to 'Show', admin_source_path(source) %></td>
+        <td><%= link_to 'Edit', edit_admin_source_path(source) %></td>
+        <td><%= link_to 'Destroy', 
+                        admin_source_path(source), 
+                        method: :delete, 
+                        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Source', new_admin_source_path %>
