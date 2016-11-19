@@ -1,13 +1,11 @@
-/*
- *= require_tree .
- *= require_self
- *= require flat-ui.min
- */
-
 @import 'bootstrap-sprockets';
-@import 'bootstrap';
+@import "bootswatch/united/variables";
+@import "bootstrap";
+@import "bootswatch/united/bootswatch";
+
 @import 'variables';
 @import 'utilities';
+
 
 html body {
   line-height: 1.5;
