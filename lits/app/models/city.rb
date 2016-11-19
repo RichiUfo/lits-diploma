@@ -1,7 +1,7 @@
 class City < ApplicationRecord
   has_many :events
 
-  def self.find_by_vk_id vk_id
-    CitySourceType.find_by(source_type: SourceType::KEYS[:vk], ext_id: vk_id).try(:city)  
+  def self.find_by_vk_id(vk_id)
+    CitySourceType.find_by(source_type: SourceType::KEYS[:vk], ext_id: vk_id).try(:city)
   end
 end

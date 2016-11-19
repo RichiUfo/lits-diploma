@@ -2,9 +2,6 @@ SourceType.find_or_create_by(id: 1).update_attributes name: 'vk', url: 'https://
 SourceType.find_or_create_by(id: 2).update_attributes name: 'fb', url: 'https://facebook.com'
 SourceType.find_or_create_by(id: 3).update_attributes name: 'dou', url: 'https://dou.ua'
 
-SocialType.find_or_create_by(id: 1).update_attributes name: 'vk'
-SocialType.find_or_create_by(id: 2).update_attributes name: 'fb'
-
 City.find_or_create_by(id: 1).update_attributes name: 'Одесса'
 
 CitySourceType.find_or_create_by(id: 1).update_attributes city_id: 1, source_type_id: 1, ext_id: 292, ext_name: nil
