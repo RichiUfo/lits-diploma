@@ -17,4 +17,6 @@
 *.gitconfig
 .cloud-locale-test.skip
 .irb-history
+.viminfo
+npm-debug.log
 .log

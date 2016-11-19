@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112141515) do
+ActiveRecord::Schema.define(version: 20161112150259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,8 +98,9 @@ ActiveRecord::Schema.define(version: 20161112141515) do
     t.text     "ref"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "ext_id"
+    t.bigint   "ext_id"
     t.integer  "city_id"
+    t.index ["ext_id"], name: "index_sources_on_ext_id", using: :btree
     t.index ["source_type_id"], name: "index_sources_on_source_type_id", using: :btree
   end
 
