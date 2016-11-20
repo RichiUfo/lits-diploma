@@ -20,3 +20,4 @@
 .viminfo
 .log
 npm-debug.log
+.pry_history
