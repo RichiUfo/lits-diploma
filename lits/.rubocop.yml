@@ -22,3 +22,5 @@ Metrics/ModuleLength:
   Max: 200
 FormatString:
   EnforcedStyle: sprintf
+Rails/OutputSafety:
+  Enabled: false

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :events, only: [:index, :show] do
+    get 'index(/:page)', to: 'events#index', on: :collection
     get 'date/:date', to: 'events#date', on: :collection
   end
 
