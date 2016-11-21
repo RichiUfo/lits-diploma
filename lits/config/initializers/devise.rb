@@ -1,6 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  require 'koala'
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -241,10 +242,12 @@ Devise.setup do |config|
   # The "*/*" below is required to match Internet Explorer requests.
   # config.navigational_formats = ['*/*', :html]
 
+  CONFIG = YAML.load_file(Rails.root.join('config/source_type.yml'))[Rails.env]
+
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
-  config.omniauth :facebook, "1481761985173756", "996330838fd5468ce3e3f931b316d13d", :image_size => 'small'
-  config.omniauth :vkontakte, "5677646", "qSb6nCDDukTmtoFMIJHO", :image_size => 'small', scope: 'email,public_profile', info_fields: 'email, first_name, last_name'
+  config.omniauth :facebook,  CONFIG['fb_app_id'], CONFIG['fb_secret_key'], :image_size => 'small', scope: 'email', info_fields: 'email, name'
+  config.omniauth :vkontakte, CONFIG['vk_app_id'], CONFIG['vk_secret_key'], :image_size => 'small', scope: 'email,public_profile', info_fields: 'email, first_name, last_name'
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
