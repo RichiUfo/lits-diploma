@@ -1,0 +1,16 @@
+server {
+    listen 80 default_server;
+    server_name localhost;
+    
+    root /var/www/lits/public;
+
+    passenger_enabled on;
+    passenger_friendly_error_pages on;
+    passenger_app_env development;
+
+    passenger_env_var DATABASE_NAME lits;
+    passenger_env_var DATABASE_USER lits;
+    passenger_env_var DATABASE_PASS lits;
+
+    passenger_env_var SECRET_KEY_BASE bc73baf07f40a2ab6960c13494441d5f66f24c1c672c7347afcc3d7acb33e1e1fec963d9e8b4297736a55fc3f521964d9fc9372a717859204acf64c409aa7e65;
+}
