@@ -10,7 +10,7 @@ module EventHelper
   MAP_SIZE = { width: 300, height: 300 }.freeze
 
   def event_image_map(event)
-    return nil if event.lat.nil? || event.lng.nil?
+    return '' if event.lat.nil? || event.lng.nil?
 
     content_tag(:div, image_tag(mag_image_link(event)), class: 'event-map')
   end
