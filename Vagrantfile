@@ -4,8 +4,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = 'ubuntu/trusty64'
 
   config.vm.provider :virtualbox do |vb|
-    config.vm.provision :shell, path: '.setup/bootstrap.sh',
-                                env: { PROVIDER: 'do' }
+    config.vm.provision :shell, path: '.setup/bootstrap.sh'
     config.vm.synced_folder '.', '/var/www/', owner: 'www-data',
                                               group: 'www-data'
     config.vm.network :forwarded_port, guest: 22,
@@ -25,14 +24,13 @@ Vagrant.configure(2) do |config|
 
   # config.vm.define 'events', primary: false do |do_config|
   #   do_config.vm.box = 'ubuntu/trusty64'
-  #   do_config.vm.provision :shell, path: '.setup.do/bootstrap.sh',
-  #                                  env: { PROVIDER: 'do' }
+  #   do_config.vm.provision :shell, path: '.setup.do/bootstrap.sh'
   #   do_config.vm.synced_folder(
   #     '.',
   #     '/var/www/',
   #     owner: 'www-data',
   #     group: 'www-data',
-  #     rsync__exclude: %w(.bundle .tmp .gem/ .passenger .rvm .ssh .vagrant),
+  #     rsync__exclude: %w(.bundle .tmp .gem/ .passenger .rvm .ssh .vagrant lits .setup .git),
   #     rsync__args: %w(--verbose --archive --delete -z --links)
   #   )
 

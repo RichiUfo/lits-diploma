@@ -2,8 +2,8 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-su www-data -c 'mkdir /var/www/.ssh/'
-su www-data -c "cp $DIR/../ssh/id_rsa /var/www/.ssh/id_rsa"
-su www-data -c "cp $DIR/../ssh/id_rsa.pub /var/www/.ssh/id_rsa.pub"
+su application -c 'mkdir /home/application/.ssh/'
+su application -c "cp $DIR/../ssh/id_rsa /home/application/.ssh/id_rsa"
+su application -c "cp $DIR/../ssh/id_rsa.pub /home/application/.ssh/id_rsa.pub"
 
-chmod 0400 /var/www/.ssh/id_rsa
+chmod 0400 /home/application/.ssh/id_rsa

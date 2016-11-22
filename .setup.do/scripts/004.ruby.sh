@@ -15,5 +15,5 @@ packageList=(
 )
 apt-get install -y ${packageList[@]}
 
-chmod 775 -R /var/www/.setup/www-data
-su - www-data -c '/var/www/.setup/www-data/rvm.sh'
+chmod 775 -R /var/www/.setup.do/application
+su - application -c '/var/www/.setup.do/application/rvm.sh'

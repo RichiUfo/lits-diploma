@@ -2,11 +2,11 @@ server {
     listen 80 default_server;
     server_name localhost;
     
-    root /var/www/lits/public;
+    root /home/application/current/public;
 
     passenger_enabled on;
     passenger_friendly_error_pages on;
-    passenger_app_env development;
+    passenger_app_env production;
 
     passenger_env_var DATABASE_NAME lits;
     passenger_env_var DATABASE_USER lits;
