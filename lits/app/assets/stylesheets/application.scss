@@ -6,11 +6,12 @@
  *= require 'masonry/transitions'
  *= require_tree .
  *= require_self
- *= require flat-ui.min
  */
 
 @import 'bootstrap-sprockets';
-@import 'bootstrap';
+@import "bootswatch/united/variables";
+@import "bootstrap";
+@import "bootswatch/united/bootswatch";
 @import 'variables';
 @import 'utilities';
 

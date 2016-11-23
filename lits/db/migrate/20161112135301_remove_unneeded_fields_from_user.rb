@@ -1,8 +1,8 @@
 class RemoveUnneededFieldsFromUser < ActiveRecord::Migration[5.0]
   def change
-    remove_index :users, :confirmation_token
-    remove_index :users, :reset_password_token
-    remove_index :users, :social_type_id
+    # remove_index :users, :confirmation_token
+    # remove_index :users, :reset_password_token
+    # remove_index :users, :social_type_id
 
     remove_column :users, :encrypted_password
     remove_column :users, :reset_password_token
