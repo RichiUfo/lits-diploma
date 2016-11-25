@@ -9,13 +9,10 @@ APP_DB_NAME=${APP_DB_USER}
 APP_TEST_DB_NAME="${APP_DB_NAME}_test"
 PG_VERSION=9.6
 
-echo "$APP_NAME"
-echo "=================================="
-
-# for file in ${DIR}*; do
-#   echo "=================================="
-#   echo "[SH Scripts]: ${file} [START]"
-#   . ${file}
-#   echo "[SH Scripts]: ${file} [END]"
-#   echo "=================================="
-# done
+for file in ${DIR}*; do
+  echo "=================================="
+  echo "[SH Scripts]: ${file} [START]"
+  . ${file}
+  echo "[SH Scripts]: ${file} [END]"
+  echo "=================================="
+done
