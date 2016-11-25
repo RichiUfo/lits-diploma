@@ -26,12 +26,12 @@ RSpec.describe Components::Link do
       expect(found_link).to eq(full_link)
     end
 
-    # it 'Has to generate right vk event link' do
-    #   vk_source_type = SourceType.find_by(name: :vk)
+    it 'Has to generate right vk event link' do
+      vk_source_type = SourceType.find_by(name: :vk)
 
-    #   original_link = Components::Link.original_event_url vk_source_type, 123
-    #   expect(original_link).to eq('https://vk.com/event123')
-    # end
+      original_link = Components::Link.original_event_url vk_source_type, 123
+      expect(original_link).to eq('https://vk.com/event123')
+    end
 
     it 'Has to generate right fb event link' do
       fb_source_type = SourceType.find_by(name: :fb)
@@ -40,11 +40,11 @@ RSpec.describe Components::Link do
       expect(original_link).to eq('https://facebook.com/123')
     end
 
-    # it 'Has to generate right dou event link' do
-    #   dou_source_type = SourceType.find_by(name: :dou)
+    it 'Has to generate right dou event link' do
+      dou_source_type = SourceType.find_by(name: :dou)
 
-    #   original_link = Components::Link.original_event_url dou_source_type, 123
-    #   expect(original_link).to eq('https://dou.ua/calendar/123/')
-    # end
+      original_link = Components::Link.original_event_url dou_source_type, 123
+      expect(original_link).to eq('https://dou.ua/calendar/123/')
+    end
   end
 end
