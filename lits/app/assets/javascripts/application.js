@@ -1,5 +1,6 @@
 //= require jquery
-//= require jquery_ujs 
+//= require jquery_ujs
+//= require bootstrap
 //= require_tree .
 //= require masonry/jquery.masonry
 //= require masonry/modernizr-transitions
