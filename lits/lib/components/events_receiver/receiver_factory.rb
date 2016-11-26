@@ -19,7 +19,7 @@ module Components
         end
 
         receiver.report
-      end 
+      end
     end
   end
 end

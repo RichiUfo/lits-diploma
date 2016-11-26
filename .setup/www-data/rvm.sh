@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd ~
-rm -rf /var/www/.rvm
+rm -rf ~/.rvm
 curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 curl -sSL https://get.rvm.io | bash -s stable --rails
 echo '/bin/bash --login' >> ~/.bashrc
@@ -14,7 +14,8 @@ gem install rake
 gem install bundler
 gem install rails
 
-cd /var/www/lits
+cd ~/lits
 bundle install
 rails db:migrate
 rails db:seed
+rake receive_events:run

@@ -1,41 +1,38 @@
 class User < ApplicationRecord
-  TEMP_EMAIL_PREFIX = 'change@me'
-  TEMP_EMAIL_REGEX = /\Achange@me/
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :confirmable
+  devise :trackable, :omniauthable, omniauth_providers: [:facebook, :vkontakte]
 
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 
-  def self.find_for_oauth(auth, signed_in_resource = nil)
-    identity = Identity.find_for_oauth(auth)
-    user = signed_in_resource ? signed_in_resource : identity.user
-    if user.nil?
-      email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
-      email = auth.info.email if email_is_verified
-
-      user = User.where(:email => email).first if email
-      if user.nil?
-        user = User.new(
-            name: auth.info.name,
-            email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-
-            password: Devise.friendly_token[0,20]
-        )
-        user.skip_confirmation!
-        user.save!
+      if auth.info.email.blank?
+      #  redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email"
+      #TODO: remove this stub
+        auth.info.email = "#{auth.uid}@mail.com"
       end
+
+      user.email = auth.info.email
+      user.name  = auth.info.name
     end
-    if identity.user != user
-      identity.user = user
-      identity.save!
-    end
-    user
   end
 
-  def email_verified?
-    self.email && self.email !~ TEMP_EMAIL_REGEX
+  def avatar
+    if provider == 'vkontakte'
+      client = VkontakteApi::Client.new
+      client.users.get(user_id: uid, fields: 'photo_50').first[:photo_50]
+    elsif provider == 'facebook'
+      avatar = Net::HTTP.get_response(URI("https://graph.facebook.com/#{uid}/picture"))
+      avatar['location']
+    else
+      'https://99designs-blog.imgix.net/blog/wp-content/uploads/2013/03/odessa.png?auto=format&q=60&fit=min&w=100'
+    end
   end
 
-  validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+  # def self.new_with_session(params, session)
+  #   super.tap do |user|
+  #     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+  #       user.email = data["email"] if user.email.blank?
+  #     end
+  #   end
+  # end
+
 end
