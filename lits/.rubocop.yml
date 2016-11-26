@@ -4,6 +4,8 @@ AllCops:
     - config/initializers/devise.rb
     - db/seeds.rb
     - db/schema.rb
+  TargetRubyVersion: 
+    2.3
 Rails:
   Enabled: true
 Style/FrozenStringLiteralComment:
@@ -15,11 +17,14 @@ Documentation:
 ClassLength:
   Max: 260
 Metrics/MethodLength:
-  CountComments: false  # count full line comments?
+  CountComments: false
   Max: 25
 Metrics/ModuleLength:
-  CountComments: false  # count full line comments?
+  CountComments: false
   Max: 200
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
 FormatString:
   EnforcedStyle: sprintf
 Rails/OutputSafety:

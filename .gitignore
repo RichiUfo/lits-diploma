@@ -19,5 +19,8 @@
 .irb-history
 .viminfo
 .log
+.do_token
 npm-debug.log
 .pry_history
+
+.setup.do/ssh/*

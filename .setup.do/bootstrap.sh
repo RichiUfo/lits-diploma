@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIR="/var/www/.setup/scripts/"
+DIR="/var/www/.setup.do/scripts/"
 
 APP_NAME='lits'
 APP_DB_USER=${APP_NAME}

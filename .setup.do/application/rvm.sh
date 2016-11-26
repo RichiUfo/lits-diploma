@@ -10,12 +10,8 @@ rvm autolibs disable
 rvm reload
 rvm install ruby-2.3.1
 rvm --default use ruby-2.3.1
+echo "gem: --no-document" > ~/.gemrc
+
 gem install rake
 gem install bundler
 gem install rails
-
-cd ~/lits
-bundle install
-rails db:migrate
-rails db:seed
-rake receive_events:run
