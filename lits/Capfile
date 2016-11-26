@@ -1,0 +1,11 @@
+require 'capistrano/setup'
+require 'capistrano/deploy'
+
+require 'capistrano/rvm'
+require 'capistrano/rails'
+require 'capistrano/bundler'
+require 'capistrano/passenger'
+
+require 'whenever/capistrano'
+
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }

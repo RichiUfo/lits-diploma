@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112150259) do
+ActiveRecord::Schema.define(version: 20161126074448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,12 +60,13 @@ ActiveRecord::Schema.define(version: 20161112150259) do
     t.float    "lng"
     t.string   "ext_id"
     t.text     "name"
-    t.text     "picture"
+    t.string   "picture",      limit: 512
     t.text     "description"
     t.text     "address"
     t.text     "reg_ref"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "big_picture",  limit: 512
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
     t.index ["city_id"], name: "index_events_on_city_id", using: :btree
     t.index ["format_id"], name: "index_events_on_format_id", using: :btree

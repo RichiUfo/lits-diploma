@@ -1,13 +1,27 @@
-@import 'variables';
+#masonry-container {
+  background: #FFF;
+  margin-bottom: 20px;
+  clear: both;
+}
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.box {
+  margin: 0;
+  background: initial;
+
+}
+
+.col3 { width: 280px; }
+.col4 { width: 380px; }
 
 .thumbnail.event-thumbnail {
-   margin-bottom: 10px;
-   padding: 0;
+  margin-bottom: 0px;
 
   .event-thumbnail-link {
     display: block;
-    border-radius: 4px 4px 0 0;
-    overflow: hidden;
 
     img {
       width: 100%;
@@ -15,29 +29,12 @@
   }
 
   .caption {
-    padding: 15px;
-
-    h3 {
+    a {
       font-size: 18px;
-      margin: 0 0 10px 0;
-
-      a {
-        color: $dark_grey;
-      }
     }
 
     .event-date {
-      color: $light_grey;
-      font-size: 13px;
-    }
-
-    .event-description {
       font-size: 14px;
-      margin: 0;
-    }
-
-    .event-thumbnail-footer {
-      margin: 0;
     }
   }
 }
