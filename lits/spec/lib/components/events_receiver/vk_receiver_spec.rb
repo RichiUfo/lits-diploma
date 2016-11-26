@@ -2,14 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Components::EventsReceiver::VkReceiver do
   describe 'VkReceiver' do
-
     let(:receiver) do
       Components::EventsReceiver::VkReceiver.instance
     end
 
-    let(:event_id) { 123251774 }
+    let(:event_id) { 133135672 }
 
-    let(:source_id) { 74120822 } 
+    let(:source_id) { 74120822 }
 
     it 'Has to return API result with type "Hashie::Mash"' do
       api_result = receiver.get_raw_event(event_id)
@@ -17,18 +16,19 @@ RSpec.describe Components::EventsReceiver::VkReceiver do
     end
 
     it 'Has to format event into hash for creation a model' do
-      api_result = receiver.get_event(event_id)
+      source = Source.find_by(id: 1)
+      api_result = receiver.get_event(event_id, source)
       event = Event.new api_result
       expect(event).to be_valid
     end
 
-    it "Has to replace a pattern with a source vk id" do
+    it 'Has to replace a pattern with a source vk id' do
       expect(receiver.source_event_url(11111)).to include('11111')
     end
 
-    it 'Has to get a list of events for source' do 
+    it 'Has to get a list of events for source' do
       list = receiver.source_events_ids source_id
-      expect(list.all?{ |id| id.to_i > 0 }).to be_truthy
-    end 
+      expect(list.all? { |id| id.to_i.positive? }).to be_truthy
+    end
   end
 end
