@@ -10,6 +10,8 @@ Rails:
   Enabled: true
 Style/FrozenStringLiteralComment:
   Enabled: false
+Style/NumericLiterals:
+  Enabled: false
 Metrics/LineLength:
   Max: 100
 Documentation:
