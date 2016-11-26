@@ -115,6 +115,8 @@ GEM
       faraday_middleware (>= 0.9.1, < 1.0)
       oj (~> 2.0)
     ffi (1.9.14)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     fuubar (2.2.0)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
@@ -315,6 +317,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  friendly_id
   fuubar
   gmaps4rails
   jquery-rails
