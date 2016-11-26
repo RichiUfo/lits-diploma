@@ -23,6 +23,7 @@ gem 'omniauth'
 
 gem 'whenever', require: false
 gem 'friendly_id'
+gem 'babosa'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'

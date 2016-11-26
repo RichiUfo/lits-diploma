@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get 'date/:date', to: 'events#date', on: :collection
   end
 
+  resources :tags
   get 'feed', to: 'feed#index', as: :feed
   get 'feed/edit', to: 'feed#edit', as: :feed_edit
 
