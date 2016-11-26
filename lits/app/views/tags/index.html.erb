@@ -1,28 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tags</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tags.each do |tag| %>
-      <tr>
-        <td><%= tag.name %></td>
-        <td><%= tag.slug %></td>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h4>Tags Cloud</h4>
+<% tag_cloud Tag.number, %w{css1 css2 css3 css4} do |tag, css_class| %>
+  <%= link_to tag.name, tag_path(tag.slug), class: css_class %>
+<% end %>
 
 <br>
 
