@@ -12,12 +12,26 @@ module Components
       def save_source_events(source)
         source_events_ids(source.ext_id).each do |event_ext_id|
           event = get_event event_ext_id, source
-          event_in_db = Event.vk_source.find_by(ext_id: event[:ext_id].to_i) || Event.new(event)
-          event_in_db.save
+          save_event event
 
-          update_report(event_in_db)
+          break if event[:date] < DateTime.now.in_time_zone
+        end
+      end
 
-          break if event[:date] < Time.in_time_zone
+      def save_event(event)
+        event_record = Event.vk_source.find_by(ext_id: event[:ext_id].to_i)
+        report_key = :updated
+        if event_record.nil?
+          event_record = Event.new
+          report_key = :created
+        end
+
+        event_record.attributes = event
+
+        if event_record.save
+          @report[report_key] += 1
+        else
+          @report[:errors] += 1
         end
       end
 
@@ -67,7 +81,7 @@ module Components
         fixed_post = {}
         big_picture = picture_from_fixed_post raw_fixed_post
 
-        fixed_post[:description] = raw_fixed_post.text if raw_fixed_post.text.present?
+        fixed_post[:description] = raw_fixed_post.text if raw_fixed_post.try(:text)
         fixed_post[:big_picture] = big_picture if big_picture.present?
 
         fixed_post
@@ -104,14 +118,6 @@ module Components
           source_type_id: SourceType::KEYS[:vk]
         )
         city_source_type.present? ? city_source_type.city_id : nil
-      end
-
-      def update_report(item)
-        if item.has_errors?
-          @report[:errors] += 1
-        else
-          @report[item.id_changed? ? :exists : :created] += 1
-        end
       end
     end
   end
