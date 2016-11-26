@@ -26,7 +26,7 @@ gem 'whenever', require: false
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
-  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git'
   gem 'byebug', platform: :mri
   gem 'nyan-cat-formatter'
   gem 'awesome_print'
