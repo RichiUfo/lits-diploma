@@ -1,11 +1,5 @@
 require 'rails_helper'
 
-# :id => :integer,
-#      :parent_id => :integer,
-#           :name => :string,
-#     :created_at => :datetime,
-#     :updated_at => :datetime
-
 RSpec.describe Category, type: :model do
   describe 'column specification' do
     it { should have_db_column(:parent_id).of_type(:integer) }
@@ -21,7 +15,6 @@ RSpec.describe Category, type: :model do
 
   describe 'validate specification' do
     it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:parent_id) }
   end
 
   describe 'attributes specification' do
@@ -36,5 +29,4 @@ RSpec.describe Category, type: :model do
       it { should_not be_valid }
     end
   end
-
 end
