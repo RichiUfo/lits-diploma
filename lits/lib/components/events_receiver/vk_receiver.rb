@@ -55,7 +55,7 @@ module Components
       end
 
       def get_raw_fixed_post(raw_event)
-        return nil unless raw_event.try(:fixed_post)
+        return unless raw_event.try(:fixed_post)
 
         @client.wall
                .getById(posts: "-#{raw_event[:gid]}_#{raw_event[:fixed_post]}")
