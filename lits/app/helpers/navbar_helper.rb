@@ -1,53 +1,72 @@
 module NavbarHelper
-  def navbar(header, links)
-    content_tag(:nav, class: 'navbar navbar-inverse navbar-fixed-top') do
-      header = navbar_header(header)
+  def navbar
+    content_tag(:nav, class: 'navbar navbar-inverse navbar-fixed-top') { yield }
+  end
 
-      collapse =
-        if block_given?
-          navbar_collapse(links) { yield }
-        else
-          navbar_collapse(links)
-        end
+  def sidebar_toggle
+    button_tag fa(:bars), class: 'sidebar-toggle'
+  end
 
-      container(header + collapse)
+  def app_header
+    link_to 'Hello', '/', class: 'navbar-brand'
+  end
+
+  def city_select
+    select_tag :city,
+               options_from_collection_for_select(City.all, 'id', 'name'),
+               class: 'city-select'
+  end
+
+  def search_form
+    form_tag '/search', method: :get, class: 'search-form' do
+      search_field_tag(:q, params[:q]) + search_button
     end
   end
 
-  private
-
-  def navbar_header(header)
-    content_tag :div, navbar_brand(header) + navbar_toggle, class: 'navbar-header'
+  def auth_panel
+    user_signed_in? ? user_panel : log_in_with
   end
 
-  def navbar_brand(header)
-    link_to header, root_path, class: 'navbar-brand'
+  def log_in_with
+    content_tag :div, log_in_toggle + log_in_list, class: 'log-in-with pull-right'
   end
 
-  def navbar_toggle
-    button_tag(class: 'navbar-toggle',
-               'aria-expanded' => false,
-               'aria-controls' => 'navbar',
-               data: { toggle: 'collapse', target: '#navbar-main' }) do
-      safe_join([0..2].fill(content_tag(:span, '', class: 'icon-bar')))
+  def log_in_toggle
+    button_tag('Вход', id: 'log-in-with-toggle',
+                       class: 'log-in-with-toggle',
+                       data: { toggle: 'dropdown' })
+  end
+
+  def log_in_list
+    content_tag(:ul, aria: { labelledby: 'log-in-with-toggle' }, class: 'dropdown-menu') do
+      content_tag(:li, link_to(fa(:vk), user_vkontakte_omniauth_authorize_path, class: :vk)) +
+        content_tag(:li, link_to(fa(:facebook),
+                                 user_facebook_omniauth_authorize_path,
+                                 class: :facebook))
     end
   end
 
-  def navbar_collapse(links, &block)
-    content_tag :div, class: 'navbar-collapse collapse', id: 'navbar-main' do
-      content = content_tag(:ul, navbar_links(links), class: 'nav navbar-nav')
+  def user_panel
+    content_tag :div,
+                user_avatar_button + user_panel_dropdown,
+                class: 'dropdown user-panel pull-right'
+  end
 
-      if block_given?
-        content += content_tag(:ul, capture(&block), class: 'nav navbar-nav navbar-right')
-      end
-
-      content
+  def user_avatar_button
+    content_tag :button, class: 'user-avatar-button', 'data-toggle' => 'dropdown' do
+      image_tag current_user.avatar
     end
   end
 
-  def navbar_links(links)
-    safe_join(links.keys.map do |key|
-      content_tag :li, link_to(key, links[key]), class: current_page?(links[key]) ? 'active' : ''
-    end)
+  def user_panel_dropdown
+    content_tag :ul, class: 'dropdown-menu' do
+      concat content_tag(:li, link_to('Настроить ленту', feed_edit_path))
+      concat content_tag(:li, '', class: 'divider', role: 'separator')
+      concat content_tag(:li, link_to('Выйти', destroy_user_session_path, method: 'delete'))
+    end
+  end
+
+  def search_button
+    button_tag fa(:search), type: :submit
   end
 end

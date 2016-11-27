@@ -20,4 +20,8 @@ class Event < ApplicationRecord
   def normalize_friendly_id(text)
     text.to_slug.transliterate(:russian).normalize.to_s
   end
+
+  def self.search(query)
+    Event.where('LOWER(name) LIKE ?', "%#{query.downcase}%").all
+  end
 end

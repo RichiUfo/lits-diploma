@@ -4,6 +4,7 @@
  *= require 'masonry/fluid'
  *= require 'masonry/gutters'
  *= require 'masonry/transitions'
+ *= require 'sidebar'
  *= require_tree .
  *= require_self
  */
@@ -15,38 +16,132 @@
 @import 'variables';
 @import 'utilities';
 
-html body {
+
+html, body {
+  background: #FFF;
   line-height: 1.5;
 }
 
-.navbar {
-  .navbar-brand {
-    font-size: 24px;
-    text-transform: uppercase;
-  }
-  
-  .navbar-collapse{
+.ui.sidebar.overlay {
+  background: #FFF;
+  padding-top: 15px;
 
-    .nav.navbar-nav {
-      li {
-        a {
-          &::first-letter {
-            text-transform: uppercase;
-          }
+  ul {
+    list-style: none;
+    padding-left: 20px;
+  }
+
+  a {
+    display: block;
+  }
+
+  .parent-link {
+    font-size: 30px;
+  }
+
+  .clildren-list {
+
+    .child-link {
+      font-size: 20px;
+    }
+  }
+}
+
+.navbar {
+  .header-left {
+    float: left;
+    margin-left: 20px;
+
+    .sidebar-toggle {
+      background: initial;
+      border: none;
+      color: #FFF;
+      display: inline-block;
+    }
+
+    .navbar-brand {
+      display: inline-block;
+      float: none;
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+
+    .city-select {
+      background: initial;
+      border: none;
+      color: #FFF;
+      display: inline-block;
+    }
+  }
+
+  .header-right {
+    float: right;
+    margin-right: 20px;
+    
+    .search-form {
+      display: inline-block;
+      margin: 10px 20px 0 0;
+
+      input[type="search"] {
+        background: initial;
+        border: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+        color: #FFF;
+        outline: none;
+
+        &:focus {
+          border-bottom: 2px solid rgba(255, 255, 255, 1);
+        }
+      }
+
+      button {
+        background: initial;
+        border: none;
+        color: rgba(255, 255, 255, 0.6);
+
+        &:hover, &:focus {
+          color: rgba(255, 255, 255, 1);
         }
       }
     }
 
-    .nav.navbar-right {
-      @media only screen and (max-width : 768px) {
-        padding: 0 15px;
+    .log-in-with {
+      display: inline-block;
+      margin-top: 10px;
+
+      button {
+        background: initial;
+        border: none;
+        color: #FFF;
+        outline: none;
       }
 
-      a {
-        font-size: 30px;
-        margin-left: 20px;
+      .dropdown-menu {
+        background: initial;
+        box-shadow: none;
+        border: none;
+        min-width: 0;
+        right: 28px;
+        width: 30px;
+
+        a {
+          border-radius: 30px;
+          color: #FFF;
+          display: block;
+          height: 30px;
+          margin-bottom: 10px;
+          padding: 5px;
+          text-align: center;
+          width: 30px;
+
+          &.vk {
+            background: $vk_bg;
+          }
+          &.facebook {
+            background: $facebook_bg;
+          }
+        }
       }
     }
   }
 }
-
