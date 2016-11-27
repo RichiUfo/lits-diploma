@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126192245) do
+ActiveRecord::Schema.define(version: 20161127205031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,10 +67,12 @@ ActiveRecord::Schema.define(version: 20161126192245) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "big_picture",  limit: 512
+    t.string   "slug"
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
     t.index ["city_id"], name: "index_events_on_city_id", using: :btree
     t.index ["format_id"], name: "index_events_on_format_id", using: :btree
     t.index ["organizer_id"], name: "index_events_on_organizer_id", using: :btree
+    t.index ["slug"], name: "index_events_on_slug", unique: true, using: :btree
     t.index ["source_id"], name: "index_events_on_source_id", using: :btree
   end
 
