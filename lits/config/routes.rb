@@ -17,5 +17,8 @@ Rails.application.routes.draw do
   get 'feed', to: 'feed#index', as: :feed
   get 'feed/edit', to: 'feed#edit', as: :feed_edit
 
+  get 'search', to: 'search#index'
+  get 'search(/:q)', to: 'search#search', as: :search_query
+
   root 'events#index'
 end
