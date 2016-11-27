@@ -12,6 +12,8 @@ class Event < ApplicationRecord
   scope :dou_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:dou]) }
   scope :by_day, ->(date) { where('date::date = ?', date.to_date) }
   scope :by_today, -> { by_day(Time.zone.today) }
+  scope :by_tag, ->(tag) { joins(:tags).where('tags.name' => tag.name)}
+
 
   def self.search(query)
     Event.where('LOWER(name) LIKE ?', "%#{query.downcase}%").all
