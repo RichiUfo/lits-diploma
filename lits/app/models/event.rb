@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  extend FriendlyId
   belongs_to :city
   belongs_to :organizer, optional: true
   belongs_to :category, optional: true
@@ -6,6 +7,8 @@ class Event < ApplicationRecord
   belongs_to :format, optional: true
   has_many :event_tags
   has_many :tags, through: :event_tags
+  friendly_id :name, use: :slugged
+
 
   scope :vk_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:vk]) }
   scope :fb_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:fb]) }
@@ -14,4 +17,7 @@ class Event < ApplicationRecord
   scope :by_today, -> { by_day(Time.zone.today) }
   scope :by_tag, ->(tag) { joins(:tags).where('tags.name' => tag.name)}
 
+  def normalize_friendly_id(text)
+    text.to_slug.transliterate(:russian).normalize.to_s
+  end
 end
