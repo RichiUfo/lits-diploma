@@ -6,4 +6,8 @@ module ApplicationHelper
       content_tag :div, content_or_classes, class: "container #{classes}"
     end
   end
+
+  def fa(icon_name)
+    content_tag :i, '', class: "fa fa-#{icon_name}"
+  end
 end
