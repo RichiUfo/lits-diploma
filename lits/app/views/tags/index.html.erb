@@ -1,10 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h4>Tags Cloud</h4>
-<% tag_cloud Tag.number, %w{css1 css2 css3 css4} do |tag, css_class| %>
+<% tag_cloud Tag.number, %w{fs-16 fs-19 fs-22 fs-25} do |tag, css_class| %>
   <%= link_to tag.name, tag_path(tag.slug), class: css_class %>
 <% end %>
-
-<br>
-
-<%= link_to 'New Tag', new_tag_path %>
