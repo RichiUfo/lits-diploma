@@ -21,6 +21,10 @@ class Event < ApplicationRecord
     text.to_slug.transliterate(:russian).normalize.to_s
   end
 
+  def slug_candidates
+    [:name, [:name, :id]]
+  end
+
   def self.search(query)
     Event.where('LOWER(name) LIKE ?', "%#{query.downcase}%").all
   end
