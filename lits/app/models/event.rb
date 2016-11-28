@@ -20,4 +20,8 @@ class Event < ApplicationRecord
   def normalize_friendly_id(text)
     text.to_slug.transliterate(:russian).normalize.to_s
   end
+
+  def slug_candidates
+    [:name, [:name, :id]]
+  end
 end
