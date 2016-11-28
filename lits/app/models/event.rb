@@ -24,4 +24,8 @@ class Event < ApplicationRecord
   def slug_candidates
     [:name, [:name, :id]]
   end
+
+  def self.search(query)
+    Event.where('LOWER(name) LIKE ?', "%#{query.downcase}%").all
+  end
 end
