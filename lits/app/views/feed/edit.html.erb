@@ -1,1 +1,10 @@
 <h2>Feed editing will be here</h2>
+
+<div class="field">
+  <%= collection_check_boxes :user, :category_ids, Category.all, :id, :name do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+</div>
