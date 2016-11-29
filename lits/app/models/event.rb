@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   belongs_to :format, optional: true
   has_many :event_tags
   has_many :tags, through: :event_tags
-  friendly_id :name, use: :slugged
+  friendly_id :name_and_sequence, use: :slugged
 
 
   scope :vk_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:vk]) }
@@ -21,8 +21,10 @@ class Event < ApplicationRecord
     text.to_slug.transliterate(:russian).normalize.to_s
   end
 
-  def slug_candidates
-    [:name, [:name, :id]]
+  def name_and_sequence
+    slug = name.to_param
+    sequence = ext_id
+    "#{slug}--#{sequence}"
   end
 
   def self.search(query)
