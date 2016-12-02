@@ -13,7 +13,7 @@ module Admin
     def update
       respond_to do |format|
         if @source.update(source_params)
-          flash[:notice] = 'Post was successfully updated.'
+          flash[:notice] = 'Source was successfully updated.'
           format.html { redirect_to admin_sources_path }
           format.xml  { head :ok }
         else

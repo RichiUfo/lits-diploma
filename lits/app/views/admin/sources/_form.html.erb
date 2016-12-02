@@ -1,9 +1,10 @@
 <%= simple_form_for([:admin, @source]) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :source_type_id%>
+  <%= f.input :source_type_id, collection: SourceType.all, prompt: false %>
   <%= f.input :ref %>
   <%= f.input :ext_id %>
-  <%= f.input :city_id %>
+  <%= f.input :city_id, collection: City.all, prompt: false %>
   <%= f.button :submit %>
 <% end %>
 
+<hr>
