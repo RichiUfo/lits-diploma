@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
+//= require_directory .
 //= require masonry/jquery.masonry
 //= require masonry/modernizr-transitions
 //= require sidebar
