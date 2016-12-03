@@ -9,7 +9,7 @@ module EventsHelper
   end
 
   def event_col(event)
-    content_tag :div, event_tpl(event), class: 'box col3'
+    content_tag :div, event_tpl(event), class: 'box col4'
   end
 
   private
@@ -26,7 +26,7 @@ module EventsHelper
 
   def thumbnail_caption(event)
     content_tag :div, class: 'caption' do
-      content_tag(:h5, link_to(event.name, event_url(event))) +
+      content_tag(:h5, link_to(event.name.html_safe, event_url(event))) +
         event_time(event)
     end
   end

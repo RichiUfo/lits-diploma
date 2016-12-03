@@ -1,9 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.where('date > ?', Time.zone.now)
-                   .order('date')
-                   .page(@page)
-                   .per(20)
+    @events = Event.future.page(@page)
   end
 
   def show

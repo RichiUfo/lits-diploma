@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def container content_or_classes = nil, classes = '', &block
+  def container(content_or_classes = nil, classes = '', &block)
     if block_given?
       content_tag :div, capture(&block), class: "container #{content_or_classes}"
     else
@@ -9,5 +9,9 @@ module ApplicationHelper
 
   def fa(icon_name)
     content_tag :i, '', class: "fa fa-#{icon_name}"
+  end
+
+  def on_top_button
+    content_tag :div, fa('arrow-up'), id: 'on-top-button'
   end
 end

@@ -1,3 +1,5 @@
+<%= content_tag :h2, "#{@tag.name}:" %>
 
-<h2><%= @tag.name  %>:</h2>
-<%= events_grid Event.by_tag @tag %>
+<%= events_grid @events %>
+
+<%= paginate @events %>
