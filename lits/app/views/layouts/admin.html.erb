@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Centr. Admin</title>
+    <title>WillGo. Admin</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
-    <%= javascript_include_tag 'application' %>
+    
+    <%= stylesheet_link_tag '/assets/admin/admin', media: 'all' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
   </head>
-
-  <body>
-    <%= container('m-t-70') { yield } %>
-  </body>
+  
+  <body class="nav-sm">
+    <div class="container body">
+      <% flash.each do |key, value| %>
+      <div align="center" id="flash" class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      
+      <%= render "admin/sidenav" %>
+      <%= render "admin/topnav" %>
+      
+      <div class="right_col">
+        <%= yield %>      
+      </div>
+      <%= render "admin/footer" %>
+      
+      </div>
+      <%= javascript_include_tag '/assets/admin/admin' %>
+    </body>
+  </html>
 </html>

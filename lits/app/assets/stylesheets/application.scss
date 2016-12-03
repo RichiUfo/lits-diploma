@@ -5,7 +5,7 @@
  *= require 'masonry/gutters'
  *= require 'masonry/transitions'
  *= require 'sidebar'
- *= require_tree .
+ *= require_directory .
  *= require_self
  */
 
