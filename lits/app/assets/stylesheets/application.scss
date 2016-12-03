@@ -22,6 +22,10 @@ html, body {
   line-height: 1.5;
 }
 
+.pushable > .pusher {
+  overflow: visible;
+}
+
 .ui.sidebar.overlay {
   background: #FFF;
   padding-top: 15px;
