@@ -8,7 +8,7 @@ module NavbarHelper
   end
 
   def app_header
-    link_to 'Hello', '/', class: 'navbar-brand'
+    link_to 'WillGo', '/', class: 'navbar-brand'
   end
 
   def city_select
