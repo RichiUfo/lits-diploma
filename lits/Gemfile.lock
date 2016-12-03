@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/thoughtbot/shoulda-matchers.git
-  revision: d1e9a41fca001b6d89455aff49f1f03ac272ee08
+  remote: https://github.com/thoughtbot/shoulda-matchers.git
+  revision: 44c0198830921650af3b4a56f5d72aaae2168480
   specs:
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
@@ -62,6 +62,7 @@ GEM
     autoprefixer-rails (6.5.3)
       execjs
     awesome_print (1.7.0)
+    babosa (1.0.2)
     bcrypt (3.1.11)
     bootswatch-rails (3.3.5)
       railties (>= 3.1)
@@ -115,6 +116,8 @@ GEM
       faraday_middleware (>= 0.9.1, < 1.0)
       oj (~> 2.0)
     ffi (1.9.14)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     fuubar (2.2.0)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
@@ -304,6 +307,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  babosa
   bootstrap-sass!
   bootswatch-rails
   byebug
@@ -315,6 +319,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  friendly_id
   fuubar
   gmaps4rails
   jquery-rails

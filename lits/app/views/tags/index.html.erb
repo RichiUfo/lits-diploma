@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<h4>Tags Cloud</h4>
+<% tag_cloud Tag.number, %w{fs-16 fs-19 fs-22 fs-25} do |tag, css_class| %>
+  <%= link_to tag.name, tag_path(tag.slug), class: css_class %>
+<% end %>
