@@ -5,9 +5,11 @@ Rails.application.routes.draw do
     delete 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  namespace :admin do
+  namespace :admin, path: 'topsecret' do
     resources :sources
+    root to: 'index#index'
   end
+
 
   resources :events, only: [:index, :show] do
     get 'index(/:page)', to: 'events#index', on: :collection

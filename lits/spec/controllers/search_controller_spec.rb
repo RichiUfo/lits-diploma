@@ -14,7 +14,6 @@ RSpec.describe SearchController, type: :controller do
 
     it 'Has to redirect page with pretty url' do
       get :index, params: { q: :lil }
-      p response.body_parts
       expect(response).to redirect_to(action: :search, q: :lil)
     end
   end

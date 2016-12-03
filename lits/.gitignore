@@ -12,3 +12,5 @@
 .byebug_history
 
 public/assets/**
+
+.idea
