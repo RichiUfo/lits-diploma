@@ -12,9 +12,8 @@ module Admin
           flash[:notice] = 'Source was successfully updated.'
           format.html { redirect_to admin_sources_path }
         else
+          flash[:error] = @source.errors.full_messages.to_sentence
           format.html { render action: 'edit' }
-          # flash[:error] = @source.errors.full_messages.to_sentence
-          # format.xml  { render xml: @source.errors, status: :unprocessable_entity }
         end
       end
     end
