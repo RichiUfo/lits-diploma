@@ -19,12 +19,10 @@ var $sideBar = $('.ui.sidebar').sidebar({ transition: 'overlay' }),
 
 var register = {
   masonry: function () {
-    helper.executeAfterLoading($masonryContainer.find('img'), function(){
-      $masonryContainer.masonry({
-        itemSelector: '.box',
-        isAnimated: !Modernizr.csstransitions,
-        isFitWidth: true
-      });
+    $masonryContainer.masonry({
+      itemSelector: '.box',
+      isAnimated: !Modernizr.csstransitions,
+      isFitWidth: true
     });
   },
 
@@ -54,19 +52,3 @@ var register = {
     });
   }
 };
-
-var helper = {
-  executeAfterLoading: function ($jQobject, callback) {
-    var total = $jQobject.length,
-      loaded = 0;
-
-    $jQobject.on('load', function() {
-      loaded++;
-
-      if (total == loaded) {
-        callback();
-      }
-    });
-  }
-};
-
