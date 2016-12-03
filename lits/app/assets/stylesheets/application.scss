@@ -145,3 +145,20 @@ html, body {
     }
   }
 }
+
+#on-top-button {
+  bottom: 50px;
+  cursor: pointer;
+  display: none;
+  font-size: 50px;
+  line-height: 1;
+  position: fixed;
+  right: 50px;
+  z-index: 2;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
