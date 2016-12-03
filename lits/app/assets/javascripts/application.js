@@ -7,36 +7,48 @@
 //= require sidebar
 
 $(document).ready(function() {
-  var $sideBar = $('.ui.sidebar').sidebar({
-    transition: 'overlay', 
-  }),
-  $masonryContainer = $('#masonry-container'),
-  $sidebarToggle = $('.sidebar-toggle');
+  register.onTopButton();
+  register.sideBarToggle();
+  register.masonry();
+});
 
-  executeAfterLoading($masonryContainer.find('img'), function(){
+var $sideBar = $('.ui.sidebar').sidebar({ transition: 'overlay' }),
+    $masonryContainer = $('#masonry-container'),
+    $sidebarToggle = $('.sidebar-toggle'),
+    $onTopButton = $('#on-top-button');
+
+var register = {
+  masonry: function () {
     $masonryContainer.masonry({
       itemSelector: '.box',
       isAnimated: !Modernizr.csstransitions,
       isFitWidth: true
     });
-  });
+  },
 
-  $sidebarToggle.on('click', function(e) {
-    e.preventDefault();
-    $sideBar.sidebar('toggle');
-  });
-});
+  onTopButton: function () {
+    var button_visible = 300, 
+      delay = 1000;
 
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > button_visible) {
+        $onTopButton.fadeIn();
+      } else {
+        $onTopButton.fadeOut();
+      }
+    });
 
-function executeAfterLoading($jQobject, callback) {
-  var total = $jQobject.length,
-    loaded = 0;
-
-  $jQobject.on('load', function() {
-    loaded++;
-
-    if (total == loaded) {
-      callback();
-    }
-  });
-}
+    $onTopButton.click(function () {
+      $('body, html').animate({
+        scrollTop: 0
+      }, delay);
+    });
+  },
+  
+  sideBarToggle: function () {
+    $sidebarToggle.on('click', function(e) {
+      e.preventDefault();
+      $sideBar.sidebar('toggle');
+    });
+  }
+};
