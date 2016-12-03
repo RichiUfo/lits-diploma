@@ -1,4 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+	    	<td>source_type_id</td>
+	      	<td style="max-width: 300px; width: 300px; word-wrap: break-word;">ref</td>
+	      	<td>ext_id</td>
+	      	<td>city_id</td>
+	    </tr>
+	</thead>
+	<tbody>
+		<tr>
+	        <td><%= @source.source_type_id %></td>
+	        <td style="max-width: 300px; width: 300px; word-wrap: break-word;"><%= @source.ref %></td>
+	        <td><%= @source.ext_id %></td>
+	        <td><%= @source.city_id %></td>
+	    <tr>
+	</tbody>
+</table>
 <%= link_to 'Edit', edit_admin_source_path(@source) %> |
 <%= link_to 'Back', admin_sources_path %>

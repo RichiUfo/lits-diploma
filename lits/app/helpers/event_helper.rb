@@ -1,3 +1,5 @@
+require 'open-uri'
+require 'base64'
 module EventHelper
   MAP_LINK = 'https://maps.googleapis.com/maps/api/staticmap?' \
              'center=<lat>,<lng>&' \
@@ -5,17 +7,24 @@ module EventHelper
              'zoom=<zoom>&' \
              'markers=color:red|<lat>,<lng>&' \
              'key=<key>'.freeze
-  MAP_KEY  = 'AIzaSyDwbSLp-THz0tcCIPo8UiF6LXyAwZrrEak'.freeze
+  MAP_KEY  = Rails.application.config.source_type['google_api_key'].freeze
   MAP_ZOOM = 17
   MAP_SIZE = { width: 300, height: 300 }.freeze
 
   def event_image_map(event)
     return '' if event.lat.nil? || event.lng.nil?
 
-    content_tag(:div, image_tag(mag_image_link(event)), class: 'event-map')
+    #content_tag(:div, image_tag(mag_image_link(event)), class: 'event-map')
+    image map_image_link(event)
   end
 
-  def mag_image_link(event)
+  def image(link)
+    ff = open(link)
+    b64img =  Base64.encode64(ff.read)
+    image_tag("data:image/jpeg;base64,#{b64img}", class: 'event-map')
+  end
+
+  def map_image_link(event)
     MAP_LINK.gsub('<key>', MAP_KEY.to_s)
             .gsub('<lat>', event.lat.to_s)
             .gsub('<lng>', event.lng.to_s)
