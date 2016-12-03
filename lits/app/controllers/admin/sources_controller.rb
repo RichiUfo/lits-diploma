@@ -1,10 +1,6 @@
 module Admin
   class SourcesController < BaseController
     def show
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml { render xml: @source }
-      end
     end
 
     def edit
@@ -15,18 +11,11 @@ module Admin
         if @source.update(source_params)
           flash[:notice] = 'Source was successfully updated.'
           format.html { redirect_to admin_sources_path }
-          format.xml  { head :ok }
         else
           format.html { render action: 'edit' }
-          format.xml  { render xml: @source.errors, status: :unprocessable_entity }
+          # flash[:error] = @source.errors.full_messages.to_sentence
+          # format.xml  { render xml: @source.errors, status: :unprocessable_entity }
         end
-      end
-    end
-
-    def destroy
-      respond_to do |format|
-        format.html { redirect_to(admin_sources_path) }
-        format.xml  { head :ok }
       end
     end
 
