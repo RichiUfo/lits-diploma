@@ -9,6 +9,8 @@ class Tag < ApplicationRecord
   end
 
   def self.number
-    self.select("name, slug, count(event_tags.tag_id) as count").joins(:event_tags).group("name, slug, event_tags.tag_id")
+    select('name, slug, count(event_tags.tag_id) as count')
+      .joins(:event_tags)
+      .group('name, slug, event_tags.tag_id')
   end
 end

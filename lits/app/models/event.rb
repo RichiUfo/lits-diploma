@@ -8,15 +8,15 @@ class Event < ApplicationRecord
   has_many :event_tags
   has_many :tags, through: :event_tags
   friendly_id :name_and_sequence, use: :slugged
-
+  paginates_per PER_PAGE_DEFAULT
 
   scope :vk_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:vk]) }
   scope :fb_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:fb]) }
   scope :dou_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:dou]) }
   scope :by_day, ->(date) { where('date::date = ?', date.to_date) }
   scope :by_today, -> { by_day(Time.zone.today) }
-  scope :by_tag, ->(tag) { joins(:tags).where('tags.name' => tag.name)}
-  # scope :by_user_feed, ->{ current_user.nil? ? where('true') : joins(:category).where() }
+  scope :by_tag, ->(tag) { joins(:tags).where(tags: { name: tag.name }) }
+  scope :future, -> { where('date > ?', Time.zone.now).order('date') }
 
   def normalize_friendly_id(text)
     text.to_slug.transliterate(:russian).normalize.to_s

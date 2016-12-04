@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 20161203112054) do
     t.datetime "updated_at",                      null: false
     t.string   "provider"
     t.string   "uid"
+    t.integer  "roles_mask",         default: 0
     t.index ["city_id"], name: "index_users_on_city_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["provider"], name: "index_users_on_provider", using: :btree

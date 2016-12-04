@@ -5,16 +5,19 @@ Rails.application.routes.draw do
     delete 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  namespace :admin do
+  namespace :admin, path: 'topsecret' do
     resources :sources
+    root to: 'index#index'
   end
 
   resources :events, only: [:index, :show] do
     get 'index(/:page)', to: 'events#index', on: :collection
-    get 'date/:date', to: 'events#date', on: :collection
+    get 'date/:date', to: 'events#date', on: :collection, as: :events_date
   end
 
-  resources :tags, only: [:index, :show]
+  resources :tags, only: [:index, :show] do
+    get ':id(/:page)', to: 'tags#show', on: :collection
+  end
 
   # get 'feed', to: 'feed#index', as: :feed
   patch 'feed/:id', to: 'users#update', as: :feed_update

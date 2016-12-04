@@ -5,7 +5,7 @@
  *= require 'masonry/gutters'
  *= require 'masonry/transitions'
  *= require 'sidebar'
- *= require_tree .
+ *= require_directory .
  *= require_self
  *= require bootstrap-tagsinput
  */
@@ -21,6 +21,10 @@
 html, body {
   background: #FFF;
   line-height: 1.5;
+}
+
+.pushable > .pusher {
+  overflow: visible;
 }
 
 .ui.sidebar.overlay {
@@ -146,3 +150,20 @@ html, body {
     }
   }
 }
+
+#on-top-button {
+  bottom: 50px;
+  cursor: pointer;
+  display: none;
+  font-size: 50px;
+  line-height: 1;
+  position: fixed;
+  right: 50px;
+  z-index: 2;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+

@@ -1,9 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.where('date > ?', Time.zone.now)
-                   .order('date')
-                   .page(@page)
-                   .per(20)
+    @events = Event.future.page(@page)
   end
 
   def show
@@ -11,6 +8,6 @@ class EventsController < ApplicationController
   end
 
   def date
-    logger.debug(OmniAuth::Strategies.constants)
+    @events = Event.by_day(params[:date]).page(@page)
   end
 end

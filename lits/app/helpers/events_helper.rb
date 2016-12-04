@@ -1,5 +1,11 @@
 module EventsHelper
-  def events_grid(events)
+  ON_EMPTY_MESSAGE = 'Извините, мы не нашли события :('.freeze
+
+  def events_grid(events, on_empty_message = false)
+    !events.empty? ? grid(events) : on_empty(on_empty_message || ON_EMPTY_MESSAGE)
+  end
+
+  def grid(events)
     content_tag(
       :section, id: 'masonry-container',
                 class: 'transitions-enabled centered masonry clearfix'
@@ -8,8 +14,12 @@ module EventsHelper
     end
   end
 
+  def on_empty(on_empty_message)
+    content_tag :p, on_empty_message, class: 'on-empty-message'
+  end
+
   def event_col(event)
-    content_tag :div, event_tpl(event), class: 'box col3'
+    content_tag :div, event_tpl(event), class: 'box col4'
   end
 
   private
@@ -26,7 +36,7 @@ module EventsHelper
 
   def thumbnail_caption(event)
     content_tag :div, class: 'caption' do
-      content_tag(:h5, link_to(event.name, event_url(event))) +
+      content_tag(:h5, link_to(event.name.html_safe, event_url(event))) +
         event_time(event)
     end
   end

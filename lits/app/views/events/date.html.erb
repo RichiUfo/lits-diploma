@@ -1,2 +1,5 @@
-<h1>Events#date_show</h1>
-<p>Find me in app/views/events/date_show.html.erb</p>
+<%= events_timeline %>
+
+<%= events_grid @events, 'К сожалению, мы не нашли событий за это время :(' %>
+
+<%= paginate @events %>

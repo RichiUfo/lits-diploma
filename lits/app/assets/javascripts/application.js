@@ -1,43 +1,57 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
 //= require masonry/jquery.masonry
 //= require masonry/modernizr-transitions
 //= require sidebar
+//= require_directory .
 //= require bootstrap-tagsinput
 
 $(document).ready(function() {
-  var $sideBar = $('.ui.sidebar').sidebar({
-    transition: 'overlay',
-  }),
-  $masonryContainer = $('#masonry-container'),
-  $sidebarToggle = $('.sidebar-toggle');
-
-  executeAfterLoading($masonryContainer.find('img'), function(){
-    $masonryContainer.masonry({
-      itemSelector: '.box',
-      isAnimated: !Modernizr.csstransitions,
-      isFitWidth: true
-    });
-  });
-
-  $sidebarToggle.on('click', function(e) {
-    e.preventDefault();
-    $sideBar.sidebar('toggle');
-  });
+  register.onTopButton();
+  register.sideBarToggle();
+  register.masonry();
 });
 
+var $sideBar = $('.ui.sidebar').sidebar({ transition: 'overlay' }),
+    $masonryContainer = $('#masonry-container'),
+    $sidebarToggle = $('.sidebar-toggle'),
+    $onTopButton = $('#on-top-button');
 
-function executeAfterLoading($jQobject, callback) {
-  var total = $jQobject.length,
-    loaded = 0;
+var register = {
+  masonry: function () {
+    $masonryContainer.imagesLoaded().always(function(){
+      $masonryContainer.masonry({
+        itemSelector: '.box',
+        isAnimated: !Modernizr.csstransitions,
+        isFitWidth: true
+      });
+    });
+  },
 
-  $jQobject.on('load', function() {
-    loaded++;
+  onTopButton: function () {
+    var button_visible = 300, 
+      delay = 1000;
 
-    if (total == loaded) {
-      callback();
-    }
-  });
-}
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > button_visible) {
+        $onTopButton.fadeIn();
+      } else {
+        $onTopButton.fadeOut();
+      }
+    });
+
+    $onTopButton.click(function () {
+      $('body, html').animate({
+        scrollTop: 0
+      }, delay);
+    });
+  },
+  
+  sideBarToggle: function () {
+    $sidebarToggle.on('click', function(e) {
+      e.preventDefault();
+      $sideBar.sidebar('toggle');
+    });
+  }
+};
