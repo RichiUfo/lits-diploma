@@ -8,6 +8,6 @@ class EventsController < ApplicationController
   end
 
   def date
-    logger.debug(OmniAuth::Strategies.constants)
+    @events = Event.by_day(params[:date]).page(@page)
   end
 end

@@ -1,10 +1,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_directory .
 //= require masonry/jquery.masonry
 //= require masonry/modernizr-transitions
 //= require sidebar
+//= require_directory .
 
 $(document).ready(function() {
   register.onTopButton();
@@ -19,10 +19,12 @@ var $sideBar = $('.ui.sidebar').sidebar({ transition: 'overlay' }),
 
 var register = {
   masonry: function () {
-    $masonryContainer.masonry({
-      itemSelector: '.box',
-      isAnimated: !Modernizr.csstransitions,
-      isFitWidth: true
+    $masonryContainer.imagesLoaded().always(function(){
+      $masonryContainer.masonry({
+        itemSelector: '.box',
+        isAnimated: !Modernizr.csstransitions,
+        isFitWidth: true
+      });
     });
   },
 

@@ -1,3 +1,25 @@
 .events-timeline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 
+  .events-timeline-day {
+    padding: 0.5% 1%;
+    position: relative;
+
+    &.selected {
+      background: #772953;
+      color: #FFF;
+    }
+
+    &.weekend {
+      font-weight: bold;
+    }
+
+    &[data-month]::before {
+      content: attr(data-month);
+      position: absolute;
+      top: 35px;
+    }
+  }
 }

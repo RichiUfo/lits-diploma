@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index, :show] do
     get 'index(/:page)', to: 'events#index', on: :collection
-    get 'date/:date', to: 'events#date', on: :collection
+    get 'date/:date', to: 'events#date', on: :collection, as: :events_date
   end
 
   resources :tags, only: [:index, :show] do
