@@ -17,7 +17,21 @@ class Event < ApplicationRecord
   scope :by_today, -> { by_day(Time.zone.today) }
   scope :by_tag, ->(tag) { joins(:tags).where(tags: { name: tag.name }) }
   scope :future, -> { where('date > ?', Time.zone.now).order('date') }
+  scope :future_by_user, -> { where(feed_query.where_values.map(&:to_sql).join(" OR "))
+                              .where('date > ?', Time.zone.now).order('date')}
 
+  def future_query
+    where('date > ?', Time.zone.now).order('date')
+  end
+  def self.feed_query
+    Event.joins(:tags).where(tags: {id: user_tags.map(&:id)}, category_id: user_categories)
+  end
+  def self.user_tags
+    current_user.nil? ? [] : current_user.tags
+  end
+  def self.user_categories
+    current_user.nil? ? [] : current_user.categories
+  end
   def normalize_friendly_id(text)
     text.to_slug.transliterate(:russian).normalize.to_s
   end
