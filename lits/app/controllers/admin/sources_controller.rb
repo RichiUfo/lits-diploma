@@ -1,6 +1,6 @@
 module Admin
   class SourcesController < BaseController
-    ## before_action :url_analyzer, only: [:update, :create]
+    # before_action :url_analyzer, only: [:update, :create]
 
     def show
     end

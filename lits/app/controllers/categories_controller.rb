@@ -1,8 +1,5 @@
 class CategoriesController < ApplicationController
-  
   def show
-    @events = Event.future.by_tag(@tag).page(@page)
-    @event = Event.where(category_id: params[:category_id])
+    @events = Event.future.by_category(params[:category_id]).page(@page)
   end
-
 end
