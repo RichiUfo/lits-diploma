@@ -21,7 +21,7 @@ module EventsTimelineHelper
     options = { class: 'events-timeline-day' }
     options[:class] += ' selected' if selected_day?(day)
     options[:class] += ' weekend' if weekend?(day)
-    options[:data] = { month: day.strftime('%B') } if day.strftime('%-d') == '5'
+    options[:data] = { month: day.strftime('%B') } if day.strftime('%-d') == '1'
     options
   end
 

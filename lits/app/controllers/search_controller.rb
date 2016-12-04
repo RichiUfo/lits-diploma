@@ -12,4 +12,13 @@ class SearchController < ApplicationController
   def redirect_on_empty_q
     redirect_back(fallback_location: root_path) unless params.key?(:q) && params[:q].present?
   end
+
+  def page_title
+    title = Rails.application.config.app_name
+    title + if action_name == 'search'
+              " | Поиск по #{params[:q]}"
+            else
+              ''
+            end
+  end
 end

@@ -9,6 +9,17 @@ class TagsController < ApplicationController
     @events = Event.future.by_tag(@tag).page(@page)
   end
 
+  def page_title
+    title = Rails.application.config.app_name
+    title + if action_name == 'index'
+              ' | Все теги'
+            elsif action_name == 'show'
+              " | #{@tag.name}"
+            else
+              ''
+            end
+  end
+
   private
 
   def set_tag

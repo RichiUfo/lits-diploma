@@ -11,5 +11,7 @@ module App
     config.time_zone = 'Kyiv'
 
     config.eager_load_paths << Rails.root.join('lib')
+
+    config.app_name = 'WillGo'
   end
 end
