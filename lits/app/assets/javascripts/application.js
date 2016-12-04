@@ -5,10 +5,11 @@
 //= require masonry/jquery.masonry
 //= require masonry/modernizr-transitions
 //= require sidebar
+//= require bootstrap-tagsinput
 
 $(document).ready(function() {
   var $sideBar = $('.ui.sidebar').sidebar({
-    transition: 'overlay', 
+    transition: 'overlay',
   }),
   $masonryContainer = $('#masonry-container'),
   $sidebarToggle = $('.sidebar-toggle');

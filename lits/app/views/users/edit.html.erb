@@ -1,0 +1,15 @@
+<%= form_for(@user, url: feed_update_path(@user), html: {method: "patch"}) do |f| %>
+  <div class="field">
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+      <div class="collection-check-box">
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+    <% end %>
+  </div>
+  <div class="tags">
+    <%= f.label "Ваши теги: "%>
+    <%= f.text_field :all_tags, 'data-role'=>'tagsinput' %>
+  </div>
+  <%= f.button :submit %>
+<% end %>

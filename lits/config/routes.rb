@@ -16,8 +16,9 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:index, :show]
 
-  get 'feed', to: 'feed#index', as: :feed
-  get 'feed/edit', to: 'feed#edit', as: :feed_edit
+  # get 'feed', to: 'feed#index', as: :feed
+  patch 'feed/:id', to: 'users#update', as: :feed_update
+  get 'feed/edit', to: 'users#edit', as: :user_edit
 
   get 'search', to: 'search#index'
   get 'search(/:q)', to: 'search#search', as: :search_query

@@ -60,7 +60,7 @@ module NavbarHelper
 
   def user_panel_dropdown
     content_tag :ul, class: 'dropdown-menu' do
-      concat content_tag(:li, link_to('Настроить ленту', feed_edit_path))
+      concat content_tag(:li, link_to('Настроить ленту', user_edit_path))
       concat content_tag(:li, '', class: 'divider', role: 'separator')
       concat content_tag(:li, link_to('Выйти', destroy_user_session_path, method: 'delete'))
     end

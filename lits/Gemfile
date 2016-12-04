@@ -9,6 +9,7 @@ gem 'bootstrap-sass', git: 'https://github.com/twbs/bootstrap-sass.git', branch:
 gem 'bootswatch-rails'
 gem 'jquery-rails'
 gem 'masonry-rails'
+gem 'bootstrap-tagsinput-rails'
 
 gem 'simple_form'
 gem 'gmaps4rails'
