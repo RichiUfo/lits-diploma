@@ -7,7 +7,7 @@ module Components
         super
         Koala.config.api_version = 'v2.8'
         oauth = Koala::Facebook::OAuth.new
-        @limit = 100 # => only 10 events per fb source
+        @limit = 100 # => events per fb source
         @graph = Koala::Facebook::API.new(oauth.get_app_access_token)
       end
 

@@ -1,18 +1,7 @@
-class UrlValidator < ActiveModel::EachValidator
-  def validate_each(record, attribute, value)
-    record.errors[attribute] << (options[:message] || 'must be a valid URL') unless url_valid?(value)
-  end
-
-  def url_valid?(url)
-    url = URI.parse(url) rescue false
-    url.is_a?(URI::HTTP) || url.is_a?(URI::HTTPS)
-  end
-end
-
 class Source < ApplicationRecord
   belongs_to :source_type
   belongs_to :city
 
-  validates :ref, presence: true, url: true
-#  validates :ext_id, presence: false, numericality: true
+  validates :ref, presence: true, url: true, uniqueness: true
+  validates :ext_id, numericality: true, uniqueness: true
 end
