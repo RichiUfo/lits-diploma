@@ -3,21 +3,22 @@
   <head>
     <title>WillGo. Admin</title>
     <%= csrf_meta_tags %>
-    
+
     <%= stylesheet_link_tag 'admin/admin', media: 'all' %>
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
   </head>
-  
+
   <body class="nav-sm">
-    <div class="container body">      
+    <div class="container body">
       <%= render "admin/sidenav" %>
       <%= render "admin/topnav" %>
-      
+
       <div class="right_col">
-        <%= yield %>      
+        <%= render "admin/notice" %>
+        <%= yield %>
       </div>
       <%= render "admin/footer" %>
-      
+
       </div>
       <%= javascript_include_tag 'admin/admin' %>
     </body>
