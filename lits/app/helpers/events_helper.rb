@@ -1,11 +1,21 @@
 module EventsHelper
-  def events_grid(events)
+  ON_EMPTY_MESSAGE = 'Извините, мы не нашли события :('.freeze
+
+  def events_grid(events, on_empty_message = false)
+    !events.empty? ? grid(events) : on_empty(on_empty_message || ON_EMPTY_MESSAGE)
+  end
+
+  def grid(events)
     content_tag(
       :section, id: 'masonry-container',
                 class: 'transitions-enabled centered masonry clearfix'
     ) do
       safe_join events.map { |e| event_col e }
     end
+  end
+
+  def on_empty(on_empty_message)
+    content_tag :p, on_empty_message, class: 'on-empty-message'
   end
 
   def event_col(event)

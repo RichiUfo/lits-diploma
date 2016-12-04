@@ -4,6 +4,11 @@
   clear: both;
 }
 
+.on-empty-message {
+  font-size: 20px;
+  margin-top: 60px;
+}
+
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
