@@ -10,13 +10,14 @@ Rails.application.routes.draw do
     root to: 'index#index'
   end
 
-
   resources :events, only: [:index, :show] do
     get 'index(/:page)', to: 'events#index', on: :collection
     get 'date/:date', to: 'events#date', on: :collection
   end
 
-  resources :tags, only: [:index, :show]
+  resources :tags, only: [:index, :show] do
+    get ':id(/:page)', to: 'tags#show', on: :collection
+  end
 
   get 'feed', to: 'feed#index', as: :feed
   get 'feed/edit', to: 'feed#edit', as: :feed_edit
