@@ -29,4 +29,18 @@ module ApplicationHelper
   def meta_viewport
     tag :meta, name: :viewport, content: 'width=device-width, initial-scale=1.0'
   end
+
+  def og_title
+    tag :meta, property: 'og:title', content: Components::Meta::Og.title(controller)
+  end
+
+  def og_description
+    tag :meta, property: 'og:description',
+               content: Components::Meta::Og.description(controller)
+  end
+
+  def og_image
+    tag :meta, property: 'og:image', 
+               content: Components::Meta::Og.image(controller)
+  end
 end
