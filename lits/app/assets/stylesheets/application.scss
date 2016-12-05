@@ -7,6 +7,7 @@
  *= require 'sidebar'
  *= require_directory .
  *= require_self
+ *= require bootstrap-tagsinput
  */
 
 @import 'bootstrap-sprockets';
@@ -81,7 +82,7 @@ html, body {
   .header-right {
     float: right;
     margin-right: 20px;
-    
+
     .search-form {
       display: inline-block;
       margin: 10px 20px 0 0;

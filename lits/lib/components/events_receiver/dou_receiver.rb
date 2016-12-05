@@ -4,7 +4,6 @@ module Components
   module EventsReceiver
     class DouReceiver < BaseReceiver
       SOURCE_EVENTS_URL = URI('https://dou.ua/calendar/feed/%D0%B2%D1%81%D0%B5%20%D1%82%D0%B5%D0%BC%D1%8B%2F%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0')
-
       attr_reader :data
       # Components::EventsReceiver::DouReceiver.run
       def save_source_events(source = nil)
@@ -142,14 +141,15 @@ module Components
         date_parts[1] = date_parts[1].split('(')[0].strip
         current_date = Time.current.to_date
         day = date_parts[0].to_i
-        month = convert_month(date_parts[1])
+        month = convert_month(date_parts)
         year = month > current_date.mon ? current_date.year + 1 : current_date.year
         arr_time = string_time.split(':')
         hh, mm = arr_time[0].to_i, arr_time[1].to_i
         DateTime.new(year, month, day, hh, mm)
       end
 
-      def convert_month(string_month)
+      def convert_month(date_parts)
+        string_month = date_parts.last.split(' ').first
         months_r = %w(января февраля марта апреля мая июня июля августа сентября октября ноября декабря)
         months_u = %w(січня лютого березня квітня травня червня липня серпня вересня жовтня листопада грудня)
         index = if months_r.index(string_month.strip).nil?
@@ -157,7 +157,7 @@ module Components
                 else
                   months_r.index(string_month.strip)
                 end
-        index.nil? ? 1 : index + 1 
+        index.nil? ? 1 : index + 1
       end
 
       def prepare_description(html)

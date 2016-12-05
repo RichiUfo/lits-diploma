@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203104139) do
+ActiveRecord::Schema.define(version: 20161203112054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,15 @@ ActiveRecord::Schema.define(version: 20161203104139) do
     t.index ["slug"], name: "index_tags_on_slug", unique: true, using: :btree
   end
 
+  create_table "user_feed_tags", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_user_feed_tags_on_tag_id", using: :btree
+    t.index ["user_id"], name: "index_user_feed_tags_on_user_id", using: :btree
+  end
+
   create_table "user_feeds", force: :cascade do |t|
     t.integer  "category_id"
     t.integer  "user_id"
@@ -169,6 +178,8 @@ ActiveRecord::Schema.define(version: 20161203104139) do
   add_foreign_key "events", "organizers"
   add_foreign_key "events", "sources"
   add_foreign_key "sources", "source_types"
+  add_foreign_key "user_feed_tags", "tags"
+  add_foreign_key "user_feed_tags", "users"
   add_foreign_key "user_feeds", "categories"
   add_foreign_key "user_feeds", "users"
   add_foreign_key "users", "cities"

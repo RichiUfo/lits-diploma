@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.future.page(@page)
+    @events = Event.by_user(current_user).future.page(@page)
   end
 
   def show

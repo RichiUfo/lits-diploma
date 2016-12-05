@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   belongs_to :format, optional: true
   has_many :event_tags
   has_many :tags, through: :event_tags
-  friendly_id :name, use: :slugged
+  friendly_id :name_and_sequence, use: :slugged
   paginates_per PER_PAGE_DEFAULT
 
   scope :vk_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:vk]) }
@@ -17,13 +17,41 @@ class Event < ApplicationRecord
   scope :by_today, -> { by_day(Time.zone.today) }
   scope :by_tag, ->(tag) { joins(:tags).where(tags: { name: tag.name }) }
   scope :future, -> { where('date > ?', Time.zone.now).order('date') }
+  scope :by_user, ->(user) { select('*')
+                            .from("(#{user_tags_query(user)} UNION #{user_categories_query(user)}
+                                    ) as events")}
 
+
+  def self.user_tags_query(user)
+    query = Event.select('events.*').joins(:tags).to_sql
+    cond = if user.nil?
+             ''
+           else
+             ids = user.tags.map(&:id).join(', ')
+             ids = ids.empty? ? '-1' : ids
+             "WHERE tags.id IN (#{ids})"
+           end
+    query + cond
+  end
+  def self.user_categories_query(user)
+    query = Event.select('events.*').to_sql
+    cond = if user.nil?
+             ''
+           else
+             ids = user.categories.map(&:id).join(', ')
+             ids = ids.empty? ? '-1' : ids
+             "WHERE events.category_id IN (#{ids})"
+           end
+    query + cond
+  end
   def normalize_friendly_id(text)
     text.to_slug.transliterate(:russian).normalize.to_s
   end
 
-  def slug_candidates
-    [:name, [:name, :id]]
+  def name_and_sequence
+    slug = name.to_param
+    sequence = ext_id
+    "#{slug}--#{sequence}"
   end
 
   def self.search(query)

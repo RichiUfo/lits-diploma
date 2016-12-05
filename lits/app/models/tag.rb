@@ -8,10 +8,6 @@ class Tag < ApplicationRecord
     text.to_slug.transliterate(:russian).normalize.to_s
   end
 
-  def slug_candidates
-    [:name, [:name, :id]]
-  end
-
   def self.number
     select('name, slug, count(event_tags.tag_id) as count')
       .joins(:event_tags)

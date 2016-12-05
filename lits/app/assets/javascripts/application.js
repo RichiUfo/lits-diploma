@@ -5,6 +5,7 @@
 //= require masonry/modernizr-transitions
 //= require sidebar
 //= require_directory .
+//= require bootstrap-tagsinput
 
 $(document).ready(function() {
   register.onTopButton();
