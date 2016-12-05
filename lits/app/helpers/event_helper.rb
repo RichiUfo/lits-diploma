@@ -35,7 +35,7 @@ module EventHelper
 
   def event_header(event)
     content_tag :hgroup, class: 'event-header' do
-      event_info(event) + event_picture(event)
+      event_info(event) + event_tags(event.tags) + event_picture(event)
     end
   end
 
@@ -43,6 +43,10 @@ module EventHelper
     content_tag :bgroup, class: 'event-body' do
       event_despripton(event) + event_image_map(event)
     end
+  end
+
+  def event_tags(tags)
+    "Теги: #{tags.map { |tag| link_to(tag.name.strip, tag_path(tag.slug.strip)) }.join(', ')}".html_safe
   end
 
   def event_despripton(event)
