@@ -1,6 +1,4 @@
 module ApplicationHelper
-  APP_NAME = Rails.application.config.app_name
-
   def container(content_or_classes = nil, classes = '', &block)
     if block_given?
       content_tag :div, capture(&block), class: "container #{content_or_classes}"
