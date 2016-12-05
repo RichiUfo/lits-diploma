@@ -6,7 +6,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @events = Event.future(current_user).by_tag(@tag).page(@page)
+    @events = Event.future.by_tag(@tag).page(@page)
   end
 
   private

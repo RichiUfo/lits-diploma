@@ -16,8 +16,8 @@ class Event < ApplicationRecord
   scope :by_day, ->(date) { where('date::date = ?', date.to_date) }
   scope :by_today, -> { by_day(Time.zone.today) }
   scope :by_tag, ->(tag) { joins(:tags).where(tags: { name: tag.name }) }
-  # scope :future, -> { where('date > ?', Time.zone.now).order('date') }
-  scope :future, ->(user) { select('*')
+  scope :future, -> { where('date > ?', Time.zone.now).order('date') }
+  scope :by_user, ->(user) { select('*')
                             .from("(SELECT events.*
                                       FROM events
                                       INNER JOIN event_tags
@@ -28,8 +28,7 @@ class Event < ApplicationRecord
                                     SELECT events.*
                                       FROM events
                                       #{user_categories_cond(user)}
-                                    ) as events")
-                            .where('date > ?', Time.zone.now).order('date')}
+                                    ) as events")}
 
 
   def self.user_tags_cond(user)
