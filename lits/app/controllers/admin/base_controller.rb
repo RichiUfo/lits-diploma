@@ -32,7 +32,8 @@ module Admin
       if resource.save
         redirect_to action: 'index'
       else
-        render json: resource.errors, status: :unprocessable_entity
+        flash[:error] = resource.errors.full_messages.to_sentence
+        render action: 'new'
       end
     end
 
@@ -58,7 +59,8 @@ module Admin
         # render :show
         redirect_to action: 'index'
       else
-        render json: resource.errors, status: :unprocessable_entity
+        flash[:error] = resource.errors.full_messages.to_sentence
+        render action: 'edit'
       end
     end
 

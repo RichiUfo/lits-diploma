@@ -1,5 +1,6 @@
 namespace :receive_events do
   # rake receive_events:run
+  desc 'Get new events from each source'
   task run: :environment do
     SourceType::KEYS.keys.each do |source_type|
       begin
