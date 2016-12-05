@@ -6,7 +6,7 @@
 	    	<td>source_type_id</td>
 	      	<td style="max-width: 300px; width: 300px; word-wrap: break-word;">ref</td>
 	      	<td>ext_id</td>
-	      	<td>city_id</td>
+	      	<td>city</td>
 	    </tr>
 	</thead>
 	<tbody>
@@ -14,9 +14,9 @@
 	        <td><%= @source.source_type_id %></td>
 	        <td style="max-width: 300px; width: 300px; word-wrap: break-word;"><%= @source.ref %></td>
 	        <td><%= @source.ext_id %></td>
-	        <td><%= @source.city_id %></td>
+	        <td><%= @source.city.name %></td>
 	    <tr>
 	</tbody>
 </table>
-<%= link_to 'Edit', edit_admin_source_path(@source) %> |
-<%= link_to 'Back', admin_sources_path %>
+<%= link_to 'Edit', edit_admin_source_path(@source), class: 'btn btn-primary' %>
+<%= link_to 'Back', admin_sources_path, class: 'btn btn-primary' %>

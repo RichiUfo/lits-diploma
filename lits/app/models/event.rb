@@ -29,4 +29,9 @@ class Event < ApplicationRecord
   def self.search(query)
     Event.where('LOWER(name) LIKE ?', "%#{query.downcase}%").all
   end
+
+  def self.by_category(category_id)
+    subquery = Category.select(:id).where('parent_id = ?', category_id.to_i).to_sql
+    where("category_id = ? OR category_id IN (#{subquery})", category_id.to_i)
+  end
 end

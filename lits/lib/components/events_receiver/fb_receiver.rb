@@ -7,9 +7,8 @@ module Components
         super
         Koala.config.api_version = 'v2.8'
         oauth = Koala::Facebook::OAuth.new
-        @limit = 100 # => only 10 events per fb source
+        @limit = 100 # => events per fb source
         @graph = Koala::Facebook::API.new(oauth.get_app_access_token)
-        @date = DateTime.now.getlocal
       end
 
       def save_source_events(source)
@@ -37,8 +36,6 @@ module Components
             puts event_stored.errors.full_messages
             @report[:errors] += 1
           end
-
-          break if event[:date] < @date
         end
       end
 
@@ -47,11 +44,10 @@ module Components
       # end
 
       def format_event(raw_event) # => normalize hash before save
-        # binding.pry
         {
           name:        raw_event[:name],
           description: raw_event[:description],
-          date:        raw_event[:start_time].to_time.strftime('%a, %d %b %Y %H:%M:%S UTC %:z'),
+          date:        raw_event[:start_time].to_time.in_time_zone.strftime('%a, %d %b %Y %H:%M:%S UTC %:z'),
           picture:     picture(raw_event),
           big_picture: cover(raw_event), # big_picture(raw_event[:id]),
           ext_id:      raw_event[:id].to_i,
@@ -59,7 +55,6 @@ module Components
           lng:         raw_event.dig(:place, :location, :longitude),
           address:     raw_event.dig(:place, :location, :street),
           city_id:     city_id_map(raw_event) # raw_event.dig(:place, :location, :city_id)
-          ### stubs below
           # reg_ref:      '',
           # organizer_id: '',
           # category_id:  '',
@@ -86,7 +81,7 @@ module Components
         fields = %w( description name start_time end_time message
                      from picture.type(large) cover link created_time updated_time
                      place{location{city city_id longitude latitude}})
-        @graph.get_connection(event_ext_id, 'events', limit: @limit, fields: fields)
+        @graph.get_connection(event_ext_id, 'events', since: @today, limit: @limit, fields: fields)
       end
     end
   end

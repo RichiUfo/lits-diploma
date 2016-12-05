@@ -14,7 +14,7 @@ module Components
           event = get_event event_ext_id, source
           save_event event
 
-          break if event[:date] < DateTime.now.in_time_zone
+          break if event[:date] < @today
         end
       end
 
