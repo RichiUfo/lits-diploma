@@ -42,13 +42,15 @@ module Admin
       parsable = urlstrip.to_s.gsub!(%r{[\r\n\t ]}, '').nil? ? uri : urlstrip
       fresh_source = URI.parse(parsable)
       # FIXME
-      # unless fresh_source.scheme.casecmp('https').zero?
-      #   (@error += ' Scheme must be HTTPS!') && return
-      # end
+      unless fresh_source.scheme.casecmp('https').zero?
+        @error += ' Scheme must be HTTPS!'
+        return
+      end
       group = fresh_source.path.gsub(%r{/}, '')
-      case fresh_source.host
+      case fresh_source.host.sub('www.','')
       when 'facebook.com', 'fb.com'
         @source.source_type_id = SourceType.find_by(name: :fb).id
+        @source.ext_id = fb_ext_id(group)
       when 'vk.com', 'm.vk.com'
         @source.source_type_id = SourceType.find_by(name: :vk).id
         @source.ext_id = vk_ext_id(group)
@@ -65,7 +67,7 @@ module Admin
       oauth = Koala::Facebook::OAuth.new
       @graph = Koala::Facebook::API.new(oauth.get_app_access_token)
       begin
-        @graph.get_object(group)['id'].to_i
+        @graph.get_object(group)['id']
       rescue Koala::Facebook::ClientError => e
         @error += " FB validation: #{e.message}"
       end
@@ -79,7 +81,6 @@ module Admin
         @error += " VK validation: #{e.message}"
       end
     end
-
 
     def source_params
       @error = ''
