@@ -47,7 +47,7 @@ module Admin
         return
       end
       group = fresh_source.path.gsub(%r{/}, '')
-      case fresh_source.host
+      case fresh_source.host.sub('www.','')
       when 'facebook.com', 'fb.com', 'www.facebook.com'
         @source.source_type_id = SourceType.find_by(name: :fb).id
         @source.ext_id = fb_ext_id(group)
