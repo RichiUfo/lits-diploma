@@ -26,7 +26,7 @@ module EventsTimelineHelper
   end
 
   def selected_day?(day)
-    params[:date].present? ? params[:date].to_date == day : Time.zone.today == day
+    params[:date].present? && params[:date].to_date == day
   end
 
   def weekend?(day)

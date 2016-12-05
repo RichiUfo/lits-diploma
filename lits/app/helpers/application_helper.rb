@@ -18,6 +18,15 @@ module ApplicationHelper
   end
 
   def site_title
-    content_tag :title, Components::Meta::Title.page_title(controller)
+    content_tag :title, Components::Meta::Title.title(controller)
+  end
+
+  def meta_description
+    tag :meta, name: :description, 
+               content: Components::Meta::Description.description(controller)
+  end
+
+  def meta_viewport
+    tag :meta, name: :viewport, content: 'width=device-width, initial-scale=1.0'
   end
 end

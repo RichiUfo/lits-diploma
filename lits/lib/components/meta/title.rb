@@ -1,7 +1,7 @@
 module Components
   module Meta
     class Title
-      def self.page_title(controller)
+      def self.title(controller)
         if title_method? controller
           title_method controller
         else
