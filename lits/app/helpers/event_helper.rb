@@ -75,7 +75,7 @@ module EventHelper
   end
 
   def event_title(event)
-    content_tag(:h1, event.name, class: 'event-title')
+    content_tag(:h1, event.name.html_safe, class: 'event-title')
   end
 
   def event_time(event)
@@ -91,12 +91,11 @@ module EventHelper
   end
 
   def event_original(event)
+    content_tag :p, event_original_text(event), class: 'event-original'
+  end
+
+  def event_original_text(event)
     original_link = Components::Link.original_event_url(event.source.source_type, event.ext_id)
-    content_tag :p,
-                safe_join(
-                  ['Оригинал: ',
-                   link_to(original_link, original_link, target: :_blank)]
-                ),
-                class: 'event-original'
+    safe_join ['Оригинал: ', link_to(original_link, original_link, target: :_blank)]
   end
 end

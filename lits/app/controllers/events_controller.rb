@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  attr_reader :event
+
   def index
     @events = Event.by_user(current_user).future.page(@page)
   end

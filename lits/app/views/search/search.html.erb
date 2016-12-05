@@ -1,3 +1,2 @@
-<h3>Результаты для: <%= params[:q] %></h3>
-
-<%= events_grid @events %>
+<%= content_tag(:h3, "Результаты для: #{params[:q]}") unless @events.empty? %>
+<%= events_grid @events, "К сожалению для '#{params[:q]}' нет событий :(" %>
