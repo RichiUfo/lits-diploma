@@ -18,12 +18,6 @@ module ApplicationHelper
   end
 
   def site_title
-    title = if controller.respond_to?(:page_title) && controller.page_title.present?
-              controller.page_title
-            else
-              APP_NAME
-            end
-
-    content_tag :title, title
+    content_tag :title, Components::Meta::Title.page_title(controller)
   end
 end
