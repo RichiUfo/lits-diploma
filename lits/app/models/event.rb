@@ -18,36 +18,31 @@ class Event < ApplicationRecord
   scope :by_tag, ->(tag) { joins(:tags).where(tags: { name: tag.name }) }
   scope :future, -> { where('date > ?', Time.zone.now).order('date') }
   scope :by_user, ->(user) { select('*')
-                            .from("(SELECT events.*
-                                      FROM events
-                                      INNER JOIN event_tags
-                                        ON event_tags.event_id = events.id
-                                      INNER JOIN tags ON tags.id = event_tags.tag_id
-                                      #{user_tags_cond(user)}
-                                    UNION
-                                    SELECT events.*
-                                      FROM events
-                                      #{user_categories_cond(user)}
+                            .from("(#{user_tags_query(user)} UNION #{user_categories_query(user)}
                                     ) as events")}
 
 
-  def self.user_tags_cond(user)
-    if user.nil?
-      ''
-    else
-      ids = user.tags.map(&:id).join(', ')
-      ids = ids.empty? ? '-1' : ids
-      "WHERE tags.id IN (#{ids})"
-    end
+  def self.user_tags_query(user)
+    query = Event.select('events.*').joins(:tags).to_sql
+    cond = if user.nil?
+             ''
+           else
+             ids = user.tags.map(&:id).join(', ')
+             ids = ids.empty? ? '-1' : ids
+             "WHERE tags.id IN (#{ids})"
+           end
+    query + cond
   end
-  def self.user_categories_cond(user)
-    if user.nil?
-      ''
-    else
-      ids = user.categories.map(&:id).join(', ')
-      ids = ids.empty? ? '-1' : ids
-      "WHERE events.category_id IN (#{ids})"
-    end
+  def self.user_categories_query(user)
+    query = Event.select('events.*').to_sql
+    cond = if user.nil?
+             ''
+           else
+             ids = user.categories.map(&:id).join(', ')
+             ids = ids.empty? ? '-1' : ids
+             "WHERE events.category_id IN (#{ids})"
+           end
+    query + cond
   end
   def normalize_friendly_id(text)
     text.to_slug.transliterate(:russian).normalize.to_s
