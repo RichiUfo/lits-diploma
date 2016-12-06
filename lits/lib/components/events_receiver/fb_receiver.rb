@@ -26,7 +26,6 @@ module Components
           else
             event_status = :updated
             event_stored.attributes = event
-            # binding.pry
           end
 
           if event_stored.save
@@ -47,14 +46,14 @@ module Components
         {
           name:        raw_event[:name],
           description: raw_event[:description],
-          date:        raw_event[:start_time].to_time.in_time_zone.strftime('%a, %d %b %Y %H:%M:%S UTC %:z'),
+          date:        raw_event[:start_time].to_time.in_time_zone.strftime('%a, %d %b %Y %H:%M:%S %Z %:z'),
           picture:     picture(raw_event),
-          big_picture: cover(raw_event), # big_picture(raw_event[:id]),
+          big_picture: cover(raw_event),
           ext_id:      raw_event[:id].to_i,
           lat:         raw_event.dig(:place, :location, :latitude),
           lng:         raw_event.dig(:place, :location, :longitude),
           address:     raw_event.dig(:place, :location, :street),
-          city_id:     city_id_map(raw_event) # raw_event.dig(:place, :location, :city_id)
+          city_id:     city_id_map(raw_event)
           # reg_ref:      '',
           # organizer_id: '',
           # category_id:  '',
