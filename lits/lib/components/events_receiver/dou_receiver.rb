@@ -59,6 +59,8 @@ module Components
         if event_in_db.nil?
           save_key = :created
           event_in_db = Event.new prepared_event
+        else
+          event_in_db.attributes = prepared_event
         end
 
         if event_in_db.save
@@ -139,17 +141,19 @@ module Components
                       end
         date_parts = string_date.split(' ')
         date_parts[1] = date_parts[1].split('(')[0].strip
-        current_date = Time.current.to_date
+        current_date = Time.zone.now.to_date
         day = date_parts[0].to_i
-        month = convert_month(date_parts)
-        year = month > current_date.mon ? current_date.year + 1 : current_date.year
+        month, year = convert_month(date_parts)
+        year = year.nil? ? current_date.year : year.to_i
         arr_time = string_time.split(':')
         hh, mm = arr_time[0].to_i, arr_time[1].to_i
-        DateTime.new(year, month, day, hh, mm)
+        tz = Time.zone.now.to_s.split(' ').last
+        DateTime.new(year, month, day, hh, mm, 0, tz)
       end
 
       def convert_month(date_parts)
         string_month = date_parts.last.split(' ').first
+        string_year  = date_parts.last.split(' ').last
         months_r = %w(января февраля марта апреля мая июня июля августа сентября октября ноября декабря)
         months_u = %w(січня лютого березня квітня травня червня липня серпня вересня жовтня листопада грудня)
         index = if months_r.index(string_month.strip).nil?
@@ -157,7 +161,7 @@ module Components
                 else
                   months_r.index(string_month.strip)
                 end
-        index.nil? ? 1 : index + 1
+        return (index.nil? ? 1 : index + 1), (string_month == string_year ? nil : string_year)
       end
 
       def prepare_description(html)

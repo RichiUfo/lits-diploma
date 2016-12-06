@@ -9,8 +9,9 @@ class Tag < ApplicationRecord
   end
 
   def self.number
-    select('name, slug, count(event_tags.tag_id) as count')
-      .joins(:event_tags)
-      .group('name, slug, event_tags.tag_id')
+    select('tags.name, tags.slug, count(event_tags.tag_id) as count')
+            .joins(:events)
+            .group('tags.name, tags.slug, event_tags.tag_id')
+            .where('date > ?', Time.zone.now)
   end
 end
