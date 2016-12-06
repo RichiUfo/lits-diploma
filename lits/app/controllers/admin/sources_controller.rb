@@ -2,9 +2,6 @@ module Admin
   class SourcesController < BaseController
     # before_action :url_analyzer, only: [:update, :create]
 
-    def show
-    end
-
     def create
       @source = Source.new(source_params)
       ref = source_params[:ref]
@@ -47,15 +44,15 @@ module Admin
         return
       end
       group = fresh_source.path.gsub(%r{/}, '')
-      case fresh_source.host.sub('www.','')
+      case fresh_source.host.sub('www.', '')
       when 'facebook.com', 'fb.com'
-        @source.source_type_id = SourceType.find_by(name: :fb).id
+        @source.source_type_id = source_type(:fb)
         @source.ext_id = fb_ext_id(group)
       when 'vk.com', 'm.vk.com'
-        @source.source_type_id = SourceType.find_by(name: :vk).id
+        @source.source_type_id = source_type(:vk)
         @source.ext_id = vk_ext_id(group)
       when 'dou.ua'
-        @source.source_type_id = SourceType.find_by(name: :dou).id
+        @source.source_type_id = source_type(:dou)
         # fake ext_id for dou to pass model validation
         @source.ext_id = DateTime.now.to_i
       else
@@ -80,6 +77,11 @@ module Admin
       rescue StandardError => e
         @error += " VK validation: #{e.message}"
       end
+    end
+
+    def source_type(name)
+      source = SourceType.pluck(:name, :id).to_h.symbolize_keys
+      source[name]
     end
 
     def source_params
