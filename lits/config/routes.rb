@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     get ':id(/:page)', to: 'tags#show', on: :collection
   end
 
-  # get 'feed', to: 'feed#index', as: :feed
   patch 'feed/:id', to: 'users#update', as: :feed_update
   get 'feed/edit', to: 'users#edit', as: :user_edit
 

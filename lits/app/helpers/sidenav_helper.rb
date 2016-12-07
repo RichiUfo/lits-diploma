@@ -8,7 +8,7 @@ module SidenavHelper
       content_tag :ul do
         safe_join(sidenav_categories.map do |category|
           content_tag :li do
-            safe_join([link_to(category[1][:name], category_path(category[0])),
+            safe_join([link_to(category[1][:name], category_path(category[1][:slug])),
                        children_list(category[1][:children])])
           end
         end)
@@ -22,7 +22,7 @@ module SidenavHelper
       children.to_json
       safe_join(children.map do |category|
         content_tag :li, class: 'children-link' do
-          link_to category[:name], category_path(category[:id])
+          link_to category[:name], category_path(category[:slug])
         end
       end)
     end
