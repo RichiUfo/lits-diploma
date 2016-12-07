@@ -20,7 +20,7 @@ module ApplicationHelper
   end
 
   def meta_description
-    tag :meta, name: :description, 
+    tag :meta, name: :description,
                content: Components::Meta::Description.description(controller)
   end
 
@@ -38,7 +38,7 @@ module ApplicationHelper
   end
 
   def og_image
-    tag :meta, property: 'og:image', 
+    tag :meta, property: 'og:image',
                content: Components::Meta::Og.image(controller)
   end
 end

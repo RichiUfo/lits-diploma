@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index'
   get 'search(/:q)', to: 'search#search', as: :search_query
 
-  get 'category/:category_id(/:page)', to: 'categories#show'
+  get 'category/:category_id(/:page)', to: 'categories#show', as: :category
 
   root 'events#index'
 end

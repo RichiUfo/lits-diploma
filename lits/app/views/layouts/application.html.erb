@@ -14,33 +14,6 @@
 
   <body>
     <%= sidenav do %>
-      <ul>
-        <li>
-          <a href="" class="parent-link">IT</a>
-          <ul class="clildren-list">
-            <li>
-              <a href="#" class="child-link">
-                Разработка
-              </a>
-            </li>
-            <li>
-              <a href="#" class="child-link">
-                Дизайн
-              </a>
-            </li>
-            <li>
-              <a href="#" class="child-link">
-                Стантапы
-              </a>
-            </li>
-            <li>
-              <a href="#" class="child-link">
-                Менеджмент
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
     <%- end  %>
     <%= pusher do %>
       <%= navbar do %>
@@ -54,7 +27,7 @@
           <%= auth_panel %>
         <%- end %>
       <%- end  %>
-  
+
       <%= container('m-t-70') { yield } %>
     <%- end  %>
     <%= on_top_button %>
