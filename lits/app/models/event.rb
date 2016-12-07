@@ -17,33 +17,15 @@ class Event < ApplicationRecord
   scope :by_today, -> { by_day(Time.zone.today) }
   scope :by_tag, ->(tag) { joins(:tags).where(tags: { name: tag.name }) }
   scope :future, -> { where('date > ?', Time.zone.now).order('date') }
-  scope :by_user, ->(user) { select('*')
-                            .from("(#{user_tags_query(user)} UNION #{user_categories_query(user)}
-                                    ) as events")}
+  scope :by_user, lambda { |user|
+    select('DISTINCT events.*')
+      .joins('LEFT JOIN event_tags et ON et.event_id = events.id')
+      .joins('LEFT JOIN user_feed_tags uft ON uft.tag_id = et.tag_id')
+      .joins('LEFT JOIN categories c ON events.category_id = c.id')
+      .joins('LEFT JOIN user_feeds uf ON uf.category_id = c.id')
+      .where('uft.user_id= ? OR uf.user_id= ?', user.id, user.id)
+  }
 
-
-  def self.user_tags_query(user)
-    query = Event.select('events.*').joins(:tags).to_sql
-    cond = if user.nil?
-             ''
-           else
-             ids = user.tags.map(&:id).join(', ')
-             ids = ids.empty? ? '-1' : ids
-             "WHERE tags.id IN (#{ids})"
-           end
-    query + cond
-  end
-  def self.user_categories_query(user)
-    query = Event.select('events.*').to_sql
-    cond = if user.nil?
-             ''
-           else
-             ids = user.categories.map(&:id).join(', ')
-             ids = ids.empty? ? '-1' : ids
-             "WHERE events.category_id IN (#{ids})"
-           end
-    query + cond
-  end
   def normalize_friendly_id(text)
     text.to_slug.transliterate(:russian).normalize.to_s
   end

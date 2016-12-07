@@ -1,12 +1,12 @@
 module Components
   module Meta
     class Og
-      DEFAULT_OG_IMAGE = 'odessa.jpg'
-      
+      DEFAULT_OG_IMAGE = 'odessa.jpg'.freeze
+
       def self.title(controller)
         Title.title(controller)
       end
-      
+
       def self.description(controller)
         Description.description(controller)
       end

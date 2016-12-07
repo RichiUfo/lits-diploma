@@ -14,7 +14,7 @@ module Components
           updated: 0,
           errors: 0
         }
-        @today =  DateTime.now.in_time_zone
+        @today = DateTime.now.in_time_zone
       end
 
       def source_events_ids(source_ext_id)
