@@ -1,13 +1,13 @@
 /*
- *= require 'masonry/basic'
- *= require 'masonry/centered'
- *= require 'masonry/fluid'
- *= require 'masonry/gutters'
- *= require 'masonry/transitions'
- *= require 'sidebar'
+ *= require masonry/basic
+ *= require masonry/centered
+ *= require masonry/fluid
+ *= require masonry/gutters
+ *= require masonry/transitions
+ *= require sidebar
+ *= require chosen
  *= require_directory .
  *= require_self
- *= require bootstrap-tagsinput
  */
 
 @import 'bootstrap-sprockets';

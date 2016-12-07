@@ -4,8 +4,8 @@
 //= require masonry/jquery.masonry
 //= require masonry/modernizr-transitions
 //= require sidebar
+//= require chosen-jquery
 //= require_directory .
-//= require bootstrap-tagsinput
 
 $(document).ready(function() {
   register.onTopButton();

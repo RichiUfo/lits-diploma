@@ -18,12 +18,14 @@ class Event < ApplicationRecord
   scope :by_tag, ->(tag) { joins(:tags).where(tags: { name: tag.name }) }
   scope :future, -> { where('date > ?', Time.zone.now).order('date') }
   scope :by_user, lambda { |user|
-    select('DISTINCT events.*')
-      .joins('LEFT JOIN event_tags et ON et.event_id = events.id')
-      .joins('LEFT JOIN user_feed_tags uft ON uft.tag_id = et.tag_id')
-      .joins('LEFT JOIN categories c ON events.category_id = c.id')
-      .joins('LEFT JOIN user_feeds uf ON uf.category_id = c.id')
-      .where('uft.user_id= ? OR uf.user_id= ?', user.id, user.id)
+    unless user.nil?
+      select('DISTINCT events.*')
+        .joins('LEFT JOIN event_tags et ON et.event_id = events.id')
+        .joins('LEFT JOIN user_feed_tags uft ON uft.tag_id = et.tag_id')
+        .joins('LEFT JOIN categories c ON events.category_id = c.id')
+        .joins('LEFT JOIN user_feeds uf ON uf.category_id = c.id')
+        .where('uft.user_id= ? OR uf.user_id= ?', user.id, user.id)
+    end
   }
 
   def normalize_friendly_id(text)

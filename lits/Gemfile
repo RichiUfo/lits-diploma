@@ -9,11 +9,9 @@ gem 'bootstrap-sass', git: 'https://github.com/twbs/bootstrap-sass.git', branch:
 gem 'bootswatch-rails'
 gem 'jquery-rails'
 gem 'masonry-rails'
-gem 'bootstrap-tagsinput-rails'
-
+gem 'chosen-rails'
 gem 'simple_form'
 gem 'gmaps4rails'
-gem 'kaminari'
 
 gem 'vkontakte_api', '~> 1.4'
 gem 'koala', '~> 2.2' # Facebook API
@@ -24,6 +22,7 @@ gem 'omniauth'
 
 gem 'whenever', require: false
 gem 'friendly_id'
+gem 'kaminari'
 gem 'babosa'
 
 group :development, :test do

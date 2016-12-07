@@ -7,10 +7,8 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-
       if auth.info.email.blank?
-      #  redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email"
-      #TODO: remove this stub
+        # redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email"
         auth.info.email = "#{auth.uid}@mail.com"
       end
 
@@ -31,19 +29,11 @@ class User < ApplicationRecord
     end
   end
 
-  # def self.new_with_session(params, session)
-  #   super.tap do |user|
-  #     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-  #       user.email = data["email"] if user.email.blank?
-  #     end
-  #   end
-  # end
-  def all_tags=(names)
-    self.tags = names.split(",").map do |name|
-      Tag.where(name: name.strip).first_or_create!
-    end
+  def all_tags=(ids)
+    self.tags = ids.map { |id| Tag.find_by(id: id) }.select(&:present?)
   end
+
   def all_tags
-    self.tags.map(&:name).join(", ")
+    tag_ids
   end
 end

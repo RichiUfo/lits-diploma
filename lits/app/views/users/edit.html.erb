@@ -9,7 +9,7 @@
   </div>
   <div class="tags">
     <%= f.label "Ваши теги: "%>
-    <%= f.text_field :all_tags, 'data-role'=>'tagsinput' %>
+    <%= f.collection_select :all_tags, Tag.order(:name), :id, :name, {}, {multiple: true} %>
   </div>
   <%= f.button :submit %>
 <% end %>

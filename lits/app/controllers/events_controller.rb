@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.by_user(current_user).future.page(@page)
+    @events = Event.future.page(@page) if @events.blank?
   end
 
   def show
