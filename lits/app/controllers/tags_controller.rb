@@ -13,7 +13,8 @@ class TagsController < ApplicationController
   private
 
   def set_tag
-    @tag = Tag.friendly.find(params[:id])
+    @tag = Tag.friendly
+              .find_by(' LOWER(slug) = ? OR id = ? ', params[:id].downcase, params[:id].to_i)
   end
 
   def tag_params

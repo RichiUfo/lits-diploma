@@ -15,7 +15,7 @@ class Event < ApplicationRecord
   scope :dou_source, -> { joins(:source).where('sources.source_type_id' => SourceType::KEYS[:dou]) }
   scope :by_day, ->(date) { where('date::date = ?', date.to_date) }
   scope :by_today, -> { by_day(Time.zone.today) }
-  scope :by_tag, ->(tag) { joins(:tags).where(tags: { name: tag.name }) }
+  scope :by_tag, ->(tag) { joins(:tags).where(' LOWER(tags.name) = ? ', tag.name.downcase) }
   scope :future, -> { where('date > ?', Time.zone.now).order('date') }
   scope :by_user, lambda { |user|
     unless user.nil?
@@ -43,6 +43,10 @@ class Event < ApplicationRecord
   end
 
   def self.by_category(category_id)
+    if category_id.to_i.zero?
+      category = Category.find_by('LOWER(slug) = ?', category_id.downcase)
+      category_id = category.present? ? category.id : -1
+    end
     subquery = Category.select(:id).where('parent_id = ?', category_id.to_i).to_sql
     where("category_id = ? OR category_id IN (#{subquery})", category_id.to_i)
   end

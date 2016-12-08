@@ -10,5 +10,4 @@ class Category < ApplicationRecord
   def normalize_friendly_id(text)
     text.to_slug.transliterate(:russian).normalize.to_s
   end
-
 end
