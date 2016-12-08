@@ -13,7 +13,7 @@ class TagsController < ApplicationController
   private
 
   def set_tag
-    @tag = Tag.friendly.find(params[:id].to_s.downcase)
+    @tag = Tag.friendly.find(params[:id])
   end
 
   def tag_params

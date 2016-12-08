@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.friendly.find(params[:id].to_s.downcase)
+    @event = Event.friendly.find(params[:id])
   end
 
   def date
