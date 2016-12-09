@@ -1,14 +1,14 @@
 development:
   fb_app_id:      207194596386777
   fb_secret_key:  6458c9feb552b306b2d25164bcbd8b2d
-  vk_app_id:      5677646
-  vk_secret_key:  qSb6nCDDukTmtoFMIJHO
+  vk_app_id:      <%= ENV["VK_APP_ID"] %>
+  vk_secret_key:  <%= ENV["VK_SECRET_KEY"] %>
   google_api_key: AIzaSyDwbSLp-THz0tcCIPo8UiF6LXyAwZrrEak
 test:
   fb_app_id:      207194596386777
   fb_secret_key:  6458c9feb552b306b2d25164bcbd8b2d
-  vk_app_id:      5677646
-  vk_secret_key:  qSb6nCDDukTmtoFMIJHO
+  vk_app_id:      <%= ENV["VK_APP_ID"] %>
+  vk_secret_key:  <%= ENV["VK_SECRET_KEY"] %>
   google_api_key: AIzaSyDwbSLp-THz0tcCIPo8UiF6LXyAwZrrEak
 production:
   fb_app_id:      <%= ENV["FB_APP_ID"] %>
