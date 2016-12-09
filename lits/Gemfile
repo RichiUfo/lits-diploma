@@ -25,6 +25,8 @@ gem 'friendly_id'
 gem 'kaminari'
 gem 'babosa'
 
+gem 'sentry-raven'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
