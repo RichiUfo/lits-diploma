@@ -35,15 +35,13 @@ module Admin
     private
 
     def url_analyzer(uri)
-      urlstrip = uri
-      parsable = urlstrip.to_s.gsub!(%r{[\r\n\t ]}, '').nil? ? uri : urlstrip
-      fresh_source = URI.parse(parsable)
+      fresh_source = URI.parse(uri.gsub(/\s+/, ''))
       # FIXME
       unless fresh_source.scheme.casecmp('https').zero?
         @error += ' Scheme must be HTTPS!'
         return
       end
-      group = fresh_source.path.gsub(%r{/}, '')
+      group = fresh_source.path.delete('/')
       case fresh_source.host.sub('www.', '')
       when 'facebook.com', 'fb.com'
         @source.source_type_id = source_type(:fb)

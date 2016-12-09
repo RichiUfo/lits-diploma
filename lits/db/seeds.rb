@@ -13,8 +13,6 @@ CitySourceType.find_or_create_by(city_id: odessa.id, source_type_id: fb_id).upda
 
 Source.find_or_create_by(ext_id: 61599368)
       .update_attributes source_type_id: vk_id, ref: 'https://vk.com/hublivingroom', city_id: odessa.id
-Source.find_or_create_by(ext_id: 74120822)
-      .update_attributes source_type_id: vk_id, ref: 'https://vk.com/new.york.coffee', city_id: odessa.id
 Source.find_or_create_by(ext_id: 95160254)
       .update_attributes source_type_id: vk_id, ref: 'https://vk.com/terminal_42', city_id: odessa.id
 Source.find_or_create_by(ext_id: 23137059)
