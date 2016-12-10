@@ -33,5 +33,9 @@
     <%= on_top_button %>
 
     <%= javascript_include_tag 'application' %>
+    <% if Rails.env == 'production' %>
+    <%= render 'layouts/google_analytics' %>
+    <%= render 'layouts/yandex_metrika' %>
+    <% end %>
   </body>
 </html>
