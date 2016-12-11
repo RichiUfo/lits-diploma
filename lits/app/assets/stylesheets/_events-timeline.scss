@@ -1,11 +1,32 @@
+@import 'bootswatch/united/variables';
+$screen-xs-max: $screen-xs - 1;
+
 .events-timeline {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin: 5px 0 20px 0;
 
   .events-timeline-day {
+    font-size: 18px;
     padding: 0.5% 1%;
     position: relative;
+    display: none;
+
+    &:nth-child(-n+7) {
+      display: block;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      &:nth-child(-n+14) {
+        display: block;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      & {
+        display: block;
+      }
+    }
 
     &.selected {
       background: #772953;
@@ -16,10 +37,28 @@
       font-weight: bold;
     }
 
-    &[data-month]::before {
-      content: attr(data-month);
+    &::before {
+      font-size: 14px;
+      font-weight: normal;
+      opacity: 0.75;
       position: absolute;
-      top: 35px;
+    }
+
+    &:hover::before {
+      color: $link-color;
+    }
+
+    &[data-month]::before {
+      background: #FFF;
+      content: attr(data-month);
+      top: 30px;
+      z-index: 1;
+    }
+
+    &[data-weekend]::before {
+      content: attr(data-weekend);
+      top: -12px;
+      padding-left: 8%;     
     }
   }
 }

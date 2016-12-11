@@ -9,7 +9,7 @@ $space: 10px;
 }
 
 @each $prop, $abbrev in (margin: m, padding: p) {
-  @for $i from 0 through 7 {
+  @for $i from 0 through 10 {
     $size: $i * $space;
     .#{$abbrev}-t-#{strip-unit($size)} { #{$prop}-top:    $size !important; }
     .#{$abbrev}-b-#{strip-unit($size)} { #{$prop}-bottom: $size !important; }

@@ -1,0 +1,176 @@
+@import 'bootswatch/united/variables';
+@import 'variables';
+$screen-xs-max: $screen-xs - 1;
+
+.pusher {
+  .navbar {
+    min-height: 70px;
+    padding-top: 10px;
+    width: 100%;
+
+    @media (max-width: $screen-xs-max) {
+      min-height: 60px;
+    }
+
+    &.navbar-fixed-top {
+      z-index: 999;
+    }
+
+    .header-left {
+      float: left;
+
+      > * {
+        vertical-align: middle;
+      } 
+
+      .sidebar-toggle {
+        background: initial;
+        border: none;
+        color: #FFF;
+        display: inline-block;
+        font-size: 30px;
+        line-height: 1;
+        outline: none;
+
+        @media (max-width: $screen-xs-max) {
+          margin-bottom: -15px;
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+
+      .navbar-brand {
+        display: inline-block;
+        float: none;
+        font-size: 24px;
+        margin-left: 10px;
+        padding: 0;
+        text-transform: uppercase;
+
+        @media (max-width: $screen-xs-max) {
+          display: none;
+        }
+
+        img {
+          max-height: 50px;
+        }
+      }
+
+      .city-select {
+        background: initial;
+        border: none;
+        color: #FFF;
+        display: inline-block;
+      }
+    }
+
+    .header-right {
+      float: right;
+      
+      @media (max-width: $screen-xs-max) {
+        width: calc(100% - 50px);
+      }
+
+      .search-form {
+        display: inline-block;
+        margin: 8px 30px 0 0;
+
+        @media (max-width: $screen-xs-max) {
+          width: calc(100% - 60px);
+          margin: 0;
+          text-align: center;
+        }
+
+        > * {
+          vertical-align: middle;
+        }
+
+        input[type="search"] {
+          background: initial;
+          border: none;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+          color: #FFF;
+          font-size: 20px;
+          outline: none;
+          width: 150px;
+
+          @media (max-width: $screen-xs-max) {
+            width: calc(100% - 60px);
+          }
+
+          &:focus {
+            border-bottom: 2px solid rgba(255, 255, 255, 1);
+          }
+        }
+
+        button {
+          background: initial;
+          border: none;
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 26px;
+          line-height: 1;
+          outline: none;
+          margin-bottom: -2px;
+
+          &:hover, &:focus {
+            color: rgba(255, 255, 255, 1);
+          }
+
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+      }
+
+      .log-in-with {
+        line-height: 1;
+        margin-top: 15px;
+        position: relative;
+
+        @media (max-width: $screen-xs-max) {
+          margin-top: 8px;
+        }
+
+        button {
+          background: initial;
+          border: none;
+          color: #FFF;
+          font-size: 20px;
+          outline: none;
+        }
+
+        .dropdown-menu {
+          background: initial;
+          box-shadow: none;
+          border: none;
+          min-width: 0;
+          right: 6%;
+          top: 200%;
+          width: 50px;
+
+          a {
+            border-radius: 30px;
+            color: #FFF;
+            display: block;
+            height: 50px;
+            font-size: 28px;
+            margin-bottom: 10px;
+            padding: 5px;
+            text-align: center;
+            width: 50px;
+
+            &.vk {
+              background: $vk_bg;
+              padding-right: 7px;
+            }
+            &.facebook {
+              background: $facebook_bg;
+            }
+          }
+        }
+      }
+    }
+  }
+}
