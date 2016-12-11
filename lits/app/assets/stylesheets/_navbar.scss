@@ -124,15 +124,19 @@
       }
 
       .log-in-with {
-        display: inline-block;
         line-height: 1;
-        margin-top: 10px;
+        margin-top: 15px;
+        position: relative;
+
+        @media (max-width: $screen-xs-max) {
+          margin-top: 8px;
+        }
 
         button {
           background: initial;
           border: none;
           color: #FFF;
-          font-size: 18px;
+          font-size: 20px;
           outline: none;
         }
 
@@ -141,21 +145,24 @@
           box-shadow: none;
           border: none;
           min-width: 0;
-          right: 28px;
-          width: 30px;
+          right: 6%;
+          top: 200%;
+          width: 50px;
 
           a {
             border-radius: 30px;
             color: #FFF;
             display: block;
-            height: 30px;
+            height: 50px;
+            font-size: 28px;
             margin-bottom: 10px;
             padding: 5px;
             text-align: center;
-            width: 30px;
+            width: 50px;
 
             &.vk {
               background: $vk_bg;
+              padding-right: 7px;
             }
             &.facebook {
               background: $facebook_bg;
