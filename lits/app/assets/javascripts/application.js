@@ -13,7 +13,7 @@ $(document).ready(function() {
   app.masonry();
 });
 
-var $sideBar = $('.ui.sidebar').sidebar({ transition: 'overlay' }),
+var $sideBar = $('.ui.sidebar').sidebar({ transition: 'overlay', mobileTransition: 'overlay' }),
     $masonryContainer = $('#masonry-container'),
     $sidebarToggle = $('.sidebar-toggle'),
     $onTopButton = $('#on-top-button');
