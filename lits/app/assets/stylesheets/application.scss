@@ -16,6 +16,8 @@
 @import 'bootstrap';
 @import 'bootswatch/united/bootswatch';
 
+$zindex-navbar-fixed: 999;
+
 * {
   transition: all 0.2s ease;
 }
