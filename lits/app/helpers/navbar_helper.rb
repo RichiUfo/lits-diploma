@@ -18,8 +18,9 @@ module NavbarHelper
   end
 
   def search_form
+    input_options = { autofocus: params[:q].present? }
     form_tag '/search', method: :get, class: 'search-form' do
-      search_field_tag(:q, params[:q]) + search_button
+      search_field_tag(:q, params[:q], input_options) + search_button
     end
   end
 
