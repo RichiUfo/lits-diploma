@@ -8,9 +8,9 @@
 //= require_directory .
 
 $(document).ready(function() {
-  register.onTopButton();
-  register.sideBarToggle();
-  register.masonry();
+  app.onTopButton();
+  app.sideBarToggle();
+  app.masonry();
 });
 
 var $sideBar = $('.ui.sidebar').sidebar({ transition: 'overlay' }),
@@ -18,7 +18,10 @@ var $sideBar = $('.ui.sidebar').sidebar({ transition: 'overlay' }),
     $sidebarToggle = $('.sidebar-toggle'),
     $onTopButton = $('#on-top-button');
 
-var register = {
+var app = {
+  onTopButtonAppears: 300,
+  onTopDelay: 700,
+
   masonry: function () {
     $masonryContainer.imagesLoaded().always(function(){
       $masonryContainer.masonry({
@@ -30,11 +33,8 @@ var register = {
   },
 
   onTopButton: function () {
-    var button_visible = 300, 
-      delay = 1000;
-
     $(window).scroll(function () {
-      if ($(this).scrollTop() > button_visible) {
+      if ($(this).scrollTop() > this.onTopButtonAppears) {
         $onTopButton.fadeIn();
       } else {
         $onTopButton.fadeOut();
@@ -44,7 +44,7 @@ var register = {
     $onTopButton.click(function () {
       $('body, html').animate({
         scrollTop: 0
-      }, delay);
+      }, this.onTopDelay);
     });
   },
   

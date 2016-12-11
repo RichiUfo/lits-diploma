@@ -1,0 +1,138 @@
+@import 'variables';
+
+.pusher {
+  .navbar {
+    min-height: 70px;
+    padding-top: 10px;
+
+    &.navbar-fixed-top {
+      z-index: 999;
+    }
+
+    .header-left {
+      float: left;
+
+      > * {
+        vertical-align: middle;
+      } 
+
+      .sidebar-toggle {
+        background: initial;
+        border: none;
+        color: #FFF;
+        display: inline-block;
+        font-size: 30px;
+        line-height: 1;
+        outline: none;
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+
+      .navbar-brand {
+        display: inline-block;
+        float: none;
+        font-size: 24px;
+        margin-left: 10px;
+        padding: 0;
+        text-transform: uppercase;
+
+        img {
+          max-height: 50px;
+        }
+      }
+
+      .city-select {
+        background: initial;
+        border: none;
+        color: #FFF;
+        display: inline-block;
+      }
+    }
+
+    .header-right {
+      float: right;
+
+      .search-form {
+        display: inline-block;
+        margin: 8px 30px 0 0;
+
+        > * {
+          vertical-align: middle;
+        }
+
+        input[type="search"] {
+          background: initial;
+          border: none;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+          color: #FFF;
+          font-size: 20px;
+          outline: none;
+          width: 150px;
+
+          &:focus {
+            border-bottom: 2px solid rgba(255, 255, 255, 1);
+          }
+        }
+
+        button {
+          background: initial;
+          border: none;
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 26px;
+          line-height: 1;
+          outline: none;
+          margin-bottom: -2px;
+
+          &:hover, &:focus {
+            color: rgba(255, 255, 255, 1);
+          }
+
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+      }
+
+      .log-in-with {
+        display: inline-block;
+        margin-top: 10px;
+
+        button {
+          background: initial;
+          border: none;
+          color: #FFF;
+          outline: none;
+        }
+
+        .dropdown-menu {
+          background: initial;
+          box-shadow: none;
+          border: none;
+          min-width: 0;
+          right: 28px;
+          width: 30px;
+
+          a {
+            border-radius: 30px;
+            color: #FFF;
+            display: block;
+            height: 30px;
+            margin-bottom: 10px;
+            padding: 5px;
+            text-align: center;
+            width: 30px;
+
+            &.vk {
+              background: $vk_bg;
+            }
+            &.facebook {
+              background: $facebook_bg;
+            }
+          }
+        }
+      }
+    }
+  }
+}

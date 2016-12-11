@@ -11,16 +11,24 @@
  */
 
 @import 'bootstrap-sprockets';
-@import "bootswatch/united/variables";
-@import "bootstrap";
-@import "bootswatch/united/bootswatch";
 @import 'variables';
-@import 'utilities';
+@import 'bootswatch/united/variables';
+@import 'bootstrap';
+@import 'bootswatch/united/bootswatch';
 
+* {
+  transition: all 0.2s ease;
+}
 
 html, body {
   background: #FFF;
   line-height: 1.5;
+}
+
+body a {
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .pushable > .pusher {
@@ -29,15 +37,17 @@ html, body {
 
 .ui.sidebar.overlay {
   background: #FFF;
-  padding-top: 15px;
+  padding-top: 25px;
 
   ul {
     list-style: none;
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
   a {
     display: block;
+    font-size: 22px;
+    padding: 3px 0;
   }
 
   .parent-link {
@@ -48,105 +58,6 @@ html, body {
 
     .child-link {
       font-size: 20px;
-    }
-  }
-}
-
-.navbar {
-  .header-left {
-    float: left;
-    margin-left: 20px;
-
-    .sidebar-toggle {
-      background: initial;
-      border: none;
-      color: #FFF;
-      display: inline-block;
-    }
-
-    .navbar-brand {
-      display: inline-block;
-      float: none;
-      font-size: 24px;
-      text-transform: uppercase;
-    }
-
-    .city-select {
-      background: initial;
-      border: none;
-      color: #FFF;
-      display: inline-block;
-    }
-  }
-
-  .header-right {
-    float: right;
-    margin-right: 20px;
-
-    .search-form {
-      display: inline-block;
-      margin: 10px 20px 0 0;
-
-      input[type="search"] {
-        background: initial;
-        border: none;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-        color: #FFF;
-        outline: none;
-
-        &:focus {
-          border-bottom: 2px solid rgba(255, 255, 255, 1);
-        }
-      }
-
-      button {
-        background: initial;
-        border: none;
-        color: rgba(255, 255, 255, 0.6);
-
-        &:hover, &:focus {
-          color: rgba(255, 255, 255, 1);
-        }
-      }
-    }
-
-    .log-in-with {
-      display: inline-block;
-      margin-top: 10px;
-
-      button {
-        background: initial;
-        border: none;
-        color: #FFF;
-        outline: none;
-      }
-
-      .dropdown-menu {
-        background: initial;
-        box-shadow: none;
-        border: none;
-        min-width: 0;
-        right: 28px;
-        width: 30px;
-
-        a {
-          border-radius: 30px;
-          color: #FFF;
-          display: block;
-          height: 30px;
-          margin-bottom: 10px;
-          padding: 5px;
-          text-align: center;
-          width: 30px;
-
-          &.vk {
-            background: $vk_bg;
-          }
-          &.facebook {
-            background: $facebook_bg;
-          }
-        }
-      }
     }
   }
 }

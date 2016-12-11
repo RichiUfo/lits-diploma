@@ -1,6 +1,6 @@
 module NavbarHelper
   def navbar
-    content_tag(:nav, class: 'navbar navbar-inverse navbar-fixed-top') { yield }
+    content_tag(:nav, container { yield }, class: 'navbar navbar-inverse navbar-fixed-top')
   end
 
   def sidebar_toggle
@@ -8,7 +8,7 @@ module NavbarHelper
   end
 
   def app_header
-    link_to 'WillGo', '/', class: 'navbar-brand'
+    link_to image_tag('/white-logo.png'), '/', class: 'navbar-brand'
   end
 
   def city_select
