@@ -1,4 +1,5 @@
 @import 'bootswatch/united/variables';
+$screen-xs-max: $screen-xs - 1;
 
 .events-timeline {
   display: flex;
@@ -9,6 +10,23 @@
     font-size: 18px;
     padding: 0.5% 1%;
     position: relative;
+    display: none;
+
+    &:nth-child(-n+7) {
+      display: block;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      &:nth-child(-n+14) {
+        display: block;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      & {
+        display: block;
+      }
+    }
 
     &.selected {
       background: #772953;
