@@ -12,6 +12,7 @@ gem 'masonry-rails'
 gem 'chosen-rails'
 gem 'simple_form'
 gem 'gmaps4rails'
+gem 'russian'
 
 gem 'vkontakte_api', '~> 1.4'
 gem 'koala', '~> 2.2' # Facebook API

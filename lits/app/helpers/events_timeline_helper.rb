@@ -20,12 +20,11 @@ module EventsTimelineHelper
   def link_options_for_day(day)
     options = { class: 'events-timeline-day', data: {} }
     options[:class] += ' selected' if selected_day?(day)
-    options[:data][:month] = day.strftime('%B') if day.strftime('%-d') == '1'
-    if weekend?(day)
-      options[:class] += ' weekend'
-      options[:data][:weekend] = 'сб' if day.saturday?
-      options[:data][:weekend] = 'вс' if day.sunday?
-    end
+    options[:class] += ' weekend' if weekend?(day)
+
+    options[:data][:month] = l(day, format: '%B').mb_chars.downcase.to_s if day == day.beginning_of_month
+    options[:data][:weekend] = l(day, format: '%a').mb_chars.downcase.to_s if weekend?(day)
+
     options
   end
 

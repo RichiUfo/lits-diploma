@@ -37,28 +37,29 @@ $screen-xs-max: $screen-xs - 1;
       font-weight: bold;
     }
 
-    &::before {
+    &::before, &::after {
       font-size: 14px;
       font-weight: normal;
       opacity: 0.75;
       position: absolute;
     }
 
-    &:hover::before {
+    &:hover::before, &:hover::after {
       color: $link-color;
-    }
-
-    &[data-month]::before {
-      background: #FFF;
-      content: attr(data-month);
-      top: 30px;
-      z-index: 1;
     }
 
     &[data-weekend]::before {
       content: attr(data-weekend);
       top: -12px;
       padding-left: 8%;     
+    }
+
+    &[data-month]::after {
+      background: #FFF;
+      content: attr(data-month);
+      left: 25%;
+      top: 30px;
+      z-index: 1;
     }
   }
 }

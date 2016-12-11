@@ -14,13 +14,13 @@ module EventHelper
   def event_image_map(event)
     return '' if event.lat.nil? || event.lng.nil?
 
-    #content_tag(:div, image_tag(mag_image_link(event)), class: 'event-map')
+    # content_tag(:div, image_tag(mag_image_link(event)), class: 'event-map')
     image map_image_link(event)
   end
 
   def image(link)
     ff = open(link)
-    b64img =  Base64.encode64(ff.read)
+    b64img = Base64.encode64(ff.read)
     image_tag("data:image/jpeg;base64,#{b64img}", class: 'event-map')
   end
 
@@ -81,7 +81,7 @@ module EventHelper
   def event_time(event)
     time_tag(
       event.date,
-      I18n.l(event.date.in_time_zone, format: :long),
+      l(event.date.in_time_zone, format: :long),
       class: 'event-date'
     )
   end
