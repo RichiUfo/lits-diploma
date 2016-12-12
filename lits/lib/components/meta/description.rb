@@ -20,6 +20,7 @@ module Components
 
       def self.events_description(controller)
         if controller.action_name.to_sym == :show
+          return controller.event.name if controller.event.description.empty?
           text = first_p controller.event.description
           sentences_before_max_length(text) if text.length > MAX_DESCRIPTION_LENGTH
         elsif controller.action_name.to_sym == :date
@@ -42,7 +43,8 @@ module Components
       end
 
       def self.first_p(text)
-        Nokogiri::HTML.parse(text).css('p').first.text
+        paragraph = Nokogiri::HTML.parse(text).css('p').first
+        paragraph.present? ? paragraph.text : ''
       end
 
       def self.sentences_before_max_length(text)
